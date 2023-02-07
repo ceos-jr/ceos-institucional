@@ -1,3 +1,45 @@
-.SobreNos{
-    color: orange;
+.SobreNos {
+  color: orange;
+}
+.titulo {
+  color: blue;
+}
+.paragrafo {
+  color: blue;
+}
+.numeros {
+
+  
+  display: flex;
+  color: blue;
+  font-size: 25px;
+}
+.descricao {
+  
+  display: flex;
+  color: blue;
+}
+.n1{
+    margin-right: 120px;
+    padding-left: 18px;
+
+}
+.n2{
+    margin-right: 120px;
+
+}
+.p1{
+    margin-right: 85px;
+
+}
+.p2{
+    margin-right: 100px;
+
+}
+.p3{
+
+}
+.section{
+    padding-left: 750px;
+    padding-top: 120px;
 }
