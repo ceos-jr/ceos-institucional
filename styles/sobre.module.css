@@ -27,31 +27,6 @@
 .n2 {
   margin-right: 120px;
 }
-<<<<<<< HEAD
-.p1{
-  
-
-    
-
-}
-.p2{
-  padding-left: 102px;
-    
-
-}
-.p3{
-  padding-left: 107px;
-
-}
-.section{
-    padding-left: 750px;
-    padding-top: 185px;
-    
-}
-.ImagemSobre{
-  color: aqua;
-}
-=======
 .p1 {
   margin-right: 85px;
 }
@@ -61,7 +36,6 @@
 .p3 {
 }
 .section {
-  padding-left: 750px;
-  padding-top: 120px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
->>>>>>> 175478ca7c94f0601ac8d43b7bc79dcc7728c20a
