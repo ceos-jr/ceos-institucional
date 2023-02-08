@@ -25,7 +25,7 @@ const Wrapper = ({
   } as CSSProperties
   return (
     <div
-      className="absolute h-full w-full"
+      className="absolute h-full w-full [transition:_transform_1s_ease-out]"
       style={wrapperStyle}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
@@ -41,15 +41,21 @@ const Carousel = ({ children, className }: CarouselProps) => {
   const NUM_OF_ITEMS = Children.toArray(children).length
 
   const moveToNext = () => {
-    if (activeItem >= NUM_OF_ITEMS - 1) return
+    if (activeItem === NUM_OF_ITEMS - 1) return
 
-    setActiveItem((prev) => (prev + 1))
+    // Value must only range from 0 to `NUM_OF_ITEMS - 1`
+    setActiveItem((prev) => {
+      return (prev + 1) % NUM_OF_ITEMS; 
+    });
   }
 
   const moveToPrev = () => {
-    if (activeItem <= 0) return
+    if (activeItem === 0) return
 
-    setActiveItem((prev) => (prev - 1))
+    // Turn prev into a positive number in case it is negative
+    setActiveItem((prev) => {
+      return (prev < 0 ? -prev : prev) - 1; 
+    });
   }
 
   const handleTouchStart = (e: TouchEvent) => {
@@ -78,7 +84,7 @@ const Carousel = ({ children, className }: CarouselProps) => {
   }
 
   return (
-    <div className={`relative h-80 w-full border overflow-hidden ${className}`}>
+    <div className={`relative h-96 w-full overflow-hidden ${className}`}>
       <Wrapper
         currentItem={activeItem}
         handleTouchStart={handleTouchStart}
