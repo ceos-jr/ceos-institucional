@@ -4,8 +4,8 @@ import CarouselSlide from "../Carousel/CarouselSlide"
 import TestimonialCard from "./TestimonialCard"
 
 const SocialProf = () => {
-  const { width } = useWindowSize();
-  const slidesCount = (width >= 1024) ? 2.5 : (width >= 768) ? 2 : 1 
+  const { width } = useWindowSize()
+  const slidesCount = width >= 1024 ? 2.5 : width >= 768 ? 2 : 1
 
   return (
     <section className="flex flex-col items-center min-h-screen w-full py-10 font-poppins">
@@ -13,9 +13,7 @@ const SocialProf = () => {
       <h2 className="text-[#0E0E5E] text-center font-semibold text-3xl leading-10 mb-12 px-2 md:mb-16">
         Citações especiais de nossos clientes sobre nós.
       </h2>
-      <Carousel 
-        show={slidesCount}
-      >
+      <Carousel show={slidesCount}>
         <CarouselSlide
           className="flex justify-center items-center md:w-1/2 lg:w-[40%]"
           position={0}
