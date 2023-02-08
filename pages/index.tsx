@@ -4,9 +4,7 @@ import Sobre from "../components/Sobre"
 const Home: NextPage = () => {
   return (
     <div>
-      
-      <Sobre/>
-      
+      <Sobre />
     </div>
   )
 }

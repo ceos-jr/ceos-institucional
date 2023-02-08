@@ -12,26 +12,22 @@
   margin-bottom: 20px;
 }
 .numeros {
-
-  
   display: flex;
   color: blue;
   font-size: 25px;
 }
 .descricao {
-  
   display: flex;
   color: blue;
 }
-.n1{
-    margin-right: 120px;
-    padding-left: 18px;
-
+.n1 {
+  margin-right: 120px;
+  padding-left: 18px;
 }
-.n2{
-    margin-right: 120px;
-
+.n2 {
+  margin-right: 120px;
 }
+<<<<<<< HEAD
 .p1{
   
 
@@ -55,3 +51,17 @@
 .ImagemSobre{
   color: aqua;
 }
+=======
+.p1 {
+  margin-right: 85px;
+}
+.p2 {
+  margin-right: 100px;
+}
+.p3 {
+}
+.section {
+  padding-left: 750px;
+  padding-top: 120px;
+}
+>>>>>>> 175478ca7c94f0601ac8d43b7bc79dcc7728c20a
