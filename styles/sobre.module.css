@@ -1,11 +1,15 @@
 .SobreNos {
   color: orange;
+  margin-bottom: 1px;
 }
 .titulo {
   color: blue;
+  margin-bottom: 20px;
+  font-size: 29px;
 }
 .paragrafo {
   color: blue;
+  margin-bottom: 20px;
 }
 .numeros {
 
@@ -29,17 +33,25 @@
 
 }
 .p1{
-    margin-right: 85px;
+  
+
+    
 
 }
 .p2{
-    margin-right: 100px;
+  padding-left: 102px;
+    
 
 }
 .p3{
+  padding-left: 107px;
 
 }
 .section{
     padding-left: 750px;
-    padding-top: 120px;
+    padding-top: 185px;
+    
+}
+.ImagemSobre{
+  color: aqua;
 }
