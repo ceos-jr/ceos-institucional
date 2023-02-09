@@ -16,7 +16,10 @@ const CarouselSlide = ({
   } as CSSProperties
 
   return (
-    <div className={`absolute h-full w-full ${className}`} style={itemStyle}>
+    <div
+      className={`absolute h-full w-full [transition:_opacity_300ms_ease-out] ${className}`}
+      style={itemStyle}
+    >
       {children}
     </div>
   )
