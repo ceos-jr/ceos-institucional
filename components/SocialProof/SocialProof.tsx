@@ -4,18 +4,18 @@ import CarouselSlide from "../Carousel/CarouselSlide"
 import TestimonialCard from "./TestimonialCard"
 
 const SocialProf = () => {
-  const { width } = useWindowSize()
-  const slidesCount = width >= 1024 ? 2.5 : width >= 768 ? 2 : 1
+  const { width } = useWindowSize();
+  const slidesCount = (width >= 1024) ? 3 : (width >= 768) ? 2 : 1 
 
   return (
-    <section className="flex flex-col items-center min-h-screen w-full py-10 font-poppins">
+    <section className="flex flex-col items-center min-h-screen w-full py-5 font-poppins">
       <h3 className="text-accent text-xl mb-5 md:mb-0">Depoimentos</h3>
-      <h2 className="text-[#0E0E5E] text-center font-semibold text-3xl leading-10 mb-12 px-2 md:mb-16">
+      <h2 className="text-[#0E0E5E] text-center font-semibold text-3xl leading-10 mb-12 px-2">
         Citações especiais de nossos clientes sobre nós.
       </h2>
       <Carousel show={slidesCount}>
         <CarouselSlide
-          className="flex justify-center items-center md:w-1/2 lg:w-[40%]"
+          className="flex justify-center items-center md:w-1/2 lg:w-1/3"
           position={0}
         >
           <TestimonialCard
@@ -27,7 +27,7 @@ const SocialProf = () => {
           />
         </CarouselSlide>
         <CarouselSlide
-          className="flex justify-center items-center md:w-1/2 lg:w-[40%]"
+          className="flex justify-center items-center md:w-1/2 lg:w-1/3"
           position={1}
         >
           <TestimonialCard
@@ -39,7 +39,7 @@ const SocialProf = () => {
           />
         </CarouselSlide>
         <CarouselSlide
-          className="flex justify-center items-center md:w-1/2 lg:w-[40%]"
+          className="flex justify-center items-center md:w-1/2 lg:w-1/3"
           position={2}
         >
           <TestimonialCard
@@ -51,7 +51,7 @@ const SocialProf = () => {
           />
         </CarouselSlide>
         <CarouselSlide
-          className="flex justify-center items-center md:w-1/2 lg:w-[40%]"
+          className="flex justify-center items-center md:w-1/2 lg:w-1/3"
           position={3}
         >
           <TestimonialCard
@@ -63,7 +63,7 @@ const SocialProf = () => {
           />
         </CarouselSlide>
         <CarouselSlide
-          className="flex justify-center items-center md:w-1/2 lg:w-[40%]"
+          className="flex justify-center items-center md:w-1/2 lg:w-1/3"
           position={4}
         >
           <TestimonialCard
@@ -75,7 +75,7 @@ const SocialProf = () => {
           />
         </CarouselSlide>
         <CarouselSlide
-          className="flex justify-center items-center md:w-1/2 lg:w-[40%]"
+          className="flex justify-center items-center md:w-1/2 lg:w-1/3"
           position={5}
         >
           <TestimonialCard
