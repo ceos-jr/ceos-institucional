@@ -1,4 +1,5 @@
-import type { NextPage } from "next"
+import { NextPage } from "next"
+import Footer from "../components/Footer"
 import Head from "next/head"
 
 const Home: NextPage = () => {
@@ -10,7 +11,7 @@ const Home: NextPage = () => {
       </Head>
       <main></main>
 
-      <footer></footer>
+      <Footer />
     </div>
   )
 }
