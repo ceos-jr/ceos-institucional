@@ -10,7 +10,7 @@ function Footer() {
         <p>Your best partner through the digital market-place</p>
       </div>
       <div className={`${styles.Links} ${styles.column}`}>
-        <h3>Links</h3>
+        <h3 className="">Links</h3>
         <ul>
           <li>
             <a href="#" rel="">
@@ -35,7 +35,7 @@ function Footer() {
         </ul>
       </div>
       <div className={`${styles.Contatos} ${styles.column}`}>
-        <h3>Contatos</h3>
+        <h3 className="font-poppins">Contatos</h3>
         <ul>
           <li>(85)12345-6789</li>
           <li>ceos@gmail.com</li>
