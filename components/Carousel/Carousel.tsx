@@ -38,11 +38,12 @@ const Wrapper = ({
   handleTouchStart,
   handleTouchMove,
 }: WrapperProps) => {
-  const screens = Math.floor(currentItem / Math.floor(show));
-  
-  const percentage = currentItem % Math.floor(show) === 0 
-    ? currentItem * (100 / show)
-    : screens * 100
+  const screens = Math.floor(currentItem / Math.floor(show))
+
+  const percentage =
+    currentItem % Math.floor(show) === 0
+      ? currentItem * (100 / show)
+      : screens * 100
 
   const wrapperStyle = {
     transform: `translateX(-${percentage}%)`,
@@ -50,15 +51,17 @@ const Wrapper = ({
 
   const elements = Children.toArray(children).map((child, index) => {
     if (!isReactElement(child)) return child
-    
+
     // Turn opaque all elements that are not fully visible
-    const opaque = index !== currentItem;  
+    const opaque = index !== currentItem
 
     return cloneElement(
       child,
-      { 
-        ...child.props,  
-        className: opaque ? `${child.props.className} opacity-40` : child.props.className,
+      {
+        ...child.props,
+        className: opaque
+          ? `${child.props.className} opacity-40`
+          : child.props.className,
       },
       child.props.children
     )
@@ -126,9 +129,7 @@ const Carousel = ({ children, className, show = 1 }: CarouselProps) => {
   }
 
   return (
-    <div 
-      className={`relative h-[26rem] w-full overflow-hidden ${className}`}
-    >
+    <div className={`relative h-[26rem] w-full overflow-hidden ${className}`}>
       <Wrapper
         show={show}
         currentItem={activeItem}
