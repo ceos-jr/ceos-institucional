@@ -14,7 +14,6 @@
   line-height: 2rem;
 }
 
-
 .descricao {
   display: flex;
   color: #0e0e5e;
@@ -41,7 +40,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   flex-wrap: wrap;
-  
+
   align-items: center;
   min-height: 100vh;
 }
@@ -52,7 +51,7 @@
 .div1 {
   background: transparent;
 }
-.descricao span{
+.descricao span {
   font-weight: 700;
   color: #0e0e5e;
   font-size: 30px;
@@ -60,11 +59,11 @@
 
 @media (max-width: 768px) {
   .section {
-    grid-template-rows: repeat(2,  1fr);
-    
+    grid-template-rows: repeat(2, 1fr);
+
     align-items: normal;
   }
-  .div2{
+  .div2 {
     grid-row: 2/2;
     width: 100%;
     grid-column: 1/-1;
@@ -72,47 +71,31 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    
-   
   }
-  .div1{
-    
+  .div1 {
     grid-column: 1/-1;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    
-    
   }
-  .div1 img{
+  .div1 img {
     width: 450px;
-    
-    
-    
   }
-  .titulo{
+  .titulo {
     font-size: 30px;
     padding-left: 50px;
     padding-right: 50px;
-    
   }
-  .paragrafo{
+  .paragrafo {
     font-size: 20px;
     padding-left: 50px;
     padding-right: 50px;
   }
-  .SobreNos{
+  .SobreNos {
     font-size: 20px;
     padding-right: 50px;
-    
   }
-  .numeros{
+  .numeros {
     font-size: 24px;
   }
-
-  
 }
-
-
-

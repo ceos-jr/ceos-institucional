@@ -1,7 +1,4 @@
-
 import type { NextPage } from "next"
-
-
 
 import Sobre from "../components/Sobre"
 import Footer from "../components/Footer"
@@ -17,11 +14,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="w-full min-h-screen">
-       <Sobre/>
+        <Sobre />
         <SocialProf />
       </main>
       <Footer />
-      
     </div>
   )
 }

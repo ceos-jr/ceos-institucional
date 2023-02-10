@@ -17,8 +17,7 @@ export default function Sobre() {
           desenvolvimento rigoroso que inclui o desenvolvimento dirigido por
           testes.
         </p>
-        
-        
+
         <div className={styles.descricao}>
           <div>
             <span>4500</span>
@@ -31,7 +30,6 @@ export default function Sobre() {
           <div>
             <span>350</span>
             <h3>Running work</h3>
-            
           </div>
         </div>
       </div>
