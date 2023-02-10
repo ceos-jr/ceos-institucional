@@ -3,8 +3,10 @@ import styles from "../styles/sobre.module.css"
 export default function Sobre() {
   return (
     <section className={styles.section}>
-      <div></div>
-      <div>
+      <div className={styles.div1}>
+        <Image src="/ImagemSobre.png" alt="Imagem" width={677} height={775} />
+      </div>
+      <div className={styles.div2}>
         <h1 className={styles.SobreNos}>Sobre nós</h1>
         <p className={styles.titulo}>
           Nossa visão é construir uma <br></br> solução empresarial de sucesso.
