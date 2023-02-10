@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    font-family: Poppins;
+    @apply font-poppins;
     position: sticky;
     top: 0;
     left: 0;
@@ -23,7 +23,6 @@
     letter-spacing: 1px;
 }
 .Menu li:hover{
-    font-weight: 500;
     transform: scale(1.1);
 }
 .Button{
