@@ -1,16 +1,18 @@
 import { NextPage } from "next"
 import Footer from "../components/Footer"
 import Head from "next/head"
+import SocialProf from "../components/SocialProof/SocialProof"
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center py-2 w-full min-h-screen">
       <Head>
-        <title>Create Next App</title>
+        <title>CEOS Institucional</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main></main>
-
+      <main className="w-full min-h-screen">
+        <SocialProf />
+      </main>
       <Footer />
     </div>
   )
