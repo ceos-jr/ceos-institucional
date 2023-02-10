@@ -1,5 +1,11 @@
-import { NextPage } from "next"
+
+import type { NextPage } from "next"
+
+
+
+import Sobre from "../components/Sobre"
 import Footer from "../components/Footer"
+
 import Head from "next/head"
 import SocialProf from "../components/SocialProof/SocialProof"
 
@@ -11,9 +17,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="w-full min-h-screen">
+       <Sobre/>
         <SocialProf />
       </main>
       <Footer />
+      
     </div>
   )
 }

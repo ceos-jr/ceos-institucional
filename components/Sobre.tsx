@@ -2,9 +2,9 @@ import Image from "next/image"
 import styles from "../styles/sobre.module.css"
 export default function Sobre() {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} font-poppins`}>
       <div className={styles.div1}>
-        <Image src="/ImagemSobre.png" alt="Imagem" width={677} height={775} />
+        <Image src="/imagemcelular.svg" alt="Imagem" width={890} height={900} />
       </div>
       <div className={styles.div2}>
         <h1 className={styles.SobreNos}>Sobre nós</h1>

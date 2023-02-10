@@ -4,22 +4,25 @@
   font-size: 22px;
 }
 .titulo {
-  color: blue;
+  color: #0E0E5E;
   margin-bottom: 20px;
   font-size: 37px;
+  
 }
 .paragrafo {
-  color: blue;
+  color: rgb(16, 16, 77);
   margin-bottom: 20px;
+  line-height: 2rem;
 }
 .numeros {
   display: flex;
-  color: blue;
+  color: #0E0E5E;
   font-size: 30px;
+  font-weight: 700;
 }
 .descricao {
   display: flex;
-  color: blue;
+  color: #0E0E5E;
 }
 .n1 {
   margin-right: 120px;
@@ -40,13 +43,20 @@
 .section {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  
+  height: 100vh;
+  align-items: center;
+  
 }
 .div2 {
-  margin-top: 220px;
-  padding-left: 100px;
+  margin-left: 30px;
+  padding-right: 20px;
+  
 }
 .div1 {
   background: transparent;
-  margin-left: 100px;
+  
+  
+  
 }
 
