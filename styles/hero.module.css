@@ -1,0 +1,104 @@
+@media (min-width: 375px) {
+  .global {
+    align-items: center;
+    display: grid;
+    gap: 20px;
+  }
+
+  .globaltext {
+    display: grid;
+    gap: 23px;
+    text-align: left;
+    padding-left: 14px;
+    padding-right: 15px;
+  }
+
+  .globaltext h1 {
+    color: #0e0e5e;
+    font-size: 37px;
+    font-style: bold;
+    width: 342px;
+  }
+
+  .abutton {
+    padding: 10px 20px;
+    color: white;
+    background-color: #ff9100;
+    width: 100%;
+    border-radius: 6px;
+    text-align: center;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .buttonarrow {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .svgceoslogo {
+    padding-left: 14px;
+    padding-top: 23px;
+  }
+  .svghero {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-top: 2rem;
+  }
+  .svgparceiros {
+    padding: 1rem 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .global {
+    align-items: center;
+    display: grid;
+    grid-column: 1 / 3;
+    gap: 20px;
+  }
+
+  .globaltext {
+    display: grid;
+    gap: 23px;
+    text-align: left;
+    padding-left: 14px;
+    padding-right: 15px;
+  }
+
+  .globaltext h1 {
+    color: #0e0e5e;
+    font-size: 37px;
+    font-style: bold;
+    width: 342px;
+  }
+
+  .abutton {
+    padding: 10px 20px;
+    color: white;
+    background-color: #ff9100;
+    width: 100%;
+    border-radius: 6px;
+    text-align: center;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .buttonarrow {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .svgceoslogo {
+    padding-left: 14px;
+    padding-top: 23px;
+  }
+  .svghero {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-top: 2rem;
+  }
+  .svgparceiros {
+    padding: 1rem 1rem;
+  }
+}
