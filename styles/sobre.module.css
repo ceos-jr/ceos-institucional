@@ -46,7 +46,6 @@
   padding: 2rem;
 }
 .div2 {
-  
 }
 .div1 {
   background: transparent;
@@ -100,18 +99,16 @@
   }
 }
 @media (max-width: 375px) {
-  .paragrafo{
+  .paragrafo {
     font-size: 12px;
   }
-  .titulo{
+  .titulo {
     font-size: 20px;
   }
-  .SobreNos{
+  .SobreNos {
     line-height: 75px;
   }
-  .div1{
+  .div1 {
     margin-bottom: -290px;
   }
-  
-
 }
