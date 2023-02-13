@@ -1,3 +1,4 @@
+import Services from "../components/Services"
 import { NextPage } from "next"
 import Footer from "../components/Footer"
 import Head from "next/head"
@@ -11,9 +12,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="w-full min-h-screen">
+      <Services/>
         <SocialProf />
       </main>
       <Footer />
+    
     </div>
   )
 }
