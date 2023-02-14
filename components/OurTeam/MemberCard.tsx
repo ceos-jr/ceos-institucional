@@ -28,7 +28,7 @@ const TeamCard = ({
   instagramURL,
 }: TeamCardProps) => {
   return (
-    <div className="flex flex-col items-center w-[17rem] h-[23.5rem] py-10 rounded-xl bg-white">
+    <div className="flex flex-col items-center w-[17rem] h-[23.5rem] py-10 rounded-xl bg-white hover:scale-105 transition-transform duration-300 ease-out">
       <Image
         className="h-28 w-28 object-cover mb-8 rounded-full"
         src={memberImg}
