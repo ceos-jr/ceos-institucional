@@ -2,6 +2,7 @@ import { NextPage } from "next"
 import Footer from "../components/Footer"
 import Head from "next/head"
 import SocialProf from "../components/SocialProof/SocialProof"
+import OurTeam from "../components/OurTeam/OurTeam"
 
 const Home: NextPage = () => {
   return (
@@ -11,6 +12,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="w-full min-h-screen">
+        <OurTeam/>
         <SocialProf />
       </main>
       <Footer />
