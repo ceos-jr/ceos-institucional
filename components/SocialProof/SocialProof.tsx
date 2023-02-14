@@ -11,7 +11,7 @@ const SocialProf = () => {
 
   return (
     <section className="flex flex-col items-center min-h-screen w-full py-8 font-poppins">
-      <div className="container flex flex-col items-center">
+      <div className="container-wrapper flex flex-col items-center">
         <h3 className="text-accent text-xl mb-4 md:mb-0 lg:self-start">
           Depoimentos
         </h3>

@@ -16,7 +16,7 @@ const OurTeam = () => {
         "relative min-h-screen w-full overflow-hidden before:absolute before:bg-[#F5F7FC] before:top-[0%] before:-left-[20%] before:w-[130%] before:h-[90%] before:rotate-[5deg]"
       }
     >
-      <div className="container py-8 flex flex-col">
+      <div className="container-wrapper py-8 flex flex-col">
         <h3 className="text-accent text-xl mb-4 md:mb-0 z-10">Nosso Time</h3>
         <h2 className="text-[#0E0E5E] text-3xl max-w-[45ch] font-semibold leading-10 z-10">
           Somos uma pequena equipe de contadores de histórias, pensadores e
