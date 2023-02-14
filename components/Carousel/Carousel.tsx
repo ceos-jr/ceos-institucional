@@ -170,7 +170,8 @@ const Carousel = ({
             [transition:_color_300ms_ease-out_transform_300ms_ease-out] z-10
             hover:text-accent hover:scale-[1.2] 
             focus:text-accent focus:scale-[1.2]
-        `}>
+        `}
+        >
           <HiOutlineChevronLeft />
         </button>
       )}
@@ -182,7 +183,8 @@ const Carousel = ({
             [transition:_color_300ms_ease-out_transform_300ms_ease-out] z-10
             hover:text-accent hover:scale-[1.2] 
             focus:text-accent focus:scale-[1.2]
-        `}>
+        `}
+        >
           <HiOutlineChevronRight />
         </button>
       )}

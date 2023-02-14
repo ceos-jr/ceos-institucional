@@ -17,8 +17,8 @@ module.exports = {
         accent: "#FF9100",
       },
       screens: {
-        "xl": "1200px"
-      }
+        xl: "1200px",
+      },
     },
   },
   plugins: [],

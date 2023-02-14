@@ -12,7 +12,9 @@ const OurTeam = () => {
 
   return (
     <section
-      className={"relative min-h-screen w-full overflow-hidden before:absolute before:bg-[#F5F7FC] before:top-[0%] before:-left-[20%] before:w-[130%] before:h-[90%] before:rotate-[5deg]"}
+      className={
+        "relative min-h-screen w-full overflow-hidden before:absolute before:bg-[#F5F7FC] before:top-[0%] before:-left-[20%] before:w-[130%] before:h-[90%] before:rotate-[5deg]"
+      }
     >
       <div className="container py-8 flex flex-col">
         <h3 className="text-accent text-xl mb-4 md:mb-0 z-10">Nosso Time</h3>
@@ -20,9 +22,7 @@ const OurTeam = () => {
           Somos uma pequena equipe de contadores de histórias, pensadores e
           solucionadores de problemas.
         </h2>
-        <Indicator
-          className="my-4 z-10 md:my-0 md:self-end"
-        />
+        <Indicator className="my-4 z-10 md:my-0 md:self-end" />
         <Carousel show={slidesCount}>
           <CarouselSlide
             className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"

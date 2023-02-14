@@ -93,9 +93,7 @@ const SocialProf = () => {
           />
         </CarouselSlide>
       </Carousel>
-      <Indicator
-        className="my-4"
-      />
+      <Indicator className="my-4" />
     </section>
   )
 }
