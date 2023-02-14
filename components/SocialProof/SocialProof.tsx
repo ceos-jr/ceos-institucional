@@ -2,6 +2,7 @@ import useWindowSize from "../../hooks/useWindowSize"
 import Carousel from "../Carousel/Carousel"
 import CarouselSlide from "../Carousel/CarouselSlide"
 import TestimonialCard from "./TestimonialCard"
+import Indicator from "../Indicator/Indicator"
 
 const SocialProf = () => {
   const { width } = useWindowSize()
@@ -92,6 +93,9 @@ const SocialProf = () => {
           />
         </CarouselSlide>
       </Carousel>
+      <Indicator
+        className="my-4"
+      />
     </section>
   )
 }
