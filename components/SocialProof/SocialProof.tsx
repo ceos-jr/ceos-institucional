@@ -6,14 +6,19 @@ import TestimonialCard from "./TestimonialCard"
 const SocialProf = () => {
   const { width } = useWindowSize()
   const slidesCount = width >= 1024 ? 3 : width >= 768 ? 2 : 1
+  const highlightSlide = width >= 1024 ? true : false
 
   return (
-    <section className="flex flex-col items-center min-h-screen w-full py-5 font-poppins">
-      <h3 className="text-accent text-xl mb-5 md:mb-0">Depoimentos</h3>
-      <h2 className="text-[#0E0E5E] text-center font-semibold text-3xl leading-10 mb-12 px-2">
-        Citações especiais de nossos clientes sobre nós.
-      </h2>
-      <Carousel show={slidesCount}>
+    <section className="flex flex-col items-center min-h-screen w-full py-8 font-poppins">
+      <div className="container flex flex-col items-center">
+        <h3 className="text-accent text-xl mb-4 md:mb-0 lg:self-start">
+          Depoimentos
+        </h3>
+        <h2 className="text-[#0E0E5E] text-center font-semibold text-3xl leading-10 mb-12 lg:self-start">
+          Citações especiais de nossos clientes sobre nós.
+        </h2>
+      </div>
+      <Carousel show={slidesCount} highlight={highlightSlide}>
         <CarouselSlide
           className="flex justify-center items-center md:w-1/2 lg:w-1/3"
           position={0}
