@@ -101,7 +101,7 @@ const Carousel = ({
   const [touchPosition, setTouchPosition] = useState<number | null>(null)
 
   // When the highlight option is active the carousel will transition the slides
-  // and count the limit in a different manner 
+  // and count the limit in a different manner
   const LENGTH = Children.toArray(children).length
   const LIMIT = LENGTH - (highlight ? 1 : show)
   const SHOW_LEFT_ARROW = show !== LENGTH && activeItem !== 0
@@ -166,12 +166,11 @@ const Carousel = ({
         <button
           onClick={moveToPrev}
           className={`
-                hidden md:block absolute outline-0 text-xl text-primary bottom-0 left-[45%] 
-                [transition:_color_300ms_ease-out_transform_300ms_ease-out] z-10
-                hover:text-accent hover:scale-[1.3] 
-                focus:text-accent focus:scale-[1.3]
-              `}
-        >
+            hidden md:block absolute outline-0 text-3xl text-primary bottom-1/2 left-2 
+            [transition:_color_300ms_ease-out_transform_300ms_ease-out] z-10
+            hover:text-accent hover:scale-[1.2] 
+            focus:text-accent focus:scale-[1.2]
+        `}>
           <HiOutlineChevronLeft />
         </button>
       )}
@@ -179,12 +178,11 @@ const Carousel = ({
         <button
           onClick={moveToNext}
           className={`
-          hidden md:block absolute outline-0 text-xl text-primary bottom-0 right-[45%] 
-          [transition:_color_300ms_ease-out_transform_300ms_ease-out] z-10
-          hover:text-accent hover:scale-[1.3] 
-          focus:text-accent focus:scale-[1.3]
-        `}
-        >
+            hidden md:block absolute outline-0 text-3xl text-primary bottom-1/2 right-2 
+            [transition:_color_300ms_ease-out_transform_300ms_ease-out] z-10
+            hover:text-accent hover:scale-[1.2] 
+            focus:text-accent focus:scale-[1.2]
+        `}>
           <HiOutlineChevronRight />
         </button>
       )}
