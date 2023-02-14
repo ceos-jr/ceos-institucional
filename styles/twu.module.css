@@ -1,0 +1,25 @@
+@media (min-width: 375px) {
+  .global {
+    justify-content: center;
+  }
+  .globaltext{
+    text-align: left;
+    color: #FF9100;
+    font: normal normal normal 20px/60px Helvetica;
+  }
+  .globaltext h2{
+    color: #0E0E5E;
+  }
+  
+  .globaltext p{
+    color: #21262C;
+    opacity: .7;
+    font: normal normal normal 18px/27px Poppins;
+  }
+  .svgtwu {
+    height: 360px;
+    width: 350px;
+    padding-left: 15px;
+    
+  }
+}
