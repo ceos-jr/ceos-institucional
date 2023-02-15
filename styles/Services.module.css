@@ -6,10 +6,12 @@
 .titulo{
     color: #0e0e5e;
     font-size: 26px;
+    font-weight: 650;
 
 }
 .paragrafo{
     color: #0e0e5e;
+    padding-top: 15px;
     
 
 }
