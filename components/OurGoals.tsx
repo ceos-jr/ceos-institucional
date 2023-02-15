@@ -24,7 +24,8 @@ function OurGoals() {
         </p>
         <button className="my-12 text-white shadow-lg px-4 py-3 bg-[#FF9100] rounded-md transition-all hover:scale-105">
           <a className="flex items-center justify-between" href="#" rel="">
-            <span>Inicie um projeto conosco</span> <BsArrowRight className="text-3xl"/>
+            <span>Inicie um projeto conosco</span>{" "}
+            <BsArrowRight className="text-3xl" />
           </a>
         </button>
       </div>
