@@ -1,0 +1,122 @@
+.Footer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  background: #f5f7ff 0% 0% no-repeat padding-box;
+}
+.Footer .Links h3 {
+  @apply font-poppins;
+}
+.Footer .Contatos h3 {
+  @apply font-poppins;
+}
+
+.Footer .column {
+  width: 25%;
+  margin: 0 auto;
+}
+
+.Footer .Logo {
+  padding: 0rem 1rem 0rem 1rem;
+}
+
+.Footer .Links {
+  padding: 0 1rem;
+}
+.Footer .Contatos {
+  padding: 0 1rem;
+}
+
+.Footer .Logo img {
+  margin-bottom: 1rem;
+}
+
+.Footer .Logo p {
+  color: #677294;
+  max-width: 30ch;
+}
+
+.Links h3 {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 20px;
+  color: #0e0e5e;
+}
+
+.Links ul {
+  display: flex;
+  flex-direction: column;
+  color: #677294;
+  gap: 10px;
+}
+
+.Links ul li a {
+  transition: all 0.3s ease;
+}
+
+.Links ul li a:hover {
+  color: #0e0e5e;
+  padding-left: 8px;
+}
+
+.Contatos h3 {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 20px;
+  color: #0e0e5e;
+}
+
+.Contatos ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #677294;
+}
+
+.Socials ul {
+  display: flex;
+  padding: 0.5rem;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.Socials li .facebook {
+  padding: 0.5rem 1rem;
+}
+
+.Socials li .twitter {
+  padding: 0.74rem 0.6rem;
+}
+
+.Footer .Copyright {
+  border-top: 1px solid #677294;
+  color: #677294;
+  text-align: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.Socials .Icon {
+  font-size: 2.5rem;
+  color: #4383fc;
+  border: 1px solid;
+  border-radius: 15px;
+  padding: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.Socials .Icon:hover {
+  color: #fff;
+  background-color: #4383fc;
+}
+
+@media (max-width: 768px) {
+  .Footer .column {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .Footer .Logo {
+    margin-top: 2rem;
+  }
+}
