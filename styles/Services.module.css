@@ -1,21 +1,20 @@
-.services{
-    color: orange;
-    line-height: 35px;
+.texto h2 {
+  color: orange;
+  line-height: 35px;
+}
+.texto h1 {
+  color: #0e0e5e;
+  font-size: 26px;
+  font-weight: 650;
+}
+.texto p {
+  color: #0e0e5e;
+  padding-top: 15px;
+}
 
+.imagens {
+  
 }
-.titulo{
-    color: #0e0e5e;
-    font-size: 26px;
-    font-weight: 650;
+.texto {
+}
 
-}
-.paragrafo{
-    color: #0e0e5e;
-    padding-top: 15px;
-    
-
-}
-.div2{
-    display: flex;
-    
-}
