@@ -3,7 +3,6 @@ import Footer from "../components/Footer"
 import Head from "next/head"
 import SocialProf from "../components/SocialProof/SocialProof"
 import OurTeam from "../components/OurTeam/OurTeam"
-
 import Navbar from "../components/Navbar"
 
 const Home: NextPage = () => {
