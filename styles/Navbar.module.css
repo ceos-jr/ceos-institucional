@@ -21,20 +21,22 @@
 .Menu li{
     transition: all 0.1s ease;
     letter-spacing: 1px;
+    font-size: 18px;
 }
 .Menu li:hover{
     transform: scale(1.1);
 }
 .Button{
     background-color: #ffffff;
-    border: 1.5px solid darkorange;
+    border: 1.5px solid #FF9100;
     border-radius: 5px;
     padding: 0.5rem 1rem;
     transition: all 0.1s ease;
     letter-spacing: 1px;
+    font-size: 16px;
 }
 .Button:hover{
-    background-color: darkorange;
+    background-color: #FF9100;
     color: white;
     transform: scale(1.1);
 }
@@ -51,6 +53,9 @@
     }
     .Button{
         display: none;
+    }
+    .Navbar img{
+        width: 110px;
     }
 }
 

@@ -4,7 +4,7 @@ import Image from "next/image"
 const Navbar = () => {
   return (
     <nav className={styles.Navbar}>
-      <Image src={"/Navbar/Ceos.svg"} alt="" width={120} height={120} />
+      <Image src={"/Navbar/Ceos.svg"} alt="" width={150} height={120} />
       <ul className={styles.Menu}>
         <li>
           <a href="#">Início</a>
