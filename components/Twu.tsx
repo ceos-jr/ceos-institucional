@@ -19,7 +19,20 @@ export default function Twu() {
         <p>
           Ajudamos sua empresa a refletir seu verdadeiro eu por meio de projetos
           inovadores...
-        </p> 
+        </p>
+      </div>
+      <div className={styles.container}>
+        <form action="/send-data-here" method="post">
+          <label htmlFor="name">Nome</label>
+          <input type="text" id="name" name="name" />
+          <label htmlFor="telefone">Telefone</label>
+          <input type="text" id="phone" name="phone" />
+          <label htmlFor="email">Email</label>
+          <input type="text" id="email" name="email" />
+          <label htmlFor="menssage">Mensagem</label>
+          <input type="text" id="message" name="message" />
+          <button type="submit">Enviar</button>
+        </form>
       </div>
     </div>
   )

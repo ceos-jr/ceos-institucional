@@ -6,6 +6,7 @@
     text-align: left;
     color: #FF9100;
     font: normal normal normal 20px/60px Helvetica;
+    gap: 35px;
   }
   .globaltext h2{
     color: #0E0E5E;
