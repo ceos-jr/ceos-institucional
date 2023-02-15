@@ -10,11 +10,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["var(--poppins)", ...fontFamily.sans],
+        poppins: ["var(--font-poppins)", ...fontFamily.sans],
       },
       colors: {
         primary: "#2979FF",
         accent: "#FF9100",
+      },
+      screens: {
+        xl: "1200px",
       },
     },
   },
