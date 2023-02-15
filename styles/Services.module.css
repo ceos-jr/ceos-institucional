@@ -1,0 +1,21 @@
+.services{
+    color: orange;
+    line-height: 35px;
+
+}
+.titulo{
+    color: #0e0e5e;
+    font-size: 26px;
+    font-weight: 650;
+
+}
+.paragrafo{
+    color: #0e0e5e;
+    padding-top: 15px;
+    
+
+}
+.div2{
+    display: flex;
+    
+}
