@@ -18,18 +18,25 @@ function OurGoals() {
             rigoroso que inclui o desenvloviemnto dirigido por testes.
           </p>
           <p className="text-[#21262C] opacity-70 leading-7 text-base">
-            Desenvolvemos com sucesso muitos projetos,incluindoblogs, plataformas
-            de publicação e gestão de talentos, sites de comércio eletrônico,
-            agências de viagens, um aplicativo da web compatível com HIPAA e uma
-            plataforma de concurso sem fins lucrativos.
+            Desenvolvemos com sucesso muitos projetos,incluindoblogs,
+            plataformas de publicação e gestão de talentos, sites de comércio
+            eletrônico, agências de viagens, um aplicativo da web compatível com
+            HIPAA e uma plataforma de concurso sem fins lucrativos.
           </p>
           <button className="w-full md:w-1/2 lg:w-[55%] my-12 text-white shadow-lg px-4 py-3 bg-[#FF9100] rounded-md transition-all hover:scale-105 ">
             <a className="flex items-center justify-between" href="#" rel="">
-              <span>Inicie um projeto conosco</span> <BsArrowRight className="text-3xl"/>
+              <span>Inicie um projeto conosco</span>{" "}
+              <BsArrowRight className="text-3xl" />
             </a>
           </button>
         </div>
-        <Image className="lg:w-[425px] xl:w-[550px] self-center" src="/OurGoals/OurGoals.svg" alt="" width={400} height={200} />
+        <Image
+          className="lg:w-[425px] xl:w-[550px] self-center"
+          src="/OurGoals/OurGoals.svg"
+          alt=""
+          width={400}
+          height={200}
+        />
       </div>
     </div>
   )
