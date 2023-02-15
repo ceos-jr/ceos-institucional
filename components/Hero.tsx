@@ -8,14 +8,14 @@ export default function Hero() {
     <section className={styles.bg}>
       <div className={styles.global}>
         <div className={styles.globaltext}>
-          <h1 className=" font-semibold">
+          <h1>
             Obtenha a melhor solução para o seu projeto
           </h1>
-          <p className="font-semibold text-base text-[#21262C] opacity-70">
+          <p className="font-semibold text-[#21262C] opacity-70">
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <p className={`${styles.abutton} text-base text-[#FFFFFF]`}>
+          <p className={`${styles.abutton} text-[#FFFFFF]`}>
             <span>Inicie um projeto conosco</span>
             <HiOutlineArrowLongRight className={styles.buttonarrow} />
           </p>

@@ -1,7 +1,7 @@
 .global {
-  align-items: center;
   display: grid;
   gap: 20px;
+  align-items: center;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   padding: 1rem;
 }
@@ -38,10 +38,6 @@
   font-size: 1.5rem;
   line-height: 2rem;
 }
-.svgceoslogo {
-  padding-left: 14px;
-  padding-top: 23px;
-}
 .svghero {
   width: 80%;
   margin: 0 auto;
@@ -56,39 +52,15 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     @apply container mx-auto;
   }
-
-  .globaltext {
-    display: grid;
-    gap: 23px;
-    text-align: left;
-    padding-left: 14px;
-    padding-right: 15px;
-  }
-
   .globaltext h1 {
     color: #0e0e5e;
     font-size: 40px;
   }
-
   .abutton {
-    padding: 10px 20px;
-    color: white;
-    background-color: #ff9100;
     width: 20rem;
-    border-radius: 6px;
-    text-align: center;
-    opacity: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .buttonarrow {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
   .svghero {
     width: 100%;
-    margin: 0 auto;
   }
   .svgparceiros {
     justify-content: flex;
