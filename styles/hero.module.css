@@ -12,7 +12,6 @@
   text-align: left;
   padding-left: 14px;
   padding-right: 15px;
-
 }
 
 .globaltext h1 {
@@ -28,7 +27,7 @@
   background-color: #ff9100;
   width: 100%;
   border-radius: 6px;
-  text-align: center; 
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: space-between;

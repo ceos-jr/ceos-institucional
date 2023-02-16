@@ -17,7 +17,7 @@ export default function Index() {
         <OurGoals />
         <OurTeam />
         <SocialProf />
-        <Twu/>
+        <Twu />
       </main>
       <Footer />
     </div>
