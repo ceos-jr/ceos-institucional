@@ -99,16 +99,14 @@
   }
 }
 @media (max-width: 375px) {
-  .paragrafo {
-    font-size: 12px;
+  .paragrafo{
+    opacity: 0.7;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    display: block;
+    margin-left: -50px;
+    
   }
-  .titulo {
-    font-size: 20px;
-  }
-  .SobreNos {
-    line-height: 75px;
-  }
-  .div1 img {
-    padding-top: 250px;
-  }
+  
+  
 }

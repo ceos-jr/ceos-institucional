@@ -7,10 +7,12 @@
   padding: 1.5rem;
 }
 .Footer .Links h3 {
-  @apply font-poppins mb-2;
+  font-family: var(--font-poppins);
+  margin-bottom: 0.5rem;
 }
 .Footer .Contatos h3 {
-  @apply font-poppins mb-2;
+  font-family: var(--font-poppins);
+  margin-bottom: 0.5rem;
 }
 
 .Footer .column {
