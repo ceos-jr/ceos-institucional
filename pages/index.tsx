@@ -7,6 +7,7 @@ import SocialProf from "../components/SocialProof/SocialProof"
 import OurTeam from "../components/OurTeam/OurTeam"
 import Hero from "../components/Hero"
 import OurGoals from "../components/OurGoals"
+import Twu from "../components/Twu"
 
 const Home: NextPage = () => {
   return (
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
         <OurGoals />
         <OurTeam />
         <SocialProf />
+        <Twu />
       </main>
       <Footer />
     </div>

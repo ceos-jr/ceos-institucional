@@ -18,7 +18,7 @@
   color: #0e0e5e;
   font-size: 37px;
   font-weight: bold;
-  line-height: 3rem;
+  line-height: 2rem;
 }
 
 .abutton {
@@ -28,7 +28,6 @@
   width: 100%;
   border-radius: 6px;
   text-align: center;
-  opacity: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -44,8 +43,8 @@
 
 @media (min-width: 768px) {
   .bg {
-    background: transparent url("/images/herobg.svg") no-repeat;
-    background-size: 60%;
+    background: transparent url("/images/herobg.svg") 0% 0% no-repeat
+      padding-box;
   }
   .global {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -65,17 +64,5 @@
     justify-content: flex;
     grid-column: 1 / -1;
     justify-self: end;
-    margin-top: 2rem;
-  }
-}
-@media (min-width: 1200px) {
-  .bg {
-    background-size: 55%;
-    background-position: left top;
-  }
-}
-@media (min-width: 1576px) {
-  .bg {
-    background-size: 45%;
   }
 }
