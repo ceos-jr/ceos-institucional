@@ -1,0 +1,9 @@
+version: "3"
+services:
+  ceos:
+    container_name: ceos
+    build:
+      context: ./
+    image: ceos-local
+    ports:
+      - "80:80"
