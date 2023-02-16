@@ -4,12 +4,15 @@
   margin-top: 2rem;
   background: #f5f7ff 0% 0% no-repeat padding-box;
   width: 100%;
+  padding: 1.5rem;
 }
 .Footer .Links h3 {
-  @apply font-poppins;
+  font-family: var(--font-poppins);
+  margin-bottom: 0.5rem;
 }
 .Footer .Contatos h3 {
-  @apply font-poppins;
+  font-family: var(--font-poppins);
+  margin-bottom: 0.5rem;
 }
 
 .Footer .column {
@@ -95,6 +98,7 @@
   text-align: center;
   width: 100%;
   margin-top: 2rem;
+  padding-top: 2rem;
 }
 
 .Socials .Icon {
