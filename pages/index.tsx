@@ -3,6 +3,7 @@ import Footer from "../components/Footer"
 import Head from "next/head"
 import SocialProf from "../components/SocialProof/SocialProof"
 import OurTeam from "../components/OurTeam/OurTeam"
+import Hero from "../components/Hero"
 import OurGoals from "../components/OurGoals"
 
 const Home: NextPage = () => {
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="w-full min-h-screen">
+        <Hero />
         <OurGoals />
         <OurTeam />
         <SocialProf />
@@ -21,5 +23,4 @@ const Home: NextPage = () => {
     </div>
   )
 }
-
 export default Home
