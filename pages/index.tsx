@@ -6,7 +6,7 @@ import OurTeam from "../components/OurTeam/OurTeam"
 import OurGoals from "../components/OurGoals"
 import Twu from "../components/Twu"
 
-export default function Index(){
+export default function Index() {
   return (
     <div className="flex flex-col justify-center items-center py-2 w-full min-h-screen">
       <Head>
@@ -17,7 +17,7 @@ export default function Index(){
         <OurGoals />
         <OurTeam />
         <SocialProf />
-        <Twu/>
+        {/* <Twu/>  */}
       </main>
       <Footer />
     </div>
