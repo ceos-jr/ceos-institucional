@@ -43,9 +43,9 @@ const NavItemMobile = ({ text, url }: NavItemProps) => {
 
 const Navbar = () => {
   const [show, setShow] = useState(true)
-  const { lockScroll, unlockScroll } = useScrollLock() 
+  const { lockScroll, unlockScroll } = useScrollLock()
   const heightRef = useRef(0)
-  
+
   useEffect(() => {
     const handleScroll = () => {
       const currentHeight = window.scrollY
@@ -69,7 +69,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
 
   const toggleNavbar = () => {
-    if(!open) {
+    if (!open) {
       lockScroll()
     } else {
       unlockScroll()
@@ -114,29 +114,29 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flex lg:hidden justify-between">
-      <Image src={"/Navbar/Ceos.svg"} alt="" width={150} height={120} />
+        <Image src={"/Navbar/Ceos.svg"} alt="" width={150} height={120} />
         <button
           className="bg-white px-2 py-2 rounded lg:hidden"
           onClick={toggleNavbar}
         >
-          <RxHamburgerMenu className="text-primary-500 w-5 h-5"/>
+          <RxHamburgerMenu className="text-primary-500 w-5 h-5" />
         </button>
-          <ul
-            className={
-              "absolute flex flex-col -top-96 left-0 w-full bg-white opacity-0 [transition:_opacity_300ms_200ms_ease-out] lg:hidden" +
-              (open ? " translate-y-[29rem] opacity-100" : "")
-            }
-          >
-            {NavItemData.map((item) => {
-              return (
-                <NavItemMobile
-                  key={item.url + item.text}
-                  text={item.text}
-                  url={item.url}
-                />
-              )
-            })}
-          </ul>
+        <ul
+          className={
+            "absolute flex flex-col -top-96 left-0 w-full bg-white opacity-0 [transition:_opacity_300ms_200ms_ease-out] lg:hidden" +
+            (open ? " translate-y-[29rem] opacity-100" : "")
+          }
+        >
+          {NavItemData.map((item) => {
+            return (
+              <NavItemMobile
+                key={item.url + item.text}
+                text={item.text}
+                url={item.url}
+              />
+            )
+          })}
+        </ul>
       </div>
     </nav>
   )

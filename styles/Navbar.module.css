@@ -20,34 +20,31 @@
   margin-left: auto;
   padding: 0 1rem;
 }
-.Menu li{
-    transition: all 0.1s ease;
-    letter-spacing: 1px;
-    font-size: 18px;
+.Menu li {
+  transition: all 0.1s ease;
+  letter-spacing: 1px;
+  font-size: 18px;
 }
 .Menu li:hover {
   transform: scale(1.1);
 }
-.Button{
-    background-color: #ffffff;
-    border: 1.5px solid darkorange;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    transition: all 0.1s ease;
-    letter-spacing: 1px;
-    font-size: 16px;
+.Button {
+  background-color: #ffffff;
+  border: 1.5px solid darkorange;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  transition: all 0.1s ease;
+  letter-spacing: 1px;
+  font-size: 16px;
 }
-.Button:hover{
-    background-color: darkorange;
-    color: white;
-    transform: scale(1.1);
+.Button:hover {
+  background-color: darkorange;
+  color: white;
+  transform: scale(1.1);
 }
 
 @media (max-width: 999px) {
-  .Navbar{
+  .Navbar {
     display: none;
-  }  
+  }
 }
-
-
-
