@@ -9,7 +9,7 @@ import Hero from "../components/Hero"
 import OurGoals from "../components/OurGoals"
 import Twu from "../components/Twu"
 
-export default function Index() {
+const Home: NextPage = () => {
   return (
     <div className="flex flex-col justify-center items-center py-2 w-full min-h-screen">
       <Head>
