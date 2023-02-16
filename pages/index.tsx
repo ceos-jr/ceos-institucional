@@ -1,3 +1,5 @@
+import Sobre from "../components/Sobre"
+import Services from "../components/Services/Services"
 import { NextPage } from "next"
 import Footer from "../components/Footer"
 import Head from "next/head"
@@ -15,6 +17,8 @@ const Home: NextPage = () => {
       </Head>
       <main className="w-full min-h-screen">
         <Hero />
+        <Services />
+        <Sobre />
         <OurGoals />
         <OurTeam />
         <SocialProf />

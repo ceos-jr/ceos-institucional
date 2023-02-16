@@ -1,0 +1,149 @@
+.card {
+  position: absolute;
+  width: 280px;
+  height: 373px;
+  background-color: #f4f8fd;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
+  transition: background 150ms ease-out;
+  border-radius: 0.5rem;
+}
+
+.card:hover {
+  background-color: #2979ff;
+  box-shadow: 4px 15px 40px #135af766;
+}
+
+.card:hover h1 {
+  color: white;
+  transition: background 150ms ease-out;
+}
+
+.card:hover p {
+  color: white;
+  opacity: 1;
+  transition: background 150ms ease-out;
+}
+
+.card h1 {
+  margin-top: 26px;
+  color: #21262c;
+  font-weight: 600;
+}
+.card p {
+  margin-top: 21px;
+  color: #21262c;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+.card button {
+  margin-top: 21px;
+  color: #ff9100;
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+}
+.seta {
+  margin-left: 15px;
+  font-size: 25px;
+}
+/* class A */
+.rocketIcon > path {
+  fill: #a9b1c6;
+}
+
+/* class B */
+.rocketIcon g path:nth-child(1),
+.rocketIcon g rect {
+  fill: #1522ed;
+  stroke: #135af7;
+  transition: fill 150ms ease-out, stroke 150ms ease-out;
+}
+
+/* class C */
+.rocketIcon g path:nth-child(3),
+.rocketIcon g ellipse {
+  fill: #00d280;
+  transition: fill 150ms ease-out;
+}
+
+/* class D */
+.rocketIcon g path:nth-child(4) {
+  fill: #00d280;
+  transition: fill 150ms ease-out;
+}
+
+/* class E */
+.rocketIcon g path:nth-child(6),
+.rocketIcon g path:nth-child(7),
+.rocketIcon g path:nth-child(8) {
+  fill: #135af7;
+  stroke: #1522ed;
+  transition: fill 150ms ease-out, stroke 150ms ease-out;
+}
+
+.card:hover .rocketIcon g path:nth-child(3),
+.card:hover .rocketIcon g path:nth-child(4),
+.card:hover .rocketIcon g ellipse {
+  fill: white;
+}
+
+.card:hover .rocketIcon g path:nth-child(1),
+.card:hover .rocketIcon g path:nth-child(6),
+.card:hover .rocketIcon g path:nth-child(7),
+.card:hover .rocketIcon g path:nth-child(8),
+.card:hover .rocketIcon g rect {
+  fill: white;
+  stroke: white;
+}
+
+/* class A */
+.rocketIcon > path {
+  fill: #a9b1c6;
+}
+
+/* class B */
+.rocketIcon g path:nth-child(1),
+.rocketIcon g rect {
+  fill: #1522ed;
+  stroke: #135af7;
+  transition: fill 150ms ease-out, stroke 150ms ease-out;
+}
+
+/* class C */
+.rocketIcon g path:nth-child(3),
+.rocketIcon g ellipse {
+  fill: #00d280;
+  transition: fill 150ms ease-out;
+}
+
+/* class D */
+.rocketIcon g path:nth-child(4) {
+  fill: #00d280;
+  transition: fill 150ms ease-out;
+}
+
+/* class E */
+.rocketIcon g path:nth-child(6),
+.rocketIcon g path:nth-child(7),
+.rocketIcon g path:nth-child(8) {
+  fill: #135af7;
+  stroke: #1522ed;
+  transition: fill 150ms ease-out, stroke 150ms ease-out;
+}
+
+.card:hover .rocketIcon g path:nth-child(3),
+.card:hover .rocketIcon g path:nth-child(4),
+.card:hover .rocketIcon g ellipse {
+  fill: white;
+}
+
+.card:hover .rocketIcon g path:nth-child(1),
+.card:hover .rocketIcon g path:nth-child(6),
+.card:hover .rocketIcon g path:nth-child(7),
+.card:hover .rocketIcon g path:nth-child(8),
+.card:hover .rocketIcon g rect {
+  fill: white;
+  stroke: white;
+}
