@@ -44,9 +44,9 @@
   width: 100%;
   text-align: left;
 }
-.seta{
-    margin-left: 15px;
-    font-size: 25px;
+.seta {
+  margin-left: 15px;
+  font-size: 25px;
 }
 /* class A */
 .rocketIcon > path {
@@ -58,8 +58,7 @@
 .rocketIcon g rect {
   fill: #1522ed;
   stroke: #135af7;
-  transition: fill 150ms ease-out,
-    stroke 150ms ease-out;
+  transition: fill 150ms ease-out, stroke 150ms ease-out;
 }
 
 /* class C */
@@ -81,8 +80,7 @@
 .rocketIcon g path:nth-child(8) {
   fill: #135af7;
   stroke: #1522ed;
-  transition: fill 150ms ease-out,
-    stroke 150ms ease-out;
+  transition: fill 150ms ease-out, stroke 150ms ease-out;
 }
 
 .card:hover .rocketIcon g path:nth-child(3),
@@ -110,8 +108,7 @@
 .rocketIcon g rect {
   fill: #1522ed;
   stroke: #135af7;
-  transition: fill 150ms ease-out,
-    stroke 150ms ease-out;
+  transition: fill 150ms ease-out, stroke 150ms ease-out;
 }
 
 /* class C */
@@ -133,8 +130,7 @@
 .rocketIcon g path:nth-child(8) {
   fill: #135af7;
   stroke: #1522ed;
-  transition: fill 150ms ease-out,
-    stroke 150ms ease-out;
+  transition: fill 150ms ease-out, stroke 150ms ease-out;
 }
 
 .card:hover .rocketIcon g path:nth-child(3),
