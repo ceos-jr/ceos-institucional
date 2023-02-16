@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   margin-top: 2rem;
   background: #f5f7ff 0% 0% no-repeat padding-box;
+  width: 100%;
 }
 .Footer .Links h3 {
   @apply font-poppins;
