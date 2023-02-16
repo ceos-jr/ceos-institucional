@@ -12,7 +12,7 @@ const OurTeam = () => {
   return (
     <section
       className={
-        "relative min-h-screen w-full overflow-hidden before:absolute before:bg-[#F5F7FC] before:top-[0%] before:-left-[20%] before:w-[130%] before:h-[90%] before:rotate-[5deg]"
+        "relative h-full w-full overflow-hidden before:absolute before:bg-[#F5F7FC] before:top-[0%] before:-left-[20%] before:w-[130%] before:h-[90%] before:rotate-[5deg]"
       }
     >
       <div className="container-wrapper py-8 flex flex-col">
