@@ -17,7 +17,9 @@ const Home: NextPage = () => {
         <title>CEOS Institucional</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+      <header className="bg-white h-[12vh] w-full">
+        <Navbar />
+      </header>
       <main className="w-full min-h-screen">
         <Hero />
         <Services />

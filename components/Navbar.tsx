@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { useState, useRef, useEffect } from "react"
 import { RxHamburgerMenu } from "react-icons/rx"
+import useScrollLock from "../hooks/useScrollLock"
 
 const NavItemData = [
   {
@@ -17,6 +18,10 @@ const NavItemData = [
   },
   {
     text: "Blog",
+    url: "#",
+  },
+  {
+    text: "Fale conosco",
     url: "#",
   },
 ]
@@ -38,8 +43,9 @@ const NavItemMobile = ({ text, url }: NavItemProps) => {
 
 const Navbar = () => {
   const [show, setShow] = useState(true)
+  const { lockScroll, unlockScroll } = useScrollLock() 
   const heightRef = useRef(0)
-
+  
   useEffect(() => {
     const handleScroll = () => {
       const currentHeight = window.scrollY
@@ -63,6 +69,11 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
 
   const toggleNavbar = () => {
+    if(!open) {
+      lockScroll()
+    } else {
+      unlockScroll()
+    }
     setOpen((previous) => !previous)
   }
 
