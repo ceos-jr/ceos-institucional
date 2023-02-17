@@ -80,35 +80,4 @@
   .div1 img {
     width: 450px;
   }
-  .titulo {
-    font-size: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-  .paragrafo {
-    font-size: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-  .SobreNos {
-    font-size: 20px;
-    padding-right: 50px;
-  }
-  .numeros {
-    font-size: 24px;
-  }
-}
-@media (max-width: 375px) {
-  .paragrafo {
-    font-size: 12px;
-  }
-  .titulo {
-    font-size: 20px;
-  }
-  .SobreNos {
-    line-height: 75px;
-  }
-  .div1 img {
-    padding-top: 250px;
-  }
 }
