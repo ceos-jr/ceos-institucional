@@ -1,6 +1,5 @@
 import styles from "../styles/hero.module.css"
 import Image from "next/image"
-import next from "next"
 import { HiOutlineArrowLongRight } from "react-icons/hi2"
 
 export default function Hero() {
@@ -10,7 +9,7 @@ export default function Hero() {
         <div className={styles.globaltext}>
           <h1>Obtenha a melhor solução para o seu projeto</h1>
           <p className="font-semibold text-[#21262C] opacity-70">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
           <p className={`${styles.abutton} text-[#FFFFFF]`}>
