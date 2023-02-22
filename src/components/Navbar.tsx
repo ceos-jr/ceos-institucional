@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { useState, useRef, useEffect } from "react"
-import { RxHamburgerMenu } from "react-icons/rx"
+import { RxCross2, RxHamburgerMenu } from "react-icons/rx"
 import useScrollLock from "../hooks/useScrollLock"
 
 const NavItemData = [
@@ -33,7 +33,7 @@ interface NavItemProps {
 
 const NavItemMobile = ({ text, url }: NavItemProps) => {
   return (
-    <li className="w-full text-gray-800 border-b border-gray-200 hover:text-primary-500 transition-colors duration-300 ease-in">
+    <li className="w-full text-gray-800 border-b border-gray-200 hover:text-primary transition-colors duration-300 ease-in">
       <a href={url} className="block text-center w-full py-4">
         {text}
       </a>
@@ -43,7 +43,7 @@ const NavItemMobile = ({ text, url }: NavItemProps) => {
 
 const Navbar = () => {
   const [show, setShow] = useState(true)
-  const { lockScroll, unlockScroll } = useScrollLock()
+  const { lockScroll, unlockScroll, scrollBarCompensation } = useScrollLock()
   const heightRef = useRef(0)
 
   useEffect(() => {
@@ -79,9 +79,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 bg-white justify-between items-center py-4 px-8 w-full [transition:_transform_350ms_ease-out] ${
-        show ? "" : "-translate-y-48"
-      }`}
+      className={`sticky top-0 left-0 z-50 bg-white/70 backdrop-blur justify-between items-center py-4 px-8 transition-transform duration-300 ease-out ${
+        show ? "shadow-md shadow-primary/40" : "-translate-y-48"
+      } ${scrollBarCompensation > 0 ? "w-screen" : "w-full"}`}
     >
       <div className="hidden lg:flex ">
         <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
@@ -116,14 +116,18 @@ const Navbar = () => {
       <div className="flex lg:hidden justify-between">
         <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
         <button
-          className="bg-white px-2 py-2 rounded lg:hidden"
+          className="bg-white px-2 py-2 rounded lg:hidden hover:text-primary text-2xl transition-colors"
           onClick={toggleNavbar}
         >
-          <RxHamburgerMenu className="text-primary-500 w-5 h-5" />
+          {open ? (
+            <RxCross2 style={{ marginRight: scrollBarCompensation }} />
+          ) : (
+            <RxHamburgerMenu />
+          )}
         </button>
         <ul
           className={
-            "absolute flex flex-col -top-96 left-0 w-full bg-white opacity-0 [transition:_opacity_300ms_200ms_ease-out] lg:hidden" +
+            "absolute flex flex-col -top-96 left-0 w-full bg-white opacity-0 transition duration-500 ease-in-out lg:hidden shadow-md shadow-primary/40" +
             (open ? " translate-y-[29rem] opacity-100" : "")
           }
         >
