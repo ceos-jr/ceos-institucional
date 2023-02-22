@@ -14,10 +14,13 @@ const Home: NextPage = () => {
   return (
     <div className="flex flex-col justify-center items-center py-2 w-full min-h-screen">
       <Head>
-        <title>CEOS Institucional</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Home • CEOS</title>
+        <meta
+          name="description"
+          content="CEOS Jr é a empresa junior da Ciência da Computação da UFC. Utilizamos linguagens de programação modernas como JavaScript, Python e TypeScript, além de frameworks como React para desenvolver aplicações web escaláveis e eficientes.."
+        />
       </Head>
-      <header className="bg-white h-[12vh] w-full">
+      <header className="w-full bg-white h-[12vh]">
         <Navbar />
       </header>
       <main className="w-full min-h-screen">
