@@ -45,6 +45,7 @@ const Navbar = () => {
   const [show, setShow] = useState(true)
   const { lockScroll, unlockScroll, scrollBarCompensation } = useScrollLock()
   const heightRef = useRef(0)
+  console.log(scrollBarCompensation)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,9 +80,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`sticky top-0 left-0 z-50 bg-white/70 backdrop-blur justify-between items-center py-4 px-8 w-full transition-transform duration-300 ease-out ${
+      className={`sticky top-0 left-0 z-50 bg-white/70 backdrop-blur justify-between items-center py-4 px-8 transition-transform duration-300 ease-out ${
         show ? "shadow-md shadow-primary/40" : "-translate-y-48"
-      }`}
+      } ${scrollBarCompensation > 0 ? "w-screen" : "w-full"}`}
     >
       <div className="hidden lg:flex ">
         <Image src={"/Navbar/Ceos.svg"} alt="" width={150} height={120} />
@@ -127,7 +128,7 @@ const Navbar = () => {
         </button>
         <ul
           className={
-            "absolute flex flex-col -top-96 left-0 w-full bg-white opacity-0 transition duration-500 ease-in-out lg:hidden shadow-lg" +
+            "absolute flex flex-col -top-96 left-0 w-full bg-white opacity-0 transition duration-500 ease-in-out lg:hidden shadow-md shadow-primary/40" +
             (open ? " translate-y-[29rem] opacity-100" : "")
           }
         >
