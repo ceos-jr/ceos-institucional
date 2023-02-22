@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { useState, useRef, useEffect } from "react"
-import { RxHamburgerMenu } from "react-icons/rx"
+import { RxCross2, RxHamburgerMenu } from "react-icons/rx"
 import useScrollLock from "../hooks/useScrollLock"
 
 const NavItemData = [
@@ -43,7 +43,7 @@ const NavItemMobile = ({ text, url }: NavItemProps) => {
 
 const Navbar = () => {
   const [show, setShow] = useState(true)
-  const { lockScroll, unlockScroll } = useScrollLock()
+  const { lockScroll, unlockScroll, scrollBarCompensation } = useScrollLock()
   const heightRef = useRef(0)
 
   useEffect(() => {
@@ -116,10 +116,14 @@ const Navbar = () => {
       <div className="flex lg:hidden justify-between">
         <Image src={"/Navbar/Ceos.svg"} alt="" width={150} height={120} />
         <button
-          className="bg-white px-2 py-2 rounded lg:hidden"
+          className="bg-white px-2 py-2 rounded lg:hidden hover:text-primary text-2xl transition-colors"
           onClick={toggleNavbar}
         >
-          <RxHamburgerMenu className="text-primary-500 w-5 h-5" />
+          {open ? (
+            <RxCross2 style={{ marginRight: scrollBarCompensation }} />
+          ) : (
+            <RxHamburgerMenu />
+          )}
         </button>
         <ul
           className={
