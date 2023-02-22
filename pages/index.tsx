@@ -12,7 +12,7 @@ import Twu from "../components/Twu"
 
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col justify-center items-center py-2 w-full min-h-screen">
+    <div className="flex flex-col justify-center items-center w-full min-h-screen">
       <Head>
         <title>CEOS Institucional</title>
         <link rel="icon" href="/favicon.ico" />
