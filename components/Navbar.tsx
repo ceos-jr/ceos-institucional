@@ -79,7 +79,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 bg-white justify-between items-center py-4 px-8 w-full [transition:_transform_350ms_ease-out] ${
+      className={`fixed top-0 left-0 z-50 bg-white justify-between items-center py-4 px-8 w-full transition-transform duration-300 ease-out ${
         show ? "" : "-translate-y-48"
       }`}
     >
