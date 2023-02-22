@@ -79,8 +79,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 bg-white justify-between items-center py-4 px-8 w-full transition-transform duration-300 ease-out ${
-        show ? "" : "-translate-y-48"
+      className={`sticky top-0 left-0 z-50 bg-white/70 backdrop-blur justify-between items-center py-4 px-8 w-full transition-transform duration-300 ease-out ${
+        show ? "shadow-md shadow-primary/40" : "-translate-y-48"
       }`}
     >
       <div className="hidden lg:flex ">
