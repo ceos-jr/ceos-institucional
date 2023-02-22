@@ -19,14 +19,14 @@ export default function Hero() {
         </div>
         <Image
           className={styles.svghero}
-          src="images/hero.svg"
+          src="/images/Hero/hero_people.svg"
           alt="heroimage"
           height={1000}
           width={500}
         />
         <Image
           className={styles.svgparceiros}
-          src="images/parceiros.svg"
+          src="/images/Hero/parceiros.svg"
           alt="parceirosimage"
           height={2000}
           width={1000}

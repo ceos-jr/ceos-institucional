@@ -32,7 +32,7 @@ function OurGoals() {
         </div>
         <Image
           className="lg:w-[425px] xl:w-[550px] self-center"
-          src="/OurGoals/OurGoals.svg"
+          src="/images/OurGoals/OurGoals.svg"
           alt=""
           width={400}
           height={200}

@@ -43,7 +43,7 @@
 
 @media (min-width: 768px) {
   .bg {
-    background: transparent url("/images/herobg.svg") 0% 0% no-repeat
+    background: transparent url("/images/Hero/herobg.svg") 0% 0% no-repeat
       padding-box;
   }
   .global {

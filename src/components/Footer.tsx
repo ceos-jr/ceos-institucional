@@ -1,12 +1,12 @@
 import Image from "next/image"
-import styles from "/styles/Footer.module.css"
+import styles from "../styles/Footer.module.css"
 import { FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa"
 
 function Footer() {
   return (
     <footer className={styles.Footer}>
       <div className={`${styles.Logo} ${styles.column}`}>
-        <Image src="/Footer/Ceos.svg" alt="" width={200} height={200} />
+        <Image src="/images/ceos_logo.svg" alt="" width={200} height={200} />
         <p>Your best partner through the digital market-place</p>
       </div>
       <div className={`${styles.Links} ${styles.column}`}>

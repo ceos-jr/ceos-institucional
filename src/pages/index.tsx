@@ -1,14 +1,14 @@
 import Sobre from "../components/Sobre"
-import Services from "../components/Services/Services"
 import { NextPage } from "next"
-import Footer from "../components/Footer"
 import Head from "next/head"
 import SocialProf from "../components/SocialProof/SocialProof"
 import Navbar from "../components/Navbar"
 import OurTeam from "../components/OurTeam/OurTeam"
 import Hero from "../components/Hero"
 import OurGoals from "../components/OurGoals"
+import Footer from "../components/Footer"
 import Twu from "../components/Twu"
+import Services from "../components/Services/Services"
 
 const Home: NextPage = () => {
   return (
