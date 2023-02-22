@@ -17,8 +17,10 @@ const useScrollLock = (): ScrollLockReturn => {
     setScrollBarComprensation(0)
   }
 
-  document.body.style.overflow = scrollBarCompensation > 0 ? "hidden" : "auto"
-  document.body.style.paddingRight = `${scrollBarCompensation}px`
+  if (typeof window !== "undefined") {
+    document.body.style.overflow = scrollBarCompensation > 0 ? "hidden" : "auto"
+    document.body.style.paddingRight = `${scrollBarCompensation}px`
+  }
   return { lockScroll, unlockScroll, scrollBarCompensation }
 }
 
