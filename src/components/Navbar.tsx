@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 import { RxCross2, RxHamburgerMenu } from "react-icons/rx"
 import useScrollLock from "../hooks/useScrollLock"
@@ -83,9 +84,11 @@ const Navbar = () => {
         show ? "shadow-md shadow-primary/40" : "-translate-y-48"
       } ${scrollBarCompensation > 0 ? "w-screen" : "w-full"}`}
     >
-      <div className="hidden lg:flex ">
-        <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
-        <ul className="flex flex-row items-center gap-x-8 ml-auto py-0 px-4">
+      <div className="hidden lg:flex">
+        <Link href="/">
+          <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
+        </Link>
+        <ul className="flex flex-row gap-x-8 items-center py-0 px-4 ml-auto">
           <li className="transition-all duration-75 ease-linear hover:scale-110">
             <a className="text-lg" href="#">
               Início
@@ -114,7 +117,9 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flex lg:hidden justify-between">
-        <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
+        <Link href="/">
+          <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
+        </Link>
         <button
           className="bg-white px-2 py-2 rounded lg:hidden hover:text-primary text-2xl transition-colors"
           onClick={toggleNavbar}
