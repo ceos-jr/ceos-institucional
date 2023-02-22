@@ -33,7 +33,7 @@ interface NavItemProps {
 
 const NavItemMobile = ({ text, url }: NavItemProps) => {
   return (
-    <li className="w-full text-gray-800 border-b border-gray-200 hover:text-primary-500 transition-colors duration-300 ease-in">
+    <li className="w-full text-gray-800 border-b border-gray-200 hover:text-primary transition-colors duration-300 ease-in">
       <a href={url} className="block text-center w-full py-4">
         {text}
       </a>
