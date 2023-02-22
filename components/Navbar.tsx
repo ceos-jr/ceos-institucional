@@ -123,7 +123,7 @@ const Navbar = () => {
         </button>
         <ul
           className={
-            "absolute flex flex-col -top-96 left-0 w-full bg-white opacity-0 transition duration-500 lg:hidden shadow-lg" +
+            "absolute flex flex-col -top-96 left-0 w-full bg-white opacity-0 transition duration-500 ease-in-out lg:hidden shadow-lg" +
             (open ? " translate-y-[29rem] opacity-100" : "")
           }
         >
