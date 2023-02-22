@@ -1,13 +1,16 @@
-import React from "react"
+import { useState } from "react"
 
 interface ScrollLockReturn {
   lockScroll: () => void
   unlockScroll: () => void
+  scrollBarCompensation: number
 }
 
 const useScrollLock = (): ScrollLockReturn => {
+  const [scrollBarCompensation, setScrollBarComprensation] = useState<number>(0)
+
   const lockScroll = () => {
-    const scrollBarCompensation = window.innerWidth - document.body.offsetWidth
+    setScrollBarComprensation(window.innerWidth - document.body.offsetWidth)
     document.body.style.overflow = "hidden"
     document.body.style.paddingRight = `${scrollBarCompensation}px`
   }
@@ -17,7 +20,7 @@ const useScrollLock = (): ScrollLockReturn => {
     document.body.style.paddingRight = "0px"
   }
 
-  return { lockScroll, unlockScroll }
+  return { lockScroll, unlockScroll, scrollBarCompensation }
 }
 
 export default useScrollLock
