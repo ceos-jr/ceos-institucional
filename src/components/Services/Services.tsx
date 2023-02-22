@@ -1,5 +1,5 @@
 import ServicesCard from "./ServicesCard"
-import styles from "/styles/Services.module.css"
+import styles from "../../styles/Services.module.css"
 import CarouselSlide from "../Carousel/CarouselSlide"
 import Carousel from "../Carousel/Carousel"
 import useWindowSize from "../../hooks/useWindowSize"

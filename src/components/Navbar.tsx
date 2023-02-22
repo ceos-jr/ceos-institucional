@@ -84,7 +84,7 @@ const Navbar = () => {
       } ${scrollBarCompensation > 0 ? "w-screen" : "w-full"}`}
     >
       <div className="hidden lg:flex ">
-        <Image src={"/Navbar/Ceos.svg"} alt="" width={150} height={120} />
+        <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
         <ul className="flex flex-row items-center gap-x-8 ml-auto py-0 px-4">
           <li className="transition-all duration-75 ease-linear hover:scale-110">
             <a className="text-lg" href="#">
@@ -114,7 +114,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flex lg:hidden justify-between">
-        <Image src={"/Navbar/Ceos.svg"} alt="" width={150} height={120} />
+        <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
         <button
           className="bg-white px-2 py-2 rounded lg:hidden hover:text-primary text-2xl transition-colors"
           onClick={toggleNavbar}
