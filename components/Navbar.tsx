@@ -45,7 +45,6 @@ const Navbar = () => {
   const [show, setShow] = useState(true)
   const { lockScroll, unlockScroll, scrollBarCompensation } = useScrollLock()
   const heightRef = useRef(0)
-  console.log(scrollBarCompensation)
 
   useEffect(() => {
     const handleScroll = () => {
