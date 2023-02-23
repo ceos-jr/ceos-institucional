@@ -1,38 +1,31 @@
-import styles from "../styles/hero.module.css"
 import Image from "next/image"
-import { HiOutlineArrowLongRight } from "react-icons/hi2"
+import ButtonWithArrow from "./layout/ButtonWithArrow"
 
 export default function Hero() {
   return (
-    <section className={styles.bg}>
-      <div className={styles.global}>
-        <div className={styles.globaltext}>
-          <h1>Obtenha a melhor solução para o seu projeto</h1>
-          <p className="font-semibold text-[#21262C] opacity-70">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    <section>
+      <div className="grid grid-cols-1 gap-5 place-items-center py-10 md:grid-cols-2 container-wrapper">
+        <div className="flex z-10 flex-col gap-8">
+          <h1 className="text-4xl font-bold lg:text-6xl lg:leading-snug text-secondary">
+            Obtenha a melhor solução para o seu projeto
+          </h1>
+          <p className="font-semibold leading-7 opacity-70 text-description">
+            Todos os nossos projetos são feitos sob medida para atender às suas
+            necessidades e objetivos, garantindo que seu site seja único e
+            eficiente.
           </p>
-          <p className={`${styles.abutton} text-[#FFFFFF]`}>
-            <span>Inicie um projeto conosco</span>
-            <HiOutlineArrowLongRight className={styles.buttonarrow} />
-          </p>
+          <ButtonWithArrow
+            name="Inicie um projeto conosco"
+            href="fale-conosco"
+            className="w-full xl:w-3/5"
+          />
         </div>
-        <Image
-          className={styles.svghero}
-          src="/images/Hero/hero_people.svg"
-          alt="hero image"
-          height={1000}
-          width={500}
-          priority
-        />
-        <Image
-          className={styles.svgparceiros}
-          src="/images/Hero/parceiros.svg"
-          alt="parceiros image"
-          height={2000}
-          width={1000}
-          priority
-        />
+        <div className="relative w-full xl:w-4/5 aspect-square">
+          <Image src="/images/Hero/hero_people.svg" alt="hero image" fill />
+        </div>
+        <div className="hidden relative col-span-full place-self-end w-3/5 h-16 md:inline-block">
+          <Image src="/images/Hero/parceiros.svg" alt="parceiros image" fill />
+        </div>
       </div>
     </section>
   )
