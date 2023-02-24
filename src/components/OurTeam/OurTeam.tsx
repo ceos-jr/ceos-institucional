@@ -7,7 +7,7 @@ const OurTeam = () => {
   const { width } = useWindowSize()
 
   const slidesCount =
-    width >= 1200 ? 4 : width >= 1024 ? 3 : width >= 768 ? 2 : 1
+    width >= 1200 ? 4 : width >= 1024 ? 3 : width >= 768 ? 2 : 1.1
 
   return (
     <section
@@ -23,7 +23,7 @@ const OurTeam = () => {
         </h2>
         <Carousel show={slidesCount}>
           <CarouselSlide
-            className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+            className="flex justify-center items-center w-[87%] md:w-1/2 lg:w-1/3 xl:w-1/4"
             position={0}
           >
             <MemberCard
@@ -38,7 +38,7 @@ const OurTeam = () => {
             />
           </CarouselSlide>
           <CarouselSlide
-            className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+            className="flex justify-center items-center w-[87%] md:w-1/2 lg:w-1/3 xl:w-1/4"
             position={1}
           >
             <MemberCard
@@ -53,7 +53,7 @@ const OurTeam = () => {
             />
           </CarouselSlide>
           <CarouselSlide
-            className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+            className="flex justify-center items-center w-[87%] md:w-1/2 lg:w-1/3 xl:w-1/4"
             position={2}
           >
             <MemberCard
@@ -68,7 +68,7 @@ const OurTeam = () => {
             />
           </CarouselSlide>
           <CarouselSlide
-            className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+            className="flex justify-center items-center w-[87%] md:w-1/2 lg:w-1/3 xl:w-1/4"
             position={3}
           >
             <MemberCard

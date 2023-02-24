@@ -8,7 +8,7 @@ export default function Services() {
   const { width } = useWindowSize()
 
   const slidesCount =
-    width >= 1200 ? 4 : width >= 1024 ? 3 : width >= 768 ? 2 : 1
+    width >= 1200 ? 4 : width >= 1024 ? 3 : width >= 768 ? 2 : 1.15
 
   return (
     <section>
@@ -26,25 +26,25 @@ export default function Services() {
         </div>
         <Carousel show={slidesCount}>
           <CarouselSlide
-            className="flex items-center justify-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+            className="flex items-center w-[87%] justify-center md:w-1/2 lg:w-1/3 xl:w-1/4"
             position={0}
           >
             <ServicesCard />
           </CarouselSlide>
           <CarouselSlide
-            className="flex items-center justify-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+            className="flex items-center w-[87%] justify-center md:w-1/2 lg:w-1/3 xl:w-1/4"
             position={1}
           >
             <ServicesCard />
           </CarouselSlide>
           <CarouselSlide
-            className="flex items-center justify-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+            className="flex items-center w-[87%] justify-center md:w-1/2 lg:w-1/3 xl:w-1/4"
             position={2}
           >
             <ServicesCard />
           </CarouselSlide>
           <CarouselSlide
-            className="flex items-center justify-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+            className="flex items-center w-[87%] justify-center md:w-1/2 lg:w-1/3 xl:w-1/4"
             position={3}
           >
             <ServicesCard />
