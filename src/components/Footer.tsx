@@ -7,7 +7,7 @@ const LinkItem = ({ href, name }: { href: string; name: string }) => {
     <li>
       <a
         href={href}
-        className="transition-all duration-300 ease-in-out hover:pl-2 hover:text-indigo-900"
+        className="transition-all duration-300 ease-in-out hover:pl-2 hover:text-secondary"
       >
         {name}
       </a>
@@ -44,7 +44,7 @@ function Footer() {
         </p>
       </div>
       <div className="mx-auto mb-8 w-full md:mb-0 md:w-1/4">
-        <h3 className="mb-2 text-2xl font-bold text-indigo-900">Links</h3>
+        <h3 className="mb-2 text-2xl font-bold text-secondary">Links</h3>
         <ul className="flex flex-col gap-2 text-gray-500">
           <LinkItem href="#" name="Início" />
           <LinkItem href="#" name="Sobre nós" />
@@ -53,7 +53,7 @@ function Footer() {
         </ul>
       </div>
       <div className="mx-auto mb-8 w-full md:mb-0 md:w-1/4">
-        <h3 className="mb-2 text-2xl font-bold text-indigo-900">Contatos</h3>
+        <h3 className="mb-2 text-2xl font-bold text-secondary">Contatos</h3>
         <ul className="flex flex-col gap-2 text-gray-500">
           <li>(85)12345-6789</li>
           <li>ceos@gmail.com</li>
