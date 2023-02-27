@@ -79,7 +79,7 @@ export default function Services() {
   const { width } = useWindowSize()
 
   const slidesCount =
-    width >= 1200 ? 4 : width >= 1024 ? 3 : width >= 768 ? 2 : 1
+    width >= 1200 ? 4 : width >= 1024 ? 3 : width >= 768 ? 2 : 1.15
 
   return (
     <section>
@@ -98,7 +98,7 @@ export default function Services() {
         <Carousel show={slidesCount}>
           {services.map((service, index) => (
             <CarouselSlide
-              className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+              className="flex justify-center items-center w-[87%] md:w-1/2 lg:w-1/3 xl:w-1/4"
               position={index}
               key={`service-${service.title}`}
             >
