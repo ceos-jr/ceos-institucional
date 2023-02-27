@@ -1,4 +1,19 @@
+import { useState, ChangeEvent } from "react"
 import Image from "next/image"
+
+interface ContactFormData {
+  name: string
+  phone: string
+  email: string
+  message: string
+}
+
+const DEFAULT_FORM_DATA = {
+  name: "",
+  phone: "",
+  email: "",
+  message: "",
+}
 
 const ErrorMessage = ({ id, msg }: { id: string; msg: string }) => {
   return (
@@ -40,18 +55,24 @@ export default function ContactUs() {
                 type="text"
                 id="name"
                 name="name"
+                onChange={handleChange}
+                value={formData.name}
                 aria-invalid={false}
                 aria-errormessage="name-error"
-                className={`form-input ${true ? "form-input-error" : ""}`}
+                className={`form-input ${false ? "form-input-error" : ""}`}
               />
-              <ErrorMessage id="name-error" msg="Handle me" />
+              {/* <ErrorMessage id="name-error" msg="Handle me" /> */}
             </div>
             <div className="w-full">
               <input
-                placeholder="85 12345678"
-                type="text"
+                placeholder="(85) 987654321"
+                type="tel"
+                pattern="([0-9]{2}) [0-9]{9}"
                 id="tel"
-                name="tel"
+                name="phone"
+                onChange={handleChange}
+                value={formData.phone}
+                required
                 className={`form-input ${false ? "form-input-error" : ""}`}
               />
             </div>
@@ -62,6 +83,8 @@ export default function ContactUs() {
               type="text"
               id="email"
               name="email"
+              onChange={handleChange}
+              value={formData.email}
               className={`form-input ${false ? "form-input-error" : ""}`}
             />
           </div>
@@ -70,6 +93,8 @@ export default function ContactUs() {
               placeholder="Mensagem"
               id="message"
               name="message"
+              onChange={handleChange}
+              value={formData.message}
               className={`form-input ${false ? "form-input-error" : ""}`}
             />
           </div>
@@ -78,7 +103,7 @@ export default function ContactUs() {
             className={`py-3 px-4 mt-4 text-white rounded-lg transition-all ${
               true ? "bg-gray-500" : "bg-accent hover:scale-105"
             }`}
-            disabled={true}
+            // disabled={true}
           >
             Enviar
           </button>
