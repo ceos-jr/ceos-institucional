@@ -27,13 +27,13 @@ const OurTeam = () => {
             position={0}
           >
             <MemberCard
-              name="Billy C. Weisz"
-              role="Owner & CEO"
+              name="Lucas Braide"
+              role="Presidente da CEOS"
               memberImg="/images/OurTeam/man-01.png"
               memberImgAlt="Company's CEO picture"
               facebookURL="#"
               twitterURL="#"
-              linkedinURL="#"
+              linkedinURL="https://www.linkedin.com/in/lucas-braide-70a8b5206"
               instagramURL="#"
             />
           </CarouselSlide>
@@ -42,8 +42,8 @@ const OurTeam = () => {
             position={1}
           >
             <MemberCard
-              name="Thomas E. Vegas"
-              role="Senior Officer"
+              name="Said Cavalcante"
+              role="Diretor de Projetos"
               memberImg="/images/OurTeam/man-02.png"
               memberImgAlt="Company's Senior Officer"
               facebookURL="#"
@@ -57,8 +57,53 @@ const OurTeam = () => {
             position={2}
           >
             <MemberCard
-              name="Laurie E. Stearns"
-              role="Marketing Officer"
+              name="Marcelo Marques"
+              role="Diretor de Pessoas e Processos"
+              memberImg="/images/OurTeam/woman-01.png"
+              memberImgAlt="Company's Marketing Officer 1"
+              facebookURL="#"
+              twitterURL="#"
+              linkedinURL="https://www.linkedin.com/in/marcelo-marques-27a9a7267/"
+              instagramURL="#"
+            />
+          </CarouselSlide>
+          <CarouselSlide
+            className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+            position={3}
+          >
+            <MemberCard
+              name="Enzo Lozano"
+              role="Gerente de Marketing"
+              memberImg="/images/OurTeam/woman-02.png"
+              memberImgAlt="Company's Marketing Officer 2"
+              facebookURL="#"
+              twitterURL="#"
+              linkedinURL="https://www.linkedin.com/in/enzo-lozano-abreu-3886b01bb/"
+              instagramURL="#"
+            />
+          </CarouselSlide>
+          <CarouselSlide
+            className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+            position={4}
+          >
+            <MemberCard
+              name="Julia Naomi"
+              role="Gerente Admin-Financeira"
+              memberImg="/images/OurTeam/woman-01.png"
+              memberImgAlt="Company's Marketing Officer 1"
+              facebookURL="#"
+              twitterURL="#"
+              linkedinURL="https://www.linkedin.com/in/julia-naomi-takihi-makiyama-1a4540257"
+              instagramURL="#"
+            />
+          </CarouselSlide>
+          <CarouselSlide
+            className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+            position={5}
+          >
+            <MemberCard
+              name="Luiz Gustavo"
+              role="Gerente de Projetos"
               memberImg="/images/OurTeam/woman-01.png"
               memberImgAlt="Company's Marketing Officer 1"
               facebookURL="#"
@@ -69,13 +114,43 @@ const OurTeam = () => {
           </CarouselSlide>
           <CarouselSlide
             className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"
-            position={3}
+            position={6}
           >
             <MemberCard
-              name="Nancy D. Simpson"
-              role="Marketing Officer"
-              memberImg="/images/OurTeam/woman-02.png"
-              memberImgAlt="Company's Marketing Officer 2"
+              name="Victoria Castro"
+              role="Gerente de Pessoas"
+              memberImg="/images/OurTeam/woman-01.png"
+              memberImgAlt="Company's Marketing Officer 1"
+              facebookURL="#"
+              twitterURL="#"
+              linkedinURL="#"
+              instagramURL="#"
+            />
+          </CarouselSlide>
+          <CarouselSlide
+            className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+            position={7}
+          >
+            <MemberCard
+              name="Alan Carneiro"
+              role="Membro efetivo da CEOS"
+              memberImg="/images/OurTeam/woman-01.png"
+              memberImgAlt="Company's Marketing Officer 1"
+              facebookURL="#"
+              twitterURL="#"
+              linkedinURL="https://www.linkedin.com/in/alan-carneiro-cabral-39035024a/"
+              instagramURL="#"
+            />
+          </CarouselSlide>
+          <CarouselSlide
+            className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+            position={8}
+          >
+            <MemberCard
+              name="Jonathan Aires"
+              role="Membro efetivo da CEOS"
+              memberImg="/images/OurTeam/woman-01.png"
+              memberImgAlt="Company's Marketing Officer 1"
               facebookURL="#"
               twitterURL="#"
               linkedinURL="#"
