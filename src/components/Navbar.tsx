@@ -34,8 +34,8 @@ interface NavItemProps {
 
 const NavItemMobile = ({ text, url }: NavItemProps) => {
   return (
-    <li className="w-full text-gray-800 border-b border-gray-200 hover:text-primary transition-colors duration-300 ease-in">
-      <a href={url} className="block text-center w-full py-4">
+    <li className="w-full text-gray-800 border-b border-gray-200 transition-colors duration-300 ease-in hover:text-primary">
+      <a href={url} className="block py-4 w-full text-center">
         {text}
       </a>
     </li>
@@ -116,12 +116,12 @@ const Navbar = () => {
           </button>
         </ul>
       </div>
-      <div className="flex lg:hidden justify-between">
+      <div className="flex justify-between lg:hidden">
         <Link href="/">
           <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
         </Link>
         <button
-          className="bg-white px-2 py-2 rounded lg:hidden hover:text-primary text-2xl transition-colors"
+          className="py-2 px-2 text-2xl rounded transition-colors lg:hidden hover:text-primary"
           onClick={toggleNavbar}
         >
           {open ? (
