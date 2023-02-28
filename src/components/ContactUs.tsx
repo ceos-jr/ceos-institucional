@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from "react"
+import { useState, ChangeEvent, FocusEvent } from "react"
 import Image from "next/image"
 
 interface ContactFormData {
@@ -8,11 +8,53 @@ interface ContactFormData {
   message: string
 }
 
+interface Validation {
+  isValid: boolean
+  errorReason: string
+}
+
+interface InputValidation {
+  name: Validation
+  email: Validation
+  phone: Validation
+  message: Validation
+}
+
 const DEFAULT_FORM_DATA = {
   name: "",
   phone: "",
   email: "",
   message: "",
+}
+
+const DEFAULT_VALIDATION = {
+  name: {
+    isValid: true,
+    errorReason: "",
+  },
+  email: {
+    isValid: true,
+    errorReason: "",
+  },
+  phone: {
+    isValid: true,
+    errorReason: "",
+  },
+  message: {
+    isValid: true,
+    errorReason: "",
+  },
+}
+
+const PATTERN = {
+  phone: new RegExp("[0-9]{11}"),
+}
+
+const checkInputPattern = (string: string, field: string): boolean => {
+  if (field === "phone") {
+    return PATTERN["phone"].test(string) || string.trim() === ""
+  }
+  return true
 }
 
 const ErrorMessage = ({ id, msg }: { id: string; msg: string }) => {
@@ -56,36 +98,43 @@ export default function ContactUs() {
                 id="name"
                 name="name"
                 onChange={handleChange}
+                onBlur={handleFocusOut}
                 value={formData.name}
-                aria-invalid={false}
-                aria-errormessage="name-error"
-                className={`form-input ${false ? "form-input-error" : ""}`}
+                className="form-input"
+                required
               />
-              {/* <ErrorMessage id="name-error" msg="Handle me" /> */}
             </div>
             <div className="w-full">
               <input
-                placeholder="(85) 987654321"
+                placeholder="85 987654321"
                 type="tel"
-                pattern="([0-9]{2}) [0-9]{9}"
                 id="tel"
                 name="phone"
                 onChange={handleChange}
+                onBlur={handleFocusOut}
                 value={formData.phone}
-                required
-                className={`form-input ${false ? "form-input-error" : ""}`}
+                aria-invalid={!validation.phone.isValid}
+                aria-errormessage={validation.phone.errorReason}
+                className={`form-input ${
+                  !validation.phone.isValid ? "form-input-error" : ""
+                }`}
               />
+              {!validation.phone.isValid && (
+                <ErrorMessage id="phone" msg={validation.phone.errorReason} />
+              )}
             </div>
           </div>
           <div>
             <input
               placeholder="marcelojr@gmail.com"
-              type="text"
+              type="email"
               id="email"
               name="email"
               onChange={handleChange}
+              onBlur={handleFocusOut}
               value={formData.email}
-              className={`form-input ${false ? "form-input-error" : ""}`}
+              className="form-input"
+              required
             />
           </div>
           <div>
@@ -94,16 +143,17 @@ export default function ContactUs() {
               id="message"
               name="message"
               onChange={handleChange}
+              onBlur={handleFocusOut}
               value={formData.message}
-              className={`form-input ${false ? "form-input-error" : ""}`}
+              className="form-input"
+              required
             />
           </div>
           <button
             type="submit"
             className={`py-3 px-4 mt-4 text-white rounded-lg transition-all ${
-              true ? "bg-gray-500" : "bg-accent hover:scale-105"
+              AreInputsValid ? "bg-accent hover:scale-105" : "bg-gray-500"
             }`}
-            // disabled={true}
           >
             Enviar
           </button>
