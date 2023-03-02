@@ -13,7 +13,7 @@ export default function AboutUs() {
         <p className="font-semibold leading-7 opacity-70 text-description pl-8">
           Fundada em 1997, a Ceos é a Empresa Júnior do curso de Ciência da
           Computação da Universidade Federal do Ceará - UFC. Sempre focados na
-          excelência e guiados por nosso lema "O céu é o limite", desenvolvemos
+          excelência e guiados por nosso lema O céu é o limite, desenvolvemos
           soluções inovadoras e personalizadas para o seu problema por meio do
           desenvolvimento de sites institucionais, sistemas personalizados,
           acessorias e outros serviços. Somos a CEOS, uma empresa formada por
@@ -69,7 +69,7 @@ export default function AboutUs() {
         </h1>
       </div>
       <div className="pl-8">
-        <h1>"Transformar, em código, grandes histórias"</h1>
+        <h1>Transformar, em código, grandes histórias</h1>
       </div>
     </section>
   )
