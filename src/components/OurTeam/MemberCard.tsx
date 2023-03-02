@@ -42,41 +42,11 @@ const TeamCard = ({
         <li className="rounded-xl group/item">
           <a
             className="block py-2 px-2 rounded-xl border transition-colors duration-300 ease-in border-primary group-hover/item:bg-primary"
-            href={facebookURL}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaFacebookF className="text-sm transition-colors duration-300 ease-in text-primary group-hover/item:text-white" />
-          </a>
-        </li>
-        <li className="rounded-xl group/item">
-          <a
-            className="block py-2 px-2 rounded-xl border transition-colors duration-300 ease-in border-primary group-hover/item:bg-primary"
-            href={twitterURL}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaTwitter className="text-sm transition-colors duration-300 ease-in text-primary group-hover/item:text-white" />
-          </a>
-        </li>
-        <li className="rounded-xl group/item">
-          <a
-            className="block py-2 px-2 rounded-xl border transition-colors duration-300 ease-in border-primary group-hover/item:bg-primary"
             href={linkedinURL}
             target="_blank"
             rel="noreferrer"
           >
-            <FaLinkedinIn className="text-sm transition-colors duration-300 ease-in text-primary group-hover/item:text-white" />
-          </a>
-        </li>
-        <li className="rounded-xl group/item">
-          <a
-            className="block py-2 px-2 rounded-xl border transition-colors duration-300 ease-in border-primary group-hover/item:bg-primary"
-            href={instagramURL}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaInstagram className="text-sm transition-colors duration-300 ease-in text-primary group-hover/item:text-white" />
+            <FaLinkedinIn className="text-2xl transition-colors duration-300 ease-in text-primary group-hover/item:text-white" />
           </a>
         </li>
       </ul>

@@ -42,13 +42,13 @@ const OurTeam = () => {
             position={1}
           >
             <MemberCard
-              name="Said Cavalcante"
+              name="Said Rodrigues"
               role="Diretor de Projetos"
               memberImg="/images/OurTeam/man-02.png"
               memberImgAlt="Company's Senior Officer"
               facebookURL="#"
               twitterURL="#"
-              linkedinURL="#"
+              linkedinURL="https://www.linkedin.com/in/said-rodrigues-752316149/"
               instagramURL="#"
             />
           </CarouselSlide>
@@ -117,7 +117,7 @@ const OurTeam = () => {
             position={6}
           >
             <MemberCard
-              name="Victoria Castro"
+              name="Victoria de Castro"
               role="Gerente de Pessoas"
               memberImg="/images/OurTeam/woman-01.png"
               memberImgAlt="Company's Marketing Officer 1"
@@ -132,7 +132,7 @@ const OurTeam = () => {
             position={7}
           >
             <MemberCard
-              name="Alan Carneiro"
+              name="Alan Cabral"
               role="Membro efetivo da CEOS"
               memberImg="/images/OurTeam/woman-01.png"
               memberImgAlt="Company's Marketing Officer 1"
