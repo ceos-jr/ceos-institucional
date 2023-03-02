@@ -90,9 +90,9 @@ const Navbar = () => {
         </Link>
         <ul className="flex flex-row gap-x-8 items-center py-0 px-4 ml-auto">
           <li className="transition-all duration-75 ease-linear hover:scale-110">
-            <a className="text-lg" href="#">
+            <Link className="text-lg" href="/">
               Início
-            </a>
+            </Link>
           </li>
           <li className="transition-all duration-75 ease-linear hover:scale-110">
             <a className="text-lg" href="SobreNos">
