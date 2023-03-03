@@ -1,9 +1,10 @@
 version: "3"
 services:
   ceos:
-    container_name: ceos
+    container_name: ceos-institucional
     build:
       context: ./
-    image: ceos-local
+    image: ceos-institucional:latest
     ports:
-      - "80:80"
+      - "3000:3000"
+    restart: unless-stopped
