@@ -8,4 +8,5 @@ docker-compose.yml
 node_modules
 npm-debug.log
 README.md
+deploy-playbook.yaml
 out/
