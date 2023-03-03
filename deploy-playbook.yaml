@@ -1,0 +1,47 @@
+---
+- name: Deploy CEOS Institucional with Docker
+  hosts: all
+  remote_user: ansible
+  vars:
+    container_image: flemis/ceos-institucional
+    tag: next
+    host_port: 3000
+    container_port: 3000
+  become: true
+  roles:
+    - geerlingguy.docker
+  tasks:
+    - name: Build and run container with repository
+      block:
+        - name: Clone this repository
+          ansible.builtin.git:
+            repo: "https://github.com/ceos-jr/ceos-institucional.git"
+            dest: "{{ ansible_env.HOME }}/ceos"
+            clone: yes
+            update: yes
+        - name: Run docker compose
+          ansible.builtin.shell:
+            cmd: "docker compose up -d --build"
+            chdir: "{{ ansible_env.HOME }}/ceos"
+      when: container_image is not defined
+
+    - name: Run container from Image
+      block:
+        - name: Pull image from dockerhub
+          community.docker.docker_image:
+            name: "{{ container_image }}"
+            tag: "{{ tag }}"
+            source: pull
+          when: container_image is defined
+
+        - name: Run container
+          community.docker.docker_container:
+            name: ceos-institucional
+            image: "{{ container_image }}:{{ tag }}"
+            recreate: true
+            detach: true
+            restart_policy: "unless-stopped"
+            published_ports:
+              - "{{ host_port }}:{{ container_port }}"
+            state: started
+      when: container_image is defined
