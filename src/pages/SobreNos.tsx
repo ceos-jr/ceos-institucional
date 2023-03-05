@@ -4,19 +4,20 @@ export default function AboutUs() {
   return (
     <section>
       <Navbar />
-      <div className="py-5 bg-center bg-fixed bg-no-repeat bg-blend-lighten">
-
       <div>
-        <Image src="/images/team.jpeg" alt="" width={100} height={100} />
+      
+        <Image src="/images/Meu projeto.jpg" alt="" width={1920} height={100} />
+        </div>
+        <div className="absolute bottom-1/3">
+        
 
         <div className="flex flex-col items-start py-8 h-full">
-          <h1 className="text-2xl font-bold lg:text-2xl lg:leading-snug text-secondary pl-8">
+          <h1 className="text-2xl font-bold lg:text-2xl lg:leading-snug text-white pl-8">
             Quem Somos
           </h1>
         </div>
         <div>
-          <p className="font-semibold leading-7 opacity-70 text-description pl-8">
-            
+          <p className="font-semibold leading-7 text-white  pl-8">
             Fundada em 1997, a Ceos é a Empresa Júnior do curso de Ciência da
             Computação da Universidade Federal do Ceará - UFC. Sempre focados na
             excelência e guiados por nosso lema O céu é o limite, desenvolvemos
@@ -35,8 +36,9 @@ export default function AboutUs() {
             para o desenvolvimento da sociedade como um todo.
           </p>
         </div>
-      </div>
-      </div>
+        </div>
+      
+
       <div className="bg-slate-200 pt-5">
         <div className="text-2xl lg:text-2xl lg:leading-snug text-secondary pl-8 py-5">
           <h1>Por que confiar na CEOS ?</h1>
