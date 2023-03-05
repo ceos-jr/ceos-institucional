@@ -9,10 +9,10 @@ export default function AboutUs() {
       
         <Image src="/images/imagemtime.jpg" alt="" width={1920} height={100} />
         </div>
-        <div className="absolute bottom-1/4">
+        <div className="absolute bottom-1/3">
         
 
-        <div className="flex flex-col items-start py-8 h-full">
+        <div className="flex flex-col items-start h-full pb-5">
           <h1 className="text-2xl font-bold lg:text-2xl lg:leading-snug text-white pl-8">
             Quem Somos
           </h1>
