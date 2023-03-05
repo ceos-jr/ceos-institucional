@@ -3,7 +3,7 @@ export default function AboutUs() {
   return (
     <section>
       <Navbar />
-      <div className="bg-sky-100 pt-5">
+      <div className="bg-sky-100 py-5">
       <div className="flex flex-col items-start py-8 h-full">
         <h1 className="text-2xl font-bold lg:text-2xl lg:leading-snug text-secondary pl-8">
           Quem Somos
