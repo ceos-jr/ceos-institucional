@@ -6,12 +6,9 @@ export default function AboutUs() {
     <section>
       <Navbar />
       <div className="bg-scroll bg-black">
-      
         <Image src="/images/imagemtime.jpg" alt="" width={1920} height={100} />
-        </div>
-        <div className="absolute bottom-1/3">
-        
-
+      </div>
+      <div className="absolute bottom-1/3">
         <div className="flex flex-col items-start h-full pb-5">
           <h1 className="text-2xl font-bold lg:text-2xl lg:leading-snug text-white pl-8">
             Quem Somos
@@ -37,8 +34,7 @@ export default function AboutUs() {
             para o desenvolvimento da sociedade como um todo.
           </p>
         </div>
-        </div>
-      
+      </div>
 
       <div className="bg-slate-200 pt-5">
         <div className="text-2xl lg:text-2xl lg:leading-snug text-secondary pl-8 py-5">
@@ -89,20 +85,21 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
+        <div className="flex space-x-72">
+          <div className="grid grid-cols-1 pl-16">
+            <h1 className="text-2xl font-bold lg:text-2xl lg:leading-snug text-secondary">
+              Nossa Missão
+            </h1>
+            <p>Transformar, em código, grandes histórias</p>
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold lg:text-2xl lg:leading-snug text-secondary">Nossa Visão</h1>
+            <p>**Visão</p>
+          </div>
+        </div>
 
-        <div className="flex flex-col items-start py-8 h-full">
-          <h1 className="text-2xl font-bold lg:text-2xl lg:leading-snug text-secondary pl-16">
-            Nossa Missão
-          </h1>
-        </div>
-        <div>
-          <h1 className="leading-10 font-bold text-secondary opacity-70 pl-16">
-            Transformar, em código, grandes histórias.
-          </h1>
-        </div>
-        <Footer/>
+        <Footer />
       </div>
-      
     </section>
   )
 }
