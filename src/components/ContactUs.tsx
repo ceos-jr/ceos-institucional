@@ -232,6 +232,7 @@ export default function Twu() {
             className={`py-3 px-4 mt-4 text-white rounded-lg transition-all ${
               AreInputsValid ? "bg-accent hover:scale-105" : "bg-gray-500"
             }`}
+            disabled={!AreInputsValid ? true : false}
           >
             Enviar
           </button>
