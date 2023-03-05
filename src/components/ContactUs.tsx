@@ -64,7 +64,64 @@ const ErrorMessage = ({ id, msg }: { id: string; msg: string }) => {
     </span>
   )
 }
-export default function ContactUs() {
+
+export default function Twu() {
+  const [formData, setFormData] = useState<ContactFormData>(DEFAULT_FORM_DATA)
+  const [validation, setValidation] =
+    useState<InputValidation>(DEFAULT_VALIDATION)
+
+  const AreInputsValid = Object.values(validation).every(
+    (item) => item.isValid === true
+  )
+
+  const handleFocusOut = (
+    e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const target = e.target
+    const { name, value, required } = target
+    const patternValid = checkInputPattern(value, name)
+    const lengthValid = required ? value.trim().length === 0 ? false : true : true
+    const errorReason = lengthValid ? patternValid ? "" : "Campo não obedece ao padrão" : "Campo obrigatório"
+
+    setValidation((previous) => {
+      return {
+        ...previous,
+        [name]: {
+          isValid: lengthValid && patternValid,
+          errorReason: errorReason,
+        },
+      }
+    })
+  }
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const target = e.target
+
+    if (target.name === "phone") {
+      const patternValid = checkInputPattern(target.value, target.name)
+      const errorReason = patternValid ? "" : "Campo não obedece ao padrão"
+
+      setValidation((previous) => {
+        return {
+          ...previous,
+          [target.name]: {
+            isValid: patternValid,
+            errorReason: errorReason,
+          },
+        }
+      })
+    }
+
+    setFormData((previous) => {
+      return {
+        ...previous,
+        [target.name]: target.value,
+      }
+    })
+  }
+
   return (
     <section
       className="grid grid-cols-1 gap-8 place-items-center md:grid-cols-2 container-wrapper"
@@ -100,9 +157,16 @@ export default function ContactUs() {
                 onChange={handleChange}
                 onBlur={handleFocusOut}
                 value={formData.name}
-                className="form-input"
+                aria-invalid={!validation.name.isValid}
+                aria-errormessage={validation.name.errorReason}
+                className={`form-input ${
+                  !validation.name.isValid ? "form-input-error" : ""
+                }`}
                 required
               />
+              {!validation.name.isValid && (
+                <ErrorMessage id="name-error" msg={validation.name.errorReason} />
+              )}
             </div>
             <div className="w-full">
               <input
@@ -120,7 +184,7 @@ export default function ContactUs() {
                 }`}
               />
               {!validation.phone.isValid && (
-                <ErrorMessage id="phone" msg={validation.phone.errorReason} />
+                <ErrorMessage id="phone-error" msg={validation.phone.errorReason} />
               )}
             </div>
           </div>
@@ -133,9 +197,16 @@ export default function ContactUs() {
               onChange={handleChange}
               onBlur={handleFocusOut}
               value={formData.email}
-              className="form-input"
+              aria-invalid={!validation.email.isValid}
+              aria-errormessage={!validation.email.errorReason}
+              className={`form-input ${
+                !validation.email.isValid ? "form-input-error" : ""
+              }`} 
               required
             />
+            {!validation.email.isValid && (
+              <ErrorMessage id="email-error" msg={validation.email.errorReason} />
+            )}
           </div>
           <div>
             <textarea
@@ -145,9 +216,16 @@ export default function ContactUs() {
               onChange={handleChange}
               onBlur={handleFocusOut}
               value={formData.message}
-              className="form-input"
+              aria-invalid={!validation.message.isValid}
+              aria-errormessage={!validation.message.errorReason}
+              className={`form-input ${
+                !validation.message.isValid ? "form-input-error" : ""
+              }`} 
               required
             />
+            {!validation.email.isValid && (
+              <ErrorMessage id="message-error" msg={validation.email.errorReason} />
+            )}
           </div>
           <button
             type="submit"
