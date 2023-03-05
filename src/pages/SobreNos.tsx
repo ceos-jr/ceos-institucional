@@ -18,7 +18,7 @@ export default function AboutUs() {
           </h1>
         </div>
         <div>
-          <p className="font-semibold leading-8 text-white  pl-8 pb-10">
+          <p className="font-semibold leading-8 text-white pl-8 pb-16">
             Fundada em 1997, a Ceos é a Empresa Júnior do curso de Ciência da
             Computação da Universidade Federal do Ceará - UFC. Sempre focados na
             excelência e guiados por nosso lema O céu é o limite, desenvolvemos
