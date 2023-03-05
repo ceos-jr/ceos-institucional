@@ -14,16 +14,20 @@ const NavItemData = [
     url: "#servicos",
   },
   {
-    text: "Portfólio",
-    url: "#",
+    text: "Sobre nós",
+    url: "#sobre",
   },
   {
-    text: "Blog",
-    url: "#",
+    text: "Objetivos",
+    url: "#objetivos",
+  },
+  {
+    text: "Membros",
+    url: "#membros"
   },
   {
     text: "Fale conosco",
-    url: "#",
+    url: "#faleconosco",
   },
 ]
 

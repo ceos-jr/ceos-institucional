@@ -11,7 +11,10 @@ const StatItem = ({ name, number }: { name: string; number: number }) => {
 
 export default function Sobre() {
   return (
-    <section className="grid grid-cols-1 place-items-center py-8 md:grid-cols-2 container-wrapper">
+    <section 
+      className="grid grid-cols-1 place-items-center py-8 md:grid-cols-2 container-wrapper"
+      id="sobre"
+    >
       <div className="relative mb-8 w-full md:mb-0 xl:w-3/4 aspect-square">
         <Image src="/images/SobreNos/sobre_nos.svg" alt="" fill />
       </div>
