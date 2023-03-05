@@ -92,8 +92,8 @@ export default function AboutUs() {
             Nossa Missão
           </h1>
         </div>
-        <div className="pl-16 font-bold leading-10 opacity-70 text-description">
-          <h1 className="leading-10 font-bold text-secondary opacity-70">
+        <div>
+          <h1 className="leading-10 font-bold text-secondary opacity-70 pl-16">
             Transformar, em código, grandes histórias.
           </h1>
         </div>
