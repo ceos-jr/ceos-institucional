@@ -10,8 +10,8 @@ const NavItemData = [
     url: "#",
   },
   {
-    text: "Sobre nós",
-    url: "#",
+    text: "Serviços",
+    url: "#servicos",
   },
   {
     text: "Portfólio",
@@ -30,6 +30,16 @@ const NavItemData = [
 interface NavItemProps {
   text: string
   url: string
+}
+
+const NavItem = ({ text, url }: NavItemProps ) => {
+  return (
+     <li className="transition-all duration-75 ease-linear hover:scale-110">
+       <a className="text-lg" href={url}>
+        {text} 
+       </a>
+     </li>
+  )
 }
 
 const NavItemMobile = ({ text, url }: NavItemProps) => {
@@ -89,32 +99,30 @@ const Navbar = () => {
           <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
         </Link>
         <ul className="flex flex-row gap-x-8 items-center py-0 px-4 ml-auto">
-          <li className="transition-all duration-75 ease-linear hover:scale-110">
-            <a className="text-lg" href="#">
-              Início
-            </a>
-          </li>
-          <li className="transition-all duration-75 ease-linear hover:scale-110">
-            <a className="text-lg" href="#">
-              Sobre nós
-            </a>
-          </li>
-          <li className="transition-all duration-75 ease-linear hover:scale-110">
-            <a className="text-lg" href="#">
-              Portfólio
-            </a>
-          </li>
-          <li className="transition-all duration-75 ease-linear hover:scale-110">
-            <a className="text-lg" href="#">
-              Blog
-            </a>
-          </li>
-          <button className="bg-white border-2 border-[#FF9100] rounded-md py-2 px-4 transition-all duration-100 text-base hover:bg-[#FF9100] hover:scale-110 hover:text-white">
-            <a className="" href="#" rel="">
-              Fale conosco
-            </a>
-          </button>
-        </ul>
+          {NavItemData.map((item, index) => {
+            // The last item is the styled button
+            if (index === NavItemData.length - 1) {
+              return (
+                <button 
+                  className="bg-white border-2 border-[#FF9100] rounded-md py-2 px-4 transition-all duration-100 text-base hover:bg-[#FF9100] hover:scale-110 hover:text-white"
+                  key={item.url + item.text}
+                >
+                  <a href={item.url}>
+                    {item.text} 
+                  </a>  
+                </button>
+              )
+            }
+
+            return (
+              <NavItem
+                key={item.url + item.text}
+                text={item.text}
+                url={item.url}
+              />
+            )
+          })}
+       </ul>
       </div>
       <div className="flex justify-between lg:hidden">
         <Link href="/">
