@@ -23,7 +23,7 @@ const NavItemData = [
   },
   {
     text: "Membros",
-    url: "#membros"
+    url: "#membros",
   },
   {
     text: "Fale conosco",
@@ -36,13 +36,13 @@ interface NavItemProps {
   url: string
 }
 
-const NavItem = ({ text, url }: NavItemProps ) => {
+const NavItem = ({ text, url }: NavItemProps) => {
   return (
-     <li className="transition-all duration-75 ease-linear hover:scale-110">
-       <a className="text-lg" href={url}>
-        {text} 
-       </a>
-     </li>
+    <li className="transition-all duration-75 ease-linear hover:scale-110">
+      <a className="text-lg" href={url}>
+        {text}
+      </a>
+    </li>
   )
 }
 
@@ -107,13 +107,11 @@ const Navbar = () => {
             // The last item is the styled button
             if (index === NavItemData.length - 1) {
               return (
-                <button 
+                <button
                   className="bg-white border-2 border-[#FF9100] rounded-md py-2 px-4 transition-all duration-100 text-base hover:bg-[#FF9100] hover:scale-110 hover:text-white"
                   key={item.url + item.text}
                 >
-                  <a href={item.url}>
-                    {item.text} 
-                  </a>  
+                  <a href={item.url}>{item.text}</a>
                 </button>
               )
             }
@@ -126,7 +124,7 @@ const Navbar = () => {
               />
             )
           })}
-       </ul>
+        </ul>
       </div>
       <div className="flex justify-between lg:hidden">
         <Link href="/">

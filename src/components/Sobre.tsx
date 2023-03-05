@@ -11,7 +11,7 @@ const StatItem = ({ name, number }: { name: string; number: number }) => {
 
 export default function Sobre() {
   return (
-    <section 
+    <section
       className="grid grid-cols-1 place-items-center py-8 md:grid-cols-2 container-wrapper"
       id="sobre"
     >
