@@ -100,8 +100,9 @@ export default function AboutUs() {
             Transformar, em código, grandes histórias.
           </h1>
         </div>
+        <Footer/>
       </div>
-      <Footer/>
+      
     </section>
   )
 }
