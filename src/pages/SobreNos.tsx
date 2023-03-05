@@ -1,14 +1,15 @@
 import Image from "next/image"
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 export default function AboutUs() {
   return (
     <section>
       <Navbar />
-      <div>
+      <div className="bg-scroll bg-black">
       
-        <Image src="/images/Meu projeto.jpg" alt="" width={1920} height={100} />
+        <Image src="/images/imagemtime.jpg" alt="" width={1920} height={100} />
         </div>
-        <div className="absolute bottom-1/3">
+        <div className="absolute bottom-1/4">
         
 
         <div className="flex flex-col items-start py-8 h-full">
@@ -17,7 +18,7 @@ export default function AboutUs() {
           </h1>
         </div>
         <div>
-          <p className="font-semibold leading-7 text-white  pl-8">
+          <p className="font-semibold leading-8 text-white  pl-8 pb-10">
             Fundada em 1997, a Ceos é a Empresa Júnior do curso de Ciência da
             Computação da Universidade Federal do Ceará - UFC. Sempre focados na
             excelência e guiados por nosso lema O céu é o limite, desenvolvemos
@@ -100,6 +101,7 @@ export default function AboutUs() {
           </h1>
         </div>
       </div>
+      <Footer/>
     </section>
   )
 }
