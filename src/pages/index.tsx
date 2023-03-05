@@ -7,7 +7,7 @@ import OurTeam from "../components/OurTeam/OurTeam"
 import Hero from "../components/Hero"
 import OurGoals from "../components/OurGoals"
 import Footer from "../components/Footer"
-import Twu from "../components/Twu"
+import ContactUs from "../components/ContactUs"
 import Services from "../components/Services/Services"
 
 const Home: NextPage = () => {
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
         <OurGoals />
         <OurTeam />
         <SocialProf />
-        <Twu />
+        <ContactUs />
       </main>
       <Footer />
     </div>
