@@ -1,9 +1,15 @@
+import Image from "next/image"
 import Navbar from "../components/Navbar"
 export default function AboutUs() {
   return (
     <section>
       <Navbar />
-      <div className="bg-sky-100 py-5">
+      
+      <div className="py-5 bg-center bg-fixed bg-no-repeat bg-blend-lighten">
+        
+      <Image src="/images/team.jpeg" alt="" width={750} height={1000} />
+      
+      
       <div className="flex flex-col items-start py-8 h-full">
         <h1 className="text-2xl font-bold lg:text-2xl lg:leading-snug text-secondary pl-8">
           Quem Somos
