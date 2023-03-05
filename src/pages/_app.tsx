@@ -10,7 +10,7 @@ const poppins = Poppins({
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${poppins.variable} font-poppins`}>
+    <div className={`${poppins.variable} font-poppins scroll-smooth`}>
       <Component {...pageProps} />
     </div>
   )
