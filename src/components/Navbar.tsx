@@ -95,7 +95,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="transition-all duration-75 ease-linear hover:scale-110">
-            <a className="text-lg" href="SobreNos">
+            <a className="text-lg" href="AboutUs">
               Sobre nós
             </a>
           </li>
