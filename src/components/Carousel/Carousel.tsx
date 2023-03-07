@@ -102,7 +102,7 @@ const Carousel = ({
   const [activeItem, setActiveItem] = useState(0)
   const [touchPosition, setTouchPosition] = useState<number | null>(null)
   const { width } = useWindowSize()
-  
+
   // When the highlight option is active the carousel will transition the slides
   // and count the limit in a different manner
   const LENGTH = Children.toArray(children).length
@@ -111,7 +111,7 @@ const Carousel = ({
   const SHOW_RIGHT_ARROW = show !== LENGTH && activeItem < LIMIT
 
   // Every time the user resizes his window, the carousel sets itself to
-  // the first item 
+  // the first item
   useEffect(() => {
     setActiveItem(0)
   }, [width])
