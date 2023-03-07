@@ -14,6 +14,7 @@ const OurTeam = () => {
       className={
         "relative h-full w-full overflow-hidden before:absolute before:bg-[#F5F7FC] before:top-[0%] before:-left-[20%] before:w-[130%] before:h-[90%] before:rotate-[5deg]"
       }
+      id="membros"
     >
       <div className="container-wrapper py-8 flex flex-col">
         <h3 className="text-accent text-xl mb-4 md:mb-0 z-10">Nosso Time</h3>

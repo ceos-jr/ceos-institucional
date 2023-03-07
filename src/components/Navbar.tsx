@@ -10,20 +10,24 @@ const NavItemData = [
     url: "#",
   },
   {
+    text: "Serviços",
+    url: "#servicos",
+  },
+  {
     text: "Sobre nós",
-    url: "#",
+    url: "#sobre-nos",
   },
   {
-    text: "Portfólio",
-    url: "#",
+    text: "Objetivos",
+    url: "#objetivos",
   },
   {
-    text: "Blog",
-    url: "#",
+    text: "Membros",
+    url: "#membros",
   },
   {
     text: "Fale conosco",
-    url: "#",
+    url: "#fale-conosco",
   },
 ]
 
@@ -32,12 +36,22 @@ interface NavItemProps {
   url: string
 }
 
+const NavItem = ({ text, url }: NavItemProps) => {
+  return (
+    <li className="transition-all duration-75 ease-linear hover:scale-110">
+      <Link className="text-lg" href={url} scroll={false}>
+        {text}
+      </Link>
+    </li>
+  )
+}
+
 const NavItemMobile = ({ text, url }: NavItemProps) => {
   return (
     <li className="w-full text-gray-800 border-b border-gray-200 transition-colors duration-300 ease-in hover:text-primary">
-      <a href={url} className="block py-4 w-full text-center">
+      <Link className="block py-4 w-full text-center" href={url} scroll={false}>
         {text}
-      </a>
+      </Link>
     </li>
   )
 }
@@ -89,6 +103,7 @@ const Navbar = () => {
           <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
         </Link>
         <ul className="flex flex-row gap-x-8 items-center py-0 px-4 ml-auto">
+<<<<<<< HEAD
           <li className="transition-all duration-75 ease-linear hover:scale-110">
             <Link className="text-lg" href="/">
               Início
@@ -114,11 +129,39 @@ const Navbar = () => {
               Fale conosco
             </a>
           </button>
+=======
+          {NavItemData.map((item, index) => {
+            // The last item is the styled button
+            if (index === NavItemData.length - 1) {
+              return (
+                <button
+                  className="bg-white border-2 border-[#FF9100] rounded-md py-2 px-4 transition-all duration-100 text-base hover:bg-[#FF9100] hover:scale-110 hover:text-white"
+                  key={item.url + item.text}
+                >
+                  <Link href={item.url}>{item.text}</Link>
+                </button>
+              )
+            }
+
+            return (
+              <NavItem
+                key={item.url + item.text}
+                text={item.text}
+                url={item.url}
+              />
+            )
+          })}
+>>>>>>> main
         </ul>
       </div>
       <div className="flex justify-between lg:hidden">
         <Link href="/">
-          <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
+          <Image
+            src="/images/ceos_logo.svg"
+            alt="logo da ceos"
+            width={150}
+            height={120}
+          />
         </Link>
         <button
           className="py-2 px-2 text-2xl rounded transition-colors lg:hidden hover:text-primary"
