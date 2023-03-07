@@ -3,10 +3,10 @@
   hosts: all
   remote_user: ansible
   vars:
-    container_image: flemis/ceos-institucional
-    tag: next
-    host_port: 3000
-    container_port: 3000
+    container_image: ceosjr/institucional
+    tag: beta
+    host_port: 80
+    container_port: 80
   become: true
   roles:
     - geerlingguy.docker
