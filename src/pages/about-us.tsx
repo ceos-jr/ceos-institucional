@@ -26,7 +26,7 @@ const AboutUs: NextPage = () => {
         <title>About us • CEOS</title>
       </Head>
       <main className="w-full min-h-screen">
-        <Navbar navbarData={navbarData}/>
+        <Navbar navbarData={navbarData} />
 
         <section className="pb-8">
           <div className="flex flex-col items-center h-full">
@@ -37,7 +37,10 @@ const AboutUs: NextPage = () => {
               width={1920}
               height={100}
             />
-            <div className="container-wrapper flex flex-col gap-8 py-8 px-4" id="quem-somos">
+            <div
+              className="container-wrapper flex flex-col gap-8 py-8 px-4"
+              id="quem-somos"
+            >
               <h1 className="text-4xl text-secondary font-bold">Quem Somos</h1>
               <p className="text-description leading-8 opacity-70">
                 Fundada em 1997, a Ceos é a Empresa Júnior do curso de Ciência
@@ -54,7 +57,7 @@ const AboutUs: NextPage = () => {
               </p>
               <div>
                 <h2 className="text-2xl text-secondary font-bold mb-4">
-                  Nossa Missão é: 
+                  Nossa Missão é:
                 </h2>
                 <p className="text-accent font-bold leading-8 opacity-70">
                   Transformar, em código, grandes histórias
@@ -78,9 +81,9 @@ const AboutUs: NextPage = () => {
                   Trabalho em Equipe
                 </h4>
                 <p className="text-description leading-8 opacity-70">
-                  O trabalho em equipe um valor essencial para
-                  alcançar resultados de alta qualidade. Nos acreditamos que
-                  a colaboração entre membros de diferentes habilidades e
+                  O trabalho em equipe um valor essencial para alcançar
+                  resultados de alta qualidade. Nos acreditamos que a
+                  colaboração entre membros de diferentes habilidades e
                   perspectivas é fundamental e envolve ouvir atentamente as
                   opiniões de todos os envolvidos, respeitar e valorizar as
                   ideias dos outros, e assumir responsabilidade compartilhada
@@ -93,11 +96,11 @@ const AboutUs: NextPage = () => {
                   Resiliência
                 </h4>
                 <p className="text-description leading-8 opacity-70">
-                  A resiliência é um valor importante para
-                  alcançarmos nossos objetivos, sabendo que enfrentaremos desafios ao
-                  longo do caminho. Acreditamos que podemos superar
-                  obstáculos com persistência, determinação e flexibilidade,
-                  enxergando-os como oportunidades de aprendizado e crescimento.
+                  A resiliência é um valor importante para alcançarmos nossos
+                  objetivos, sabendo que enfrentaremos desafios ao longo do
+                  caminho. Acreditamos que podemos superar obstáculos com
+                  persistência, determinação e flexibilidade, enxergando-os como
+                  oportunidades de aprendizado e crescimento.
                 </p>
               </div>
 
@@ -106,12 +109,12 @@ const AboutUs: NextPage = () => {
                   Disciplina
                 </h4>
                 <p className="text-description leading-8 opacity-70">
-                  A disciplina é um valor fundamental que guia
-                  nosso trabalho diário, pois acreditamos que ela é essencial para
-                  alcançarmos nossos objetivos e mantermos a excelência em tudo o que
-                  fazemos. Isso inclui definir metas claras, elaborar planos de ação
-                  bem estruturados e se dedicar a cumpri-los com consistência e
-                  comprometimento.
+                  A disciplina é um valor fundamental que guia nosso trabalho
+                  diário, pois acreditamos que ela é essencial para alcançarmos
+                  nossos objetivos e mantermos a excelência em tudo o que
+                  fazemos. Isso inclui definir metas claras, elaborar planos de
+                  ação bem estruturados e se dedicar a cumpri-los com
+                  consistência e comprometimento.
                 </p>
               </div>
 
@@ -120,14 +123,13 @@ const AboutUs: NextPage = () => {
                   Transparência
                 </h4>
                 <p className="text-description leading-8 opacity-70">
-                  A transparência um valor crucial em nossas 
-                  interações internas e externas, pois acreditamos que a
-                  honestidade e a comunicação clara são essenciais para
-                  construir relações de confiança e tomar decisões informadas.
-                  Isso implica em comunicar de forma aberta as atividades,
-                  decisões e resultados da empresa, além de ouvir e responder às
-                  opiniões e preocupações dos clientes, colaboradores e
-                  parceiros.
+                  A transparência um valor crucial em nossas interações internas
+                  e externas, pois acreditamos que a honestidade e a comunicação
+                  clara são essenciais para construir relações de confiança e
+                  tomar decisões informadas. Isso implica em comunicar de forma
+                  aberta as atividades, decisões e resultados da empresa, além
+                  de ouvir e responder às opiniões e preocupações dos clientes,
+                  colaboradores e parceiros.
                 </p>
               </div>
             </div>
