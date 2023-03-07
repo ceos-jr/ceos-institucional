@@ -1,4 +1,4 @@
-import Sobre from "../components/Sobre"
+import AboutUs from "../components/AboutUs"
 import { NextPage } from "next"
 import Head from "next/head"
 import SocialProf from "../components/SocialProof/SocialProof"
@@ -24,7 +24,7 @@ const Home: NextPage = () => {
         <Navbar />
         <Hero />
         <Services />
-        <Sobre />
+        <AboutUs />
         <OurGoals />
         <OurTeam />
         <SocialProf />
