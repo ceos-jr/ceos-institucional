@@ -1,13 +1,5 @@
 import Image from "next/image"
-
-const StatItem = ({ name, number }: { name: string; number: number }) => {
-  return (
-    <div className="w-full text-secondary">
-      <span className="text-3xl font-bold">{number}</span>
-      <h3>{name}</h3>
-    </div>
-  )
-}
+import ButtonWithArrow from "./layout/ButtonWithArrow";
 
 export default function AboutUs() {
   return (
@@ -26,13 +18,13 @@ export default function AboutUs() {
         <p className="mb-8 leading-7 text-description/70">
           Um processo de desenvolvimento bem estruturado é crucial para criar
           produtos que as adoram. CEOS tem um processo de desenvolvimento
-          rigoroso que inclui o desenvloviemnto dirigido por testes.
+          rigoroso que inclui um desenvolvimento dirigido por testes.
         </p>
-        <div className="flex flex-col gap-4 justify-around items-center w-full sm:flex-row md:items-start">
-          <StatItem name="Projetos concluídos" number={4500} />
-          <StatItem name="Clientes" number={250} />
-          <StatItem name="Running work" number={350} />
-        </div>
+        <ButtonWithArrow 
+          className="lg:max-w-[300px]"
+          href="/about-us"
+          name="Saiba mais"
+        /> 
       </div>
     </section>
   )
