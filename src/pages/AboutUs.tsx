@@ -123,7 +123,7 @@ const AboutUs: NextPage = () => {
         <Footer />
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default AboutUs;
+export default AboutUs
