@@ -20,7 +20,7 @@ const navbarData = [
   },
   {
     text: "Sobre nós",
-    url: "#sobre-nos"
+    url: "#sobre-nos",
   },
   {
     text: "Objetivos",
@@ -47,7 +47,7 @@ const Home: NextPage = () => {
         />
       </Head>
       <main className="w-full min-h-screen">
-        <Navbar navbarData={navbarData}/>
+        <Navbar navbarData={navbarData} />
         <Hero />
         <Services />
         <AboutUs />

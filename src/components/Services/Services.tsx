@@ -12,11 +12,7 @@ type ServicesCardProps = {
   Icon: IconType
 }
 
-const ServicesCard = ({
-  title,
-  description,
-  Icon,
-}: ServicesCardProps) => {
+const ServicesCard = ({ title, description, Icon }: ServicesCardProps) => {
   return (
     <div className="flex flex-col gap-6 py-12 px-8 rounded-xl shadow-2xl transition-all duration-500 hover:text-white w-[280px] bg-slate-100 h-[340px] group text-description hover:shadow-blue-800/70 hover:bg-primary">
       <div className="w-min bg-gray-300 rounded-full transition-colors group-hover:text-white text-primary group-hover:bg-white/20">

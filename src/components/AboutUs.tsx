@@ -1,5 +1,5 @@
 import Image from "next/image"
-import ButtonWithArrow from "./layout/ButtonWithArrow";
+import ButtonWithArrow from "./layout/ButtonWithArrow"
 
 export default function AboutUs() {
   return (
@@ -20,11 +20,11 @@ export default function AboutUs() {
           produtos que as adoram. CEOS tem um processo de desenvolvimento
           rigoroso que inclui um desenvolvimento dirigido por testes.
         </p>
-        <ButtonWithArrow 
+        <ButtonWithArrow
           className="lg:max-w-[300px]"
           href="/about-us"
           name="Saiba mais"
-        /> 
+        />
       </div>
     </section>
   )
