@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import { RxCross2, RxHamburgerMenu } from "react-icons/rx"
 import useScrollLock from "../hooks/useScrollLock"
 
-type NavItemData = {
+export type NavItemData = {
   text: string
   url: string
 }
