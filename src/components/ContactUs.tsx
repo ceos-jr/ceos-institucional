@@ -46,13 +46,11 @@ const DEFAULT_VALIDATION = {
   },
 }
 
-const PATTERN = {
-  phone: new RegExp("[0-9]{11}"),
-}
+const PATTERN = /^([1-9]{2}\s?)?[9]?\d{4}(-|\s)?\d{4}$/
 
-const checkInputPattern = (string: string, field: string): boolean => {
+const checkInputPattern = (str: string, field: string): boolean => {
   if (field === "phone") {
-    return PATTERN["phone"].test(string) || string.trim() === ""
+    return PATTERN.test(str) || str.trim() === ""
   }
   return true
 }
@@ -80,8 +78,16 @@ export default function Twu() {
     const target = e.target
     const { name, value, required } = target
     const patternValid = checkInputPattern(value, name)
-    const lengthValid = required ? value.trim().length === 0 ? false : true : true
-    const errorReason = lengthValid ? patternValid ? "" : "Campo não obedece ao padrão" : "Campo obrigatório"
+    const lengthValid = required
+      ? value.trim().length === 0
+        ? false
+        : true
+      : true
+    const errorReason = lengthValid
+      ? patternValid
+        ? ""
+        : "Campo não obedece ao padrão"
+      : "Campo obrigatório"
 
     setValidation((previous) => {
       return {
@@ -165,7 +171,10 @@ export default function Twu() {
                 required
               />
               {!validation.name.isValid && (
-                <ErrorMessage id="name-error" msg={validation.name.errorReason} />
+                <ErrorMessage
+                  id="name-error"
+                  msg={validation.name.errorReason}
+                />
               )}
             </div>
             <div className="w-full">
@@ -184,7 +193,10 @@ export default function Twu() {
                 }`}
               />
               {!validation.phone.isValid && (
-                <ErrorMessage id="phone-error" msg={validation.phone.errorReason} />
+                <ErrorMessage
+                  id="phone-error"
+                  msg={validation.phone.errorReason}
+                />
               )}
             </div>
           </div>
@@ -198,14 +210,17 @@ export default function Twu() {
               onBlur={handleFocusOut}
               value={formData.email}
               aria-invalid={!validation.email.isValid}
-              aria-errormessage={!validation.email.errorReason}
+              aria-errormessage={validation.email.errorReason}
               className={`form-input ${
                 !validation.email.isValid ? "form-input-error" : ""
-              }`} 
+              }`}
               required
             />
             {!validation.email.isValid && (
-              <ErrorMessage id="email-error" msg={validation.email.errorReason} />
+              <ErrorMessage
+                id="email-error"
+                msg={validation.email.errorReason}
+              />
             )}
           </div>
           <div>
@@ -217,14 +232,17 @@ export default function Twu() {
               onBlur={handleFocusOut}
               value={formData.message}
               aria-invalid={!validation.message.isValid}
-              aria-errormessage={!validation.message.errorReason}
+              aria-errormessage={validation.message.errorReason}
               className={`form-input ${
                 !validation.message.isValid ? "form-input-error" : ""
-              }`} 
+              }`}
               required
             />
             {!validation.email.isValid && (
-              <ErrorMessage id="message-error" msg={validation.email.errorReason} />
+              <ErrorMessage
+                id="message-error"
+                msg={validation.email.errorReason}
+              />
             )}
           </div>
           <button
