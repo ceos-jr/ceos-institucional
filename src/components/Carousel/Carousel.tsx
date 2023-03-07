@@ -3,11 +3,13 @@ import {
   Children,
   CSSProperties,
   useState,
+  useEffect,
   TouchEvent,
   cloneElement,
   ReactElement,
 } from "react"
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi"
+import useWindowSize from "../../hooks/useWindowSize"
 
 interface CarouselProps {
   children: ReactNode
@@ -99,6 +101,7 @@ const Carousel = ({
 }: CarouselProps) => {
   const [activeItem, setActiveItem] = useState(0)
   const [touchPosition, setTouchPosition] = useState<number | null>(null)
+  const { width } = useWindowSize()
 
   // When the highlight option is active the carousel will transition the slides
   // and count the limit in a different manner
@@ -106,6 +109,12 @@ const Carousel = ({
   const LIMIT = LENGTH - (highlight ? 1 : show)
   const SHOW_LEFT_ARROW = show !== LENGTH && activeItem !== 0
   const SHOW_RIGHT_ARROW = show !== LENGTH && activeItem < LIMIT
+
+  // Every time the user resizes his window, the carousel sets itself to
+  // the first item
+  useEffect(() => {
+    setActiveItem(0)
+  }, [width])
 
   const moveToNext = () => {
     if (activeItem >= LIMIT) return

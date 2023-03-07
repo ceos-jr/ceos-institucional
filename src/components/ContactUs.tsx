@@ -7,9 +7,12 @@ const ErrorMessage = ({ id, msg }: { id: string; msg: string }) => {
     </span>
   )
 }
-export default function Twu() {
+export default function ContactUs() {
   return (
-    <section className="grid grid-cols-1 gap-8 place-items-center md:grid-cols-2 container-wrapper">
+    <section
+      className="grid grid-cols-1 gap-8 place-items-center md:grid-cols-2 container-wrapper"
+      id="fale-conosco"
+    >
       <div className="relative w-full sm:w-3/4 md:w-full aspect-square">
         <Image src="/images/twu.svg" alt="talk with us image" fill />
       </div>
