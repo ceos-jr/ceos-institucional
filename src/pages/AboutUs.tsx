@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import OurTeam from "../components/OurTeam/OurTeam";
 
 const AboutUs: NextPage = () => {
   return (
@@ -118,6 +119,7 @@ const AboutUs: NextPage = () => {
             </div>
           </div>
         </section>
+        <OurTeam/>
         <Footer />
       </main>
     </div>
