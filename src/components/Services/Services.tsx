@@ -82,7 +82,7 @@ export default function Services() {
     width >= 1200 ? 4 : width >= 1024 ? 3 : width >= 768 ? 2 : 1.15
 
   return (
-    <section>
+    <section id="servicos">
       <div className="container-wrapper">
         <div className="flex flex-col gap-4 text-secondary">
           <h2 className="text-xl text-accent">Serviços</h2>

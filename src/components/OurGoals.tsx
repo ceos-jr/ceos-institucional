@@ -4,7 +4,7 @@ import ButtonWithArrow from "./layout/ButtonWithArrow"
 
 function OurGoals() {
   return (
-    <div className="flex flex-col items-center py-8 h-full">
+    <section className="flex flex-col items-center py-8 h-full" id="objetivos">
       <div className="flex flex-col lg:flex-row container-wrapper">
         <div>
           <h2 className="mb-2 text-xl text-accent">Nossos objetivos</h2>
@@ -37,7 +37,7 @@ function OurGoals() {
           height={200}
         />
       </div>
-    </div>
+    </section>
   )
 }
 
