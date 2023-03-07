@@ -1,8 +1,8 @@
-import { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { NextPage } from "next"
+import Head from "next/head"
+import Image from "next/image"
+import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 
 const AboutUs: NextPage = () => {
   return (
@@ -121,7 +121,7 @@ const AboutUs: NextPage = () => {
         <Footer />
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default AboutUs;
+export default AboutUs
