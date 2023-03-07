@@ -5,18 +5,15 @@ import { FaDesktop, FaDonate, FaGlobe, FaHandsHelping } from "react-icons/fa"
 import { IconType } from "react-icons"
 import Link from "next/link"
 import { HiArrowNarrowRight } from "react-icons/hi"
-import { PossibleServices } from "../typings/services"
 
 type ServicesCardProps = {
   title: string
   description: string
   Icon: IconType
-  kind: PossibleServices
 }
 
 const ServicesCard = ({
   title,
-  kind,
   description,
   Icon,
 }: ServicesCardProps) => {
@@ -31,10 +28,8 @@ const ServicesCard = ({
       <h1 className="text-lg font-bold">{title}</h1>
       <p className="text-sm opacity-70">{description}</p>
       <Link
-        href={{
-          pathname: "/fale-conosco",
-          query: { service: kind },
-        }}
+        href="#fale-conosco"
+        scroll={false}
         className="flex gap-2 items-center text-sm font-semibold transition-colors group-hover:text-white text-accent"
       >
         Solicite um Orçamento
@@ -47,28 +42,24 @@ const ServicesCard = ({
 const services: ServicesCardProps[] = [
   {
     title: "Sites Institucionais",
-    kind: "institucional",
     description:
       "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
     Icon: FaGlobe,
   },
   {
     title: "Sistemas Web",
-    kind: "sistema",
     description:
       "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
     Icon: FaDesktop,
   },
   {
     title: "E-commerce",
-    kind: "ecommerce",
     description:
       "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
     Icon: FaDonate,
   },
   {
     title: "Assessoria de Sites",
-    kind: "assessoria",
     description:
       "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
     Icon: FaHandsHelping,

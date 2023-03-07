@@ -25,7 +25,7 @@ function OurGoals() {
           </p>
           <ButtonWithArrow
             name="Inicie um projeto conosco"
-            href="fale-conosco"
+            href="#fale-conosco"
             className="my-12 w-full md:w-1/2 lg:w-[55%]"
           />
         </div>
