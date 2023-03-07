@@ -103,33 +103,6 @@ const Navbar = () => {
           <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
         </Link>
         <ul className="flex flex-row gap-x-8 items-center py-0 px-4 ml-auto">
-<<<<<<< HEAD
-          <li className="transition-all duration-75 ease-linear hover:scale-110">
-            <Link className="text-lg" href="/">
-              Início
-            </Link>
-          </li>
-          <li className="transition-all duration-75 ease-linear hover:scale-110">
-            <a className="text-lg" href="AboutUs">
-              Sobre nós
-            </a>
-          </li>
-          <li className="transition-all duration-75 ease-linear hover:scale-110">
-            <a className="text-lg" href="#">
-              Portfólio
-            </a>
-          </li>
-          <li className="transition-all duration-75 ease-linear hover:scale-110">
-            <a className="text-lg" href="#">
-              Blog
-            </a>
-          </li>
-          <button className="bg-white border-2 border-[#FF9100] rounded-md py-2 px-4 transition-all duration-100 text-base hover:bg-[#FF9100] hover:scale-110 hover:text-white">
-            <a className="" href="#" rel="">
-              Fale conosco
-            </a>
-          </button>
-=======
           {NavItemData.map((item, index) => {
             // The last item is the styled button
             if (index === NavItemData.length - 1) {
@@ -151,7 +124,6 @@ const Navbar = () => {
               />
             )
           })}
->>>>>>> main
         </ul>
       </div>
       <div className="flex justify-between lg:hidden">
