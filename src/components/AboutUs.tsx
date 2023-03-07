@@ -13,16 +13,16 @@ export default function AboutUs() {
       <div className="flex flex-col gap-4">
         <h2 className="w-full text-xl text-accent">Sobre Nós</h2>
         <h1 className="text-3xl font-bold leading-10 text-secondary">
-          Nossa visão é contruir uma solução empresarial de sucesso.
+          Nossa visão é construir uma solução empresarial de sucesso.
         </h1>
         <p className="mb-8 leading-7 text-description/70">
           Um processo de desenvolvimento bem estruturado é crucial para criar
-          produtos que as adoram. CEOS tem um processo de desenvolvimento
+          produtos que as adoram. A CEOS tem um processo de desenvolvimento
           rigoroso que inclui um desenvolvimento dirigido por testes.
         </p>
         <ButtonWithArrow
           className="lg:max-w-[300px]"
-          href="/about-us"
+          href="/sobre-nos"
           name="Saiba mais"
         />
       </div>
