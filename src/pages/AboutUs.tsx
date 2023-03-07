@@ -1,9 +1,9 @@
-import { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import OurTeam from "../components/OurTeam/OurTeam";
+import { NextPage } from "next"
+import Head from "next/head"
+import Image from "next/image"
+import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
+import OurTeam from "../components/OurTeam/OurTeam"
 
 const AboutUs: NextPage = () => {
   return (
@@ -119,7 +119,7 @@ const AboutUs: NextPage = () => {
             </div>
           </div>
         </section>
-        <OurTeam/>
+        <OurTeam />
         <Footer />
       </main>
     </div>
