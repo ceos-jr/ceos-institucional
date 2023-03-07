@@ -16,7 +16,7 @@ export default function Hero() {
           </p>
           <ButtonWithArrow
             name="Inicie um projeto conosco"
-            href="fale-conosco"
+            href="#fale-conosco"
             className="w-full xl:w-3/5"
           />
         </div>
