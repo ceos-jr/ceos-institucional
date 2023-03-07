@@ -15,7 +15,7 @@ const NavItemData = [
   },
   {
     text: "Sobre nós",
-    url: "#sobre",
+    url: "#sobre-nos",
   },
   {
     text: "Objetivos",
@@ -27,7 +27,7 @@ const NavItemData = [
   },
   {
     text: "Fale conosco",
-    url: "#faleconosco",
+    url: "#fale-conosco",
   },
 ]
 
@@ -39,19 +39,27 @@ interface NavItemProps {
 const NavItem = ({ text, url }: NavItemProps) => {
   return (
     <li className="transition-all duration-75 ease-linear hover:scale-110">
-      <a className="text-lg" href={url}>
-        {text}
-      </a>
-    </li>
+       <Link
+        className="text-lg"
+        href={url}
+        scroll={false}
+      >
+        {text} 
+       </Link>
+     </li>
   )
 }
 
 const NavItemMobile = ({ text, url }: NavItemProps) => {
   return (
     <li className="w-full text-gray-800 border-b border-gray-200 transition-colors duration-300 ease-in hover:text-primary">
-      <a href={url} className="block py-4 w-full text-center">
+      <Link
+        className="block py-4 w-full text-center"
+        href={url}
+        scroll={false}
+      >
         {text}
-      </a>
+      </Link>
     </li>
   )
 }
@@ -111,7 +119,9 @@ const Navbar = () => {
                   className="bg-white border-2 border-[#FF9100] rounded-md py-2 px-4 transition-all duration-100 text-base hover:bg-[#FF9100] hover:scale-110 hover:text-white"
                   key={item.url + item.text}
                 >
-                  <a href={item.url}>{item.text}</a>
+                 <Link href={item.url}>
+                    {item.text} 
+                  </Link>  
                 </button>
               )
             }
@@ -128,7 +138,7 @@ const Navbar = () => {
       </div>
       <div className="flex justify-between lg:hidden">
         <Link href="/">
-          <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
+          <Image src="/images/ceos_logo.svg" alt="logo da ceos" width={150} height={120} />
         </Link>
         <button
           className="py-2 px-2 text-2xl rounded transition-colors lg:hidden hover:text-primary"
