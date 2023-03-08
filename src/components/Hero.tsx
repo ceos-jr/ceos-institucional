@@ -21,7 +21,12 @@ export default function Hero() {
           />
         </div>
         <div className="relative w-full xl:w-4/5 aspect-square">
-          <Image src="/images/Hero/hero_people.svg" alt="hero image" fill />
+          <Image
+            src="/images/Hero/hero_people.svg"
+            alt="hero image"
+            fill
+            priority
+          />
         </div>
         <div className="hidden relative col-span-full place-self-end w-3/5 h-16 md:inline-block">
           <Image src="/images/Hero/parceiros.svg" alt="parceiros image" fill />
