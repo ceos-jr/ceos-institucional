@@ -1,4 +1,59 @@
+import { useState, ChangeEvent, FocusEvent } from "react"
 import Image from "next/image"
+
+interface ContactFormData {
+  name: string
+  phone: string
+  email: string
+  message: string
+}
+
+interface Validation {
+  isValid: boolean
+  errorReason: string
+}
+
+interface InputValidation {
+  name: Validation
+  email: Validation
+  phone: Validation
+  message: Validation
+}
+
+const DEFAULT_FORM_DATA = {
+  name: "",
+  phone: "",
+  email: "",
+  message: "",
+}
+
+const DEFAULT_VALIDATION = {
+  name: {
+    isValid: true,
+    errorReason: "",
+  },
+  email: {
+    isValid: true,
+    errorReason: "",
+  },
+  phone: {
+    isValid: true,
+    errorReason: "",
+  },
+  message: {
+    isValid: true,
+    errorReason: "",
+  },
+}
+
+const PATTERN = /^([1-9]{2}\s?)?[9]?\d{4}(-|\s)?\d{4}$/
+
+const checkInputPattern = (str: string, field: string): boolean => {
+  if (field === "phone") {
+    return PATTERN.test(str) || str.trim() === ""
+  }
+  return true
+}
 
 const ErrorMessage = ({ id, msg }: { id: string; msg: string }) => {
   return (
@@ -7,7 +62,72 @@ const ErrorMessage = ({ id, msg }: { id: string; msg: string }) => {
     </span>
   )
 }
-export default function ContactUs() {
+
+export default function Twu() {
+  const [formData, setFormData] = useState<ContactFormData>(DEFAULT_FORM_DATA)
+  const [validation, setValidation] =
+    useState<InputValidation>(DEFAULT_VALIDATION)
+
+  const AreInputsValid = Object.values(validation).every(
+    (item) => item.isValid === true
+  )
+
+  const handleFocusOut = (
+    e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const target = e.target
+    const { name, value, required } = target
+    const patternValid = checkInputPattern(value, name)
+    const lengthValid = required
+      ? value.trim().length === 0
+        ? false
+        : true
+      : true
+    const errorReason = lengthValid
+      ? patternValid
+        ? ""
+        : "Campo não obedece ao padrão"
+      : "Campo obrigatório"
+
+    setValidation((previous) => {
+      return {
+        ...previous,
+        [name]: {
+          isValid: lengthValid && patternValid,
+          errorReason: errorReason,
+        },
+      }
+    })
+  }
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const target = e.target
+
+    if (target.name === "phone") {
+      const patternValid = checkInputPattern(target.value, target.name)
+      const errorReason = patternValid ? "" : "Campo não obedece ao padrão"
+
+      setValidation((previous) => {
+        return {
+          ...previous,
+          [target.name]: {
+            isValid: patternValid,
+            errorReason: errorReason,
+          },
+        }
+      })
+    }
+
+    setFormData((previous) => {
+      return {
+        ...previous,
+        [target.name]: target.value,
+      }
+    })
+  }
+
   return (
     <section
       className="grid grid-cols-1 gap-8 place-items-center md:grid-cols-2 container-wrapper"
@@ -40,45 +160,97 @@ export default function ContactUs() {
                 type="text"
                 id="name"
                 name="name"
-                aria-invalid={false}
-                aria-errormessage="name-error"
-                className={`form-input ${true ? "form-input-error" : ""}`}
+                onChange={handleChange}
+                onBlur={handleFocusOut}
+                value={formData.name}
+                aria-invalid={!validation.name.isValid}
+                aria-errormessage={validation.name.errorReason}
+                className={`form-input ${
+                  !validation.name.isValid ? "form-input-error" : ""
+                }`}
+                required
               />
-              <ErrorMessage id="name-error" msg="Handle me" />
+              {!validation.name.isValid && (
+                <ErrorMessage
+                  id="name-error"
+                  msg={validation.name.errorReason}
+                />
+              )}
             </div>
             <div className="w-full">
               <input
-                placeholder="85 12345678"
-                type="text"
+                placeholder="85 987654321"
+                type="tel"
                 id="tel"
-                name="tel"
-                className={`form-input ${false ? "form-input-error" : ""}`}
+                name="phone"
+                onChange={handleChange}
+                onBlur={handleFocusOut}
+                value={formData.phone}
+                aria-invalid={!validation.phone.isValid}
+                aria-errormessage={validation.phone.errorReason}
+                className={`form-input ${
+                  !validation.phone.isValid ? "form-input-error" : ""
+                }`}
               />
+              {!validation.phone.isValid && (
+                <ErrorMessage
+                  id="phone-error"
+                  msg={validation.phone.errorReason}
+                />
+              )}
             </div>
           </div>
           <div>
             <input
               placeholder="marcelojr@gmail.com"
-              type="text"
+              type="email"
               id="email"
               name="email"
-              className={`form-input ${false ? "form-input-error" : ""}`}
+              onChange={handleChange}
+              onBlur={handleFocusOut}
+              value={formData.email}
+              aria-invalid={!validation.email.isValid}
+              aria-errormessage={validation.email.errorReason}
+              className={`form-input ${
+                !validation.email.isValid ? "form-input-error" : ""
+              }`}
+              required
             />
+            {!validation.email.isValid && (
+              <ErrorMessage
+                id="email-error"
+                msg={validation.email.errorReason}
+              />
+            )}
           </div>
           <div>
             <textarea
               placeholder="Mensagem"
               id="message"
               name="message"
-              className={`form-input ${false ? "form-input-error" : ""}`}
+              onChange={handleChange}
+              onBlur={handleFocusOut}
+              value={formData.message}
+              aria-invalid={!validation.message.isValid}
+              aria-errormessage={validation.message.errorReason}
+              className={`form-input ${
+                !validation.message.isValid ? "form-input-error" : ""
+              }`}
+              required
             />
+            {!validation.email.isValid && (
+              <ErrorMessage
+                id="message-error"
+                msg={validation.email.errorReason}
+              />
+            )}
           </div>
           <button
             type="submit"
             className={`py-3 px-4 mt-4 text-white rounded-lg transition-all ${
-              true ? "bg-gray-500" : "bg-accent hover:scale-105"
+              AreInputsValid ? "bg-accent hover:scale-105" : "bg-gray-500"
             }`}
-            disabled={true}
+            disabled={!AreInputsValid ? true : false}
           >
             Enviar
           </button>

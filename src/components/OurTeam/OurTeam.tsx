@@ -1,7 +1,75 @@
 import Carousel from "../Carousel/Carousel"
 import CarouselSlide from "../Carousel/CarouselSlide"
-import MemberCard from "./MemberCard"
+import MemberCard, { TeamCardProps } from "./MemberCard"
 import useWindowSize from "../../hooks/useWindowSize"
+
+const members: TeamCardProps[] = [
+  {
+    name: "Lucas Braide",
+    role: "Presidente da CEOS",
+    linkedinURL: "https://www.linkedin.com/in/lucas-braide-70a8b5206",
+    memberImg: "/images/OurTeam/luquitas.jpeg",
+    memberImgAlt: "Presidente Lucas",
+  },
+  {
+    name: "Said Rodrigues",
+    role: "Diretor de Projetos",
+    linkedinURL: "https://www.linkedin.com/in/said-rodrigues-752316149/",
+    memberImg: "/images/OurTeam/saido.jpeg",
+    memberImgAlt: "Diretor Said",
+  },
+  {
+    name: "Marcelo Marques",
+    role: "Diretor de Pessoas e Processos",
+    memberImg: "/images/OurTeam/marcelinhopfvrfunciona.jpeg",
+    memberImgAlt: "Diretor Marcelinho",
+    linkedinURL: "https://www.linkedin.com/in/marcelo-marques-27a9a7267/",
+  },
+  {
+    name: "Enzo Lozano",
+    role: "Gerente de Marketing",
+    memberImg: "/images/OurTeam/enzo.jpeg",
+    memberImgAlt: "Diretor Enzo",
+    linkedinURL: "https://www.linkedin.com/in/enzo-lozano-abreu-3886b01bb/",
+  },
+  {
+    name: "Julia Naomi",
+    role: "Gerente Admin-Financeira",
+    memberImg: "/images/OurTeam/juia.jpeg",
+    memberImgAlt: "Gerente Naomi",
+    linkedinURL:
+      "https://www.linkedin.com/in/julia-naomi-takihi-makiyama-1a4540257",
+  },
+  {
+    name: "Luiz Gustavo",
+    role: "Gerente de Projetos",
+    memberImg: "/images/OurTeam/lg.jpeg",
+    memberImgAlt: "Gerente Luiz Gustavo",
+    linkedinURL:
+      "https://www.linkedin.com/in/luiz-gustavo-marques-costa-790297217/",
+  },
+  {
+    name: "Victoria de Castro",
+    role: "Gerente de Pessoas",
+    memberImg: "/images/OurTeam/vivi.jpeg",
+    memberImgAlt: "Gerente Victoria",
+    linkedinURL: "https://www.linkedin.com/in/victoria-de-castro-19ba5a242",
+  },
+  {
+    name: "Alan Cabral",
+    role: "Membro efetivo da CEOS",
+    memberImg: "/images/OurTeam/alan.jpeg",
+    memberImgAlt: "Membro da área Administrativa-Financeira, Alan",
+    linkedinURL: "https://www.linkedin.com/in/alan-carneiro-cabral-39035024a/",
+  },
+  {
+    name: "Jonathan Aires",
+    role: "Membro efetivo da CEOS",
+    memberImg: "/images/OurTeam/john.jpeg",
+    memberImgAlt: "Membro da área de Projetos, Jonathan",
+    linkedinURL: "http://www.linkedin.com/in/jonathan-aires-2258a1268",
+  },
+]
 
 const OurTeam = () => {
   const { width } = useWindowSize()
@@ -16,73 +84,22 @@ const OurTeam = () => {
       }
       id="nosso-time"
     >
-      <div className="container-wrapper py-8 flex flex-col">
-        <h3 className="text-accent text-xl mb-4 md:mb-0 z-10">Nosso Time</h3>
-        <h2 className="text-[#0E0E5E] text-3xl max-w-[45ch] font-semibold leading-10 z-10">
+      <div className="flex flex-col py-8 container-wrapper">
+        <h3 className="z-10 mb-4 text-xl md:mb-0 text-accent">Nosso Time</h3>
+        <h2 className="z-10 text-3xl font-semibold leading-10 text-secondary max-w-[45ch]">
           Somos uma pequena equipe de contadores de histórias, pensadores e
           solucionadores de problemas.
         </h2>
         <Carousel show={slidesCount}>
-          <CarouselSlide
-            className="flex justify-center items-center w-[87%] md:w-1/2 lg:w-1/3 xl:w-1/4"
-            position={0}
-          >
-            <MemberCard
-              name="Billy C. Weisz"
-              role="Owner & CEO"
-              memberImg="/images/OurTeam/man-01.png"
-              memberImgAlt="Company's CEO picture"
-              facebookURL="#"
-              twitterURL="#"
-              linkedinURL="#"
-              instagramURL="#"
-            />
-          </CarouselSlide>
-          <CarouselSlide
-            className="flex justify-center items-center w-[87%] md:w-1/2 lg:w-1/3 xl:w-1/4"
-            position={1}
-          >
-            <MemberCard
-              name="Thomas E. Vegas"
-              role="Senior Officer"
-              memberImg="/images/OurTeam/man-02.png"
-              memberImgAlt="Company's Senior Officer"
-              facebookURL="#"
-              twitterURL="#"
-              linkedinURL="#"
-              instagramURL="#"
-            />
-          </CarouselSlide>
-          <CarouselSlide
-            className="flex justify-center items-center w-[87%] md:w-1/2 lg:w-1/3 xl:w-1/4"
-            position={2}
-          >
-            <MemberCard
-              name="Laurie E. Stearns"
-              role="Marketing Officer"
-              memberImg="/images/OurTeam/woman-01.png"
-              memberImgAlt="Company's Marketing Officer 1"
-              facebookURL="#"
-              twitterURL="#"
-              linkedinURL="#"
-              instagramURL="#"
-            />
-          </CarouselSlide>
-          <CarouselSlide
-            className="flex justify-center items-center w-[87%] md:w-1/2 lg:w-1/3 xl:w-1/4"
-            position={3}
-          >
-            <MemberCard
-              name="Nancy D. Simpson"
-              role="Marketing Officer"
-              memberImg="/images/OurTeam/woman-02.png"
-              memberImgAlt="Company's Marketing Officer 2"
-              facebookURL="#"
-              twitterURL="#"
-              linkedinURL="#"
-              instagramURL="#"
-            />
-          </CarouselSlide>
+          {members.map((member, index) => (
+            <CarouselSlide
+              className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+              key={member.name}
+              position={index}
+            >
+              <MemberCard {...member} />
+            </CarouselSlide>
+          ))}
         </Carousel>
       </div>
     </section>

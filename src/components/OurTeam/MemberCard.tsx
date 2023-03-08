@@ -1,20 +1,12 @@
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
-  FaInstagram,
-} from "react-icons/fa"
+import { FaLinkedinIn } from "react-icons/fa"
 import Image from "next/image"
 
-interface TeamCardProps {
+export interface TeamCardProps {
   name: string
   role: string
   memberImg: string
   memberImgAlt: string
-  facebookURL: string
-  twitterURL: string
   linkedinURL: string
-  instagramURL: string
 }
 
 const TeamCard = ({
@@ -22,10 +14,7 @@ const TeamCard = ({
   role,
   memberImg,
   memberImgAlt,
-  facebookURL,
-  twitterURL,
   linkedinURL,
-  instagramURL,
 }: TeamCardProps) => {
   return (
     <div className="flex flex-col items-center py-10 bg-white rounded-xl transition-transform duration-300 ease-out hover:scale-105 w-[17rem] h-[23.5rem]">
@@ -42,41 +31,11 @@ const TeamCard = ({
         <li className="rounded-xl group/item">
           <a
             className="block py-2 px-2 rounded-xl border transition-colors duration-300 ease-in border-primary group-hover/item:bg-primary"
-            href={facebookURL}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaFacebookF className="text-sm transition-colors duration-300 ease-in text-primary group-hover/item:text-white" />
-          </a>
-        </li>
-        <li className="rounded-xl group/item">
-          <a
-            className="block py-2 px-2 rounded-xl border transition-colors duration-300 ease-in border-primary group-hover/item:bg-primary"
-            href={twitterURL}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaTwitter className="text-sm transition-colors duration-300 ease-in text-primary group-hover/item:text-white" />
-          </a>
-        </li>
-        <li className="rounded-xl group/item">
-          <a
-            className="block py-2 px-2 rounded-xl border transition-colors duration-300 ease-in border-primary group-hover/item:bg-primary"
             href={linkedinURL}
             target="_blank"
             rel="noreferrer"
           >
-            <FaLinkedinIn className="text-sm transition-colors duration-300 ease-in text-primary group-hover/item:text-white" />
-          </a>
-        </li>
-        <li className="rounded-xl group/item">
-          <a
-            className="block py-2 px-2 rounded-xl border transition-colors duration-300 ease-in border-primary group-hover/item:bg-primary"
-            href={instagramURL}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaInstagram className="text-sm transition-colors duration-300 ease-in text-primary group-hover/item:text-white" />
+            <FaLinkedinIn className="text-2xl transition-colors duration-300 ease-in text-primary group-hover/item:text-white" />
           </a>
         </li>
       </ul>
