@@ -37,8 +37,9 @@ const AboutUs: NextPage = () => {
               className="object-cover min-h-[18.75rem] max-h-[35rem] 2xl:max-w-[1536px]"
               src="/images/team.jpg"
               alt="membros da ceos"
-              width={1920}
-              height={100}
+              width={1900}
+              height={800}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 2000px"
               priority
             />
             <div
