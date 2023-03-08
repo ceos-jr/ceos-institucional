@@ -1,6 +1,4 @@
-import {
-  FaLinkedinIn,
-} from "react-icons/fa"
+import { FaLinkedinIn } from "react-icons/fa"
 import Image from "next/image"
 
 interface TeamCardProps {
@@ -17,7 +15,6 @@ const TeamCard = ({
   memberImg,
   memberImgAlt,
   linkedinURL,
-  
 }: TeamCardProps) => {
   return (
     <div className="flex flex-col items-center py-10 bg-white rounded-xl transition-transform duration-300 ease-out hover:scale-105 w-[17rem] h-[23.5rem]">
