@@ -3,6 +3,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import TeamImage from "../../public/images/team.jpg"
 
 const navbarData = [
   {
@@ -31,22 +32,23 @@ const AboutUs: NextPage = () => {
       </Head>
       <main className="w-full min-h-screen">
         <Navbar navbarData={navbarData} />
-
         <section className="pb-8">
           <div className="flex flex-col items-center h-full">
             <Image
-              className="min-h-[18.75rem] max-h-[35rem] 2xl:max-w-[1536px] object-cover"
-              src="/images/imagemtime.jpg"
+              className="object-cover min-h-[18.75rem] max-h-[35rem] 2xl:max-w-[1536px]"
+              src={TeamImage}
               alt="membros da ceos"
               width={1920}
               height={100}
+              placeholder="blur"
+              priority
             />
             <div
-              className="container-wrapper flex flex-col gap-8 py-8 px-4"
+              className="flex flex-col gap-8 py-8 px-4 container-wrapper"
               id="quem-somos"
             >
-              <h1 className="text-4xl text-secondary font-bold">Quem Somos</h1>
-              <p className="text-description leading-8 opacity-70">
+              <h1 className="text-4xl font-bold text-secondary">Quem Somos</h1>
+              <p className="leading-8 opacity-70 text-description">
                 Fundada em 1997, a Ceos é a Empresa Júnior do curso de Ciência
                 da Computação da Universidade Federal do Ceará - UFC. Sempre
                 focados na excelência e guiados por nosso lema O céu é o limite,
@@ -60,10 +62,10 @@ const AboutUs: NextPage = () => {
                 responsabilidade social.
               </p>
               <div>
-                <h2 className="text-2xl text-secondary font-bold mb-4">
+                <h2 className="mb-4 text-2xl font-bold text-secondary">
                   Nossa Missão é:
                 </h2>
-                <p className="text-accent font-bold leading-8 opacity-70">
+                <p className="font-bold leading-8 opacity-70 text-accent">
                   Transformar, em código, grandes histórias
                 </p>
               </div>
@@ -72,19 +74,19 @@ const AboutUs: NextPage = () => {
         </section>
 
         <section className="py-8 lg:pb-16" id="nossos-valores">
-          <div className="container-wrapper flex flex-col">
-            <h3 className="text-xl text-accent font-semibold mb-2">
+          <div className="flex flex-col container-wrapper">
+            <h3 className="mb-2 text-xl font-semibold text-accent">
               Nossos valores
             </h3>
-            <h2 className="text-4xl text-secondary font-bold mb-12">
+            <h2 className="mb-12 text-4xl font-bold text-secondary">
               Por que confiar na CEOS?
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:gap-12">
               <div>
-                <h4 className="text-xl text-accent font-semibold mb-4">
+                <h4 className="mb-4 text-xl font-semibold text-accent">
                   Trabalho em Equipe
                 </h4>
-                <p className="text-description leading-8 opacity-70">
+                <p className="leading-8 opacity-70 text-description">
                   O trabalho em equipe um valor essencial para alcançar
                   resultados de alta qualidade. Nos acreditamos que a
                   colaboração entre membros de diferentes habilidades e
@@ -96,10 +98,10 @@ const AboutUs: NextPage = () => {
               </div>
 
               <div>
-                <h4 className="text-xl text-accent font-semibold mb-4">
+                <h4 className="mb-4 text-xl font-semibold text-accent">
                   Resiliência
                 </h4>
-                <p className="text-description leading-8 opacity-70">
+                <p className="leading-8 opacity-70 text-description">
                   A resiliência é um valor importante para alcançarmos nossos
                   objetivos, sabendo que enfrentaremos desafios ao longo do
                   caminho. Acreditamos que podemos superar obstáculos com
@@ -109,10 +111,10 @@ const AboutUs: NextPage = () => {
               </div>
 
               <div>
-                <h4 className="text-xl text-accent font-semibold mb-4">
+                <h4 className="mb-4 text-xl font-semibold text-accent">
                   Disciplina
                 </h4>
-                <p className="text-description leading-8 opacity-70">
+                <p className="leading-8 opacity-70 text-description">
                   A disciplina é um valor fundamental que guia nosso trabalho
                   diário, pois acreditamos que ela é essencial para alcançarmos
                   nossos objetivos e mantermos a excelência em tudo o que
@@ -123,10 +125,10 @@ const AboutUs: NextPage = () => {
               </div>
 
               <div>
-                <h4 className="text-xl text-accent font-semibold mb-4">
+                <h4 className="mb-4 text-xl font-semibold text-accent">
                   Transparência
                 </h4>
-                <p className="text-description leading-8 opacity-70">
+                <p className="leading-8 opacity-70 text-description">
                   A transparência um valor crucial em nossas interações internas
                   e externas, pois acreditamos que a honestidade e a comunicação
                   clara são essenciais para construir relações de confiança e
