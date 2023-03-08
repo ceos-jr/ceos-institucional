@@ -175,7 +175,7 @@ const Carousel = ({
         <button
           onClick={moveToPrev}
           className={`
-            hidden md:block absolute outline-0 text-3xl text-primary bottom-1/2 left-2 
+            hidden sm:block absolute outline-0 text-3xl text-primary bottom-1/2 left-2 
             [transition:_color_300ms_ease-out_transform_300ms_ease-out] z-10
             hover:text-accent hover:scale-[1.2] 
             focus:text-accent focus:scale-[1.2]
@@ -188,7 +188,7 @@ const Carousel = ({
         <button
           onClick={moveToNext}
           className={`
-            hidden md:block absolute outline-0 text-3xl text-primary bottom-1/2 right-2 
+            hidden sm:block absolute outline-0 text-3xl text-primary bottom-1/2 right-2 
             [transition:_color_300ms_ease-out_transform_300ms_ease-out] z-10
             hover:text-accent hover:scale-[1.2] 
             focus:text-accent focus:scale-[1.2]
