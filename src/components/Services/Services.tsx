@@ -21,11 +21,11 @@ const ServicesCard = ({
   Icon,
 }: ServicesCardProps) => {
   return (
-    <div className="flex flex-col gap-6 py-12 px-8 rounded-xl shadow-2xl transition-all duration-500 hover:text-white w-[280px] bg-slate-100 h-[340px] group text-description hover:shadow-blue-800/70 hover:bg-primary">
-      <div className="w-min bg-gray-300 rounded-full transition-colors group-hover:text-white text-primary group-hover:bg-white/20">
+    <div className="relative group flex flex-col gap-6 py-12 px-8 rounded-xl transition-all duration-500 hover:text-white w-[280px] bg-slate-100 h-[340px] text-description hover:shadow-blue-800/70 hover:bg-primary scale-100 hover:scale-105 hover:shadow-xl ">
+      <div className="w-min bg-gray-300 rounded-full transition-colors group-hover:text-white text-primary group-hover:bg-white/20 group-hover: scale-125">
         <Icon
           size="3rem"
-          className="p-2.5 transition-colors group-hover:text-white text-primary"
+          className="p-2.5 transition-colors group-hover:text-white text-primary  "
         />
       </div>
       <h1 className="text-lg font-bold">{title}</h1>
@@ -35,10 +35,10 @@ const ServicesCard = ({
           pathname: "/fale-conosco",
           query: { service: kind },
         }}
-        className="flex gap-2 items-center text-sm font-semibold transition-colors group-hover:text-white text-accent"
+        className="flex absolute bottom-5 gap-2text-sm font-semibold transition-colors group-hover:text-white text-accent"
       >
         Solicite um Orçamento
-        <HiArrowNarrowRight size="1.5rem" />
+        <HiArrowNarrowRight size="1.5rem" className="" />
       </Link>
     </div>
   )
@@ -49,28 +49,28 @@ const services: ServicesCardProps[] = [
     title: "Sites Institucionais",
     kind: "institucional",
     description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+      "Criamos sites modernos para divulgar os serviços, os produtos e a missão da sua empresa!                     ",
     Icon: FaGlobe,
   },
   {
     title: "Sistemas Web",
     kind: "sistema",
     description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+      "Elaboramos um sistema web personalizado para que você otimize processos e aumente a produtividade da sua organização.",
     Icon: FaDesktop,
   },
   {
     title: "E-commerce",
     kind: "ecommerce",
     description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+      "Facilitamos a gestão e a logística da sua empresa com transações comerciais online.",
     Icon: FaDonate,
   },
   {
     title: "Assessoria de Sites",
     kind: "assessoria",
     description:
-      "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+      "Identificamos os seus problemas e participamos diretamente nos processos operacionais para resolvê-los.",
     Icon: FaHandsHelping,
   },
 ]
@@ -79,10 +79,10 @@ export default function Services() {
   const { width } = useWindowSize()
 
   const slidesCount =
-    width >= 1200 ? 4 : width >= 1024 ? 3 : width >= 768 ? 2 : 1
+    width >= 1200 ? 4 : width >= 1024 ? 3 : width >= 768 ? 2 : 1.15
 
   return (
-    <section>
+    <section id="servicos">
       <div className="container-wrapper">
         <div className="flex flex-col gap-4 text-secondary">
           <h2 className="text-xl text-accent">Serviços</h2>
@@ -98,7 +98,7 @@ export default function Services() {
         <Carousel show={slidesCount}>
           {services.map((service, index) => (
             <CarouselSlide
-              className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+              className="flex justify-center items-center w-[87%] md:w-1/2 lg:w-1/3 xl:w-1/4"
               position={index}
               key={`service-${service.title}`}
             >
