@@ -67,7 +67,7 @@ const Navbar = () => {
 
       // If the scroll is locked, don't hide the navbar
       // scrollBarCompensation == 0 mean scroll unlocked
-      if (scrollBarCompensation !== 0) return;
+      if (scrollBarCompensation !== 0) return
 
       if (heightRef.current - currentHeight < 0) {
         setShow(false)
