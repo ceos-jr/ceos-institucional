@@ -1,8 +1,5 @@
 import {
-  FaFacebookF,
-  FaTwitter,
   FaLinkedinIn,
-  FaInstagram,
 } from "react-icons/fa"
 import Image from "next/image"
 
@@ -11,10 +8,7 @@ interface TeamCardProps {
   role: string
   memberImg: string
   memberImgAlt: string
-  facebookURL: string
-  twitterURL: string
   linkedinURL: string
-  instagramURL: string
 }
 
 const TeamCard = ({
@@ -22,10 +16,8 @@ const TeamCard = ({
   role,
   memberImg,
   memberImgAlt,
-  facebookURL,
-  twitterURL,
   linkedinURL,
-  instagramURL,
+  
 }: TeamCardProps) => {
   return (
     <div className="flex flex-col items-center py-10 bg-white rounded-xl transition-transform duration-300 ease-out hover:scale-105 w-[17rem] h-[23.5rem]">

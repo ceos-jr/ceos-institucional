@@ -29,12 +29,9 @@ const OurTeam = () => {
             <MemberCard
               name="Lucas Braide"
               role="Presidente da CEOS"
-              memberImg="/images/OurTeam/man-01.png"
-              memberImgAlt="Company's CEO picture"
-              facebookURL="#"
-              twitterURL="#"
+              memberImg="/images/OurTeam/luquitas.jpeg"
+              memberImgAlt="Presidente Lucas"
               linkedinURL="https://www.linkedin.com/in/lucas-braide-70a8b5206"
-              instagramURL="#"
             />
           </CarouselSlide>
           <CarouselSlide
@@ -44,12 +41,9 @@ const OurTeam = () => {
             <MemberCard
               name="Said Rodrigues"
               role="Diretor de Projetos"
-              memberImg="/images/OurTeam/man-02.png"
-              memberImgAlt="Company's Senior Officer"
-              facebookURL="#"
-              twitterURL="#"
+              memberImg="/images/OurTeam/saido.jpeg"
+              memberImgAlt="Diretor Said"
               linkedinURL="https://www.linkedin.com/in/said-rodrigues-752316149/"
-              instagramURL="#"
             />
           </CarouselSlide>
           <CarouselSlide
@@ -59,12 +53,9 @@ const OurTeam = () => {
             <MemberCard
               name="Marcelo Marques"
               role="Diretor de Pessoas e Processos"
-              memberImg="/images/OurTeam/woman-01.png"
-              memberImgAlt="Company's Marketing Officer 1"
-              facebookURL="#"
-              twitterURL="#"
+              memberImg="/images/OurTeam/marcelinhopfvrfunciona.jpeg"
+              memberImgAlt="Diretor Marcelinho"
               linkedinURL="https://www.linkedin.com/in/marcelo-marques-27a9a7267/"
-              instagramURL="#"
             />
           </CarouselSlide>
           <CarouselSlide
@@ -74,12 +65,9 @@ const OurTeam = () => {
             <MemberCard
               name="Enzo Lozano"
               role="Gerente de Marketing"
-              memberImg="/images/OurTeam/woman-02.png"
-              memberImgAlt="Company's Marketing Officer 2"
-              facebookURL="#"
-              twitterURL="#"
+              memberImg="/images/OurTeam/enzo.jpeg"
+              memberImgAlt="Diretor Enzo"
               linkedinURL="https://www.linkedin.com/in/enzo-lozano-abreu-3886b01bb/"
-              instagramURL="#"
             />
           </CarouselSlide>
           <CarouselSlide
@@ -89,12 +77,9 @@ const OurTeam = () => {
             <MemberCard
               name="Julia Naomi"
               role="Gerente Admin-Financeira"
-              memberImg="/images/OurTeam/woman-01.png"
-              memberImgAlt="Company's Marketing Officer 1"
-              facebookURL="#"
-              twitterURL="#"
+              memberImg="/images/OurTeam/juia.jpeg"
+              memberImgAlt="Gerente Naomi"
               linkedinURL="https://www.linkedin.com/in/julia-naomi-takihi-makiyama-1a4540257"
-              instagramURL="#"
             />
           </CarouselSlide>
           <CarouselSlide
@@ -104,12 +89,9 @@ const OurTeam = () => {
             <MemberCard
               name="Luiz Gustavo"
               role="Gerente de Projetos"
-              memberImg="/images/OurTeam/woman-01.png"
-              memberImgAlt="Company's Marketing Officer 1"
-              facebookURL="#"
-              twitterURL="#"
-              linkedinURL="#"
-              instagramURL="#"
+              memberImg="/images/OurTeam/lg.jpeg"
+              memberImgAlt="Gerente Luiz Gustavo"
+              linkedinURL="https://www.linkedin.com/in/luiz-gustavo-marques-costa-790297217/"
             />
           </CarouselSlide>
           <CarouselSlide
@@ -119,12 +101,9 @@ const OurTeam = () => {
             <MemberCard
               name="Victoria de Castro"
               role="Gerente de Pessoas"
-              memberImg="/images/OurTeam/woman-01.png"
-              memberImgAlt="Company's Marketing Officer 1"
-              facebookURL="#"
-              twitterURL="#"
-              linkedinURL="#"
-              instagramURL="#"
+              memberImg="/images/OurTeam/vivi.jpeg"
+              memberImgAlt="Gerente Victoria"
+              linkedinURL="https://www.linkedin.com/in/victoria-de-castro-19ba5a242"
             />
           </CarouselSlide>
           <CarouselSlide
@@ -134,12 +113,9 @@ const OurTeam = () => {
             <MemberCard
               name="Alan Cabral"
               role="Membro efetivo da CEOS"
-              memberImg="/images/OurTeam/woman-01.png"
-              memberImgAlt="Company's Marketing Officer 1"
-              facebookURL="#"
-              twitterURL="#"
+              memberImg="/images/OurTeam/alan.jpeg"
+              memberImgAlt="Membro da área Administrativa-Financeira, Alan"
               linkedinURL="https://www.linkedin.com/in/alan-carneiro-cabral-39035024a/"
-              instagramURL="#"
             />
           </CarouselSlide>
           <CarouselSlide
@@ -149,12 +125,9 @@ const OurTeam = () => {
             <MemberCard
               name="Jonathan Aires"
               role="Membro efetivo da CEOS"
-              memberImg="/images/OurTeam/woman-01.png"
-              memberImgAlt="Company's Marketing Officer 1"
-              facebookURL="#"
-              twitterURL="#"
-              linkedinURL="#"
-              instagramURL="#"
+              memberImg="/images/OurTeam/john.jpeg"
+              memberImgAlt="Membro da área de Projetos, Jonathan"
+              linkedinURL="http://www.linkedin.com/in/jonathan-aires-2258a1268"
             />
           </CarouselSlide>
         </Carousel>
