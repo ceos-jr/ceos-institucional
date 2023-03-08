@@ -1,7 +1,7 @@
 import { FaLinkedinIn } from "react-icons/fa"
 import Image from "next/image"
 
-interface TeamCardProps {
+export interface TeamCardProps {
   name: string
   role: string
   memberImg: string
