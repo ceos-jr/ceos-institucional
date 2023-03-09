@@ -3,7 +3,7 @@ import ButtonWithArrow from "./layout/ButtonWithArrow"
 
 export default function Hero() {
   return (
-    <section>
+    <section id="hero">
       <div className="grid grid-cols-1 gap-5 place-items-center py-10 md:grid-cols-2 container-wrapper">
         <div className="flex z-10 flex-col gap-8">
           <h1 className="text-4xl font-bold lg:text-6xl lg:leading-snug text-secondary">

@@ -89,12 +89,18 @@ const Navbar = ({ navbarData }: NavbarProps) => {
             // The last item is the styled button
             if (index === navbarData.length - 1) {
               return (
-                <button
-                  className="bg-white border-2 border-[#FF9100] rounded-md py-2 px-4 transition-all duration-100 text-base hover:bg-[#FF9100] hover:scale-110 hover:text-white"
+                <li
+                  className="text-base text-center bg-white rounded-md border-2 transition-all duration-100 hover:text-white hover:scale-110 border-accent hover:bg-accent"
                   key={item.url + item.text}
                 >
-                  <Link href={item.url}>{item.text}</Link>
-                </button>
+                  <Link
+                    href={item.url}
+                    scroll={false}
+                    className="block py-2 px-4 w-full h-full"
+                  >
+                    {item.text}
+                  </Link>
+                </li>
               )
             }
 
