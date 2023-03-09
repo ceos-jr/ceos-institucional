@@ -4,45 +4,41 @@ import { useState, useRef, useEffect } from "react"
 import { RxCross2, RxHamburgerMenu } from "react-icons/rx"
 import useScrollLock from "../hooks/useScrollLock"
 
-const NavItemData = [
-  {
-    text: "Início",
-    url: "#",
-  },
-  {
-    text: "Sobre nós",
-    url: "#",
-  },
-  {
-    text: "Portfólio",
-    url: "#",
-  },
-  {
-    text: "Blog",
-    url: "#",
-  },
-  {
-    text: "Fale conosco",
-    url: "#",
-  },
-]
+export type NavItemData = {
+  text: string
+  url: string
+}
 
 interface NavItemProps {
   text: string
   url: string
 }
 
-const NavItemMobile = ({ text, url }: NavItemProps) => {
+interface NavbarProps {
+  navbarData: NavItemData[]
+}
+
+const NavItem = ({ text, url }: NavItemProps) => {
   return (
-    <li className="w-full text-gray-800 border-b border-gray-200 transition-colors duration-300 ease-in hover:text-primary">
-      <a href={url} className="block py-4 w-full text-center">
+    <li className="transition-all duration-75 ease-linear hover:scale-110">
+      <Link className="text-lg" href={url} scroll={false}>
         {text}
-      </a>
+      </Link>
     </li>
   )
 }
 
-const Navbar = () => {
+const NavItemMobile = ({ text, url }: NavItemProps) => {
+  return (
+    <li className="w-full text-gray-800 border-b border-gray-200 transition-colors duration-300 ease-in hover:text-primary">
+      <Link className="block py-4 w-full text-center" href={url} scroll={false}>
+        {text}
+      </Link>
+    </li>
+  )
+}
+
+const Navbar = ({ navbarData }: NavbarProps) => {
   const [show, setShow] = useState(true)
   const { lockScroll, unlockScroll, scrollBarCompensation } = useScrollLock()
   const heightRef = useRef(0)
@@ -89,36 +85,43 @@ const Navbar = () => {
           <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
         </Link>
         <ul className="flex flex-row gap-x-8 items-center py-0 px-4 ml-auto">
-          <li className="transition-all duration-75 ease-linear hover:scale-110">
-            <a className="text-lg" href="#">
-              Início
-            </a>
-          </li>
-          <li className="transition-all duration-75 ease-linear hover:scale-110">
-            <a className="text-lg" href="#">
-              Sobre nós
-            </a>
-          </li>
-          <li className="transition-all duration-75 ease-linear hover:scale-110">
-            <a className="text-lg" href="#">
-              Portfólio
-            </a>
-          </li>
-          <li className="transition-all duration-75 ease-linear hover:scale-110">
-            <a className="text-lg" href="#">
-              Blog
-            </a>
-          </li>
-          <button className="bg-white border-2 border-[#FF9100] rounded-md py-2 px-4 transition-all duration-100 text-base hover:bg-[#FF9100] hover:scale-110 hover:text-white">
-            <a className="" href="#" rel="">
-              Fale conosco
-            </a>
-          </button>
+          {navbarData.map((item, index) => {
+            // The last item is the styled button
+            if (index === navbarData.length - 1) {
+              return (
+                <li
+                  className="text-base text-center bg-white rounded-md border-2 transition-all duration-100 hover:text-white hover:scale-110 border-accent hover:bg-accent"
+                  key={item.url + item.text}
+                >
+                  <Link
+                    href={item.url}
+                    scroll={false}
+                    className="block py-2 px-4 w-full h-full"
+                  >
+                    {item.text}
+                  </Link>
+                </li>
+              )
+            }
+
+            return (
+              <NavItem
+                key={item.url + item.text}
+                text={item.text}
+                url={item.url}
+              />
+            )
+          })}
         </ul>
       </div>
       <div className="flex justify-between lg:hidden">
         <Link href="/">
-          <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
+          <Image
+            src="/images/ceos_logo.svg"
+            alt="logo da ceos"
+            width={150}
+            height={120}
+          />
         </Link>
         <button
           className="py-2 px-2 text-2xl rounded transition-colors lg:hidden hover:text-primary"
@@ -136,7 +139,7 @@ const Navbar = () => {
             (open ? " translate-y-[29rem] opacity-100" : "")
           }
         >
-          {NavItemData.map((item) => {
+          {navbarData.map((item) => {
             return (
               <NavItemMobile
                 key={item.url + item.text}

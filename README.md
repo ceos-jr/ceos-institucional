@@ -2,6 +2,19 @@
 
 Site Institucional da CEOS feito com NextJS
 
+## Environment Variables e arquivos para rodar
+
+Algumas variáveis de ambiente serão necessárias para desenvolver por completo a aplicação como:
+
+- SHEET_ID: Ela o ID da planilha do Google Sheets
+  - Vc consegue ele com o link da planilha que possui acesso por uma Service Account, leia a documentacao na `/api/contact`
+- DISCORD_WEBHOOK_URL: O URL de Webhook do discord para mandar as notificacoes
+  - Para usar esse é necessário entrar no servidor do discord e criar um
+
+E outros arquivos que são necessário no projeto
+
+- sheets-key.json: Arquivo com as credenciais da Service Account da planilha, ele deve estar na raiz do projeto
+
 ## Desenvolver Localmente
 
 Para rodar localmente esse projeto utilize o comando `npm install` para installar as dependencias e `npm run dev` para rodar um servidor local

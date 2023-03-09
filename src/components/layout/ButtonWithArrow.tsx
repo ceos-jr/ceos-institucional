@@ -12,7 +12,11 @@ const ButtonWithArrow = ({ name, href, className }: ButtonWithArrowProps) => {
     <button
       className={`text-white shadow-lg bg-accent rounded-md transition-all hover:scale-105 ${className}`}
     >
-      <Link href={href} className="flex justify-between items-center py-3 px-4">
+      <Link
+        href={href}
+        scroll={false}
+        className="flex justify-between items-center py-3 px-4"
+      >
         <span className="font-semibold">{name}</span>
         <BsArrowRight className="text-3xl" />
       </Link>
