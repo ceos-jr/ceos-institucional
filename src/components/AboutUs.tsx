@@ -26,6 +26,7 @@ export default function AboutUs() {
           className="lg:max-w-[300px]"
           href="/sobre-nos"
           name="Saiba mais"
+          scroll={true}
         />
       </div>
     </section>
