@@ -1,8 +1,13 @@
 ---
-version: "3"
+version: "3.9"
 services:
   ceos:
     container_name: ceos-institucional
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 100M
     build:
       context: ./
     image: ceosjr/institucional:latest
