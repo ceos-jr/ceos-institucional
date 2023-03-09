@@ -82,7 +82,7 @@ const OurTeam = () => {
       className={
         "relative h-full w-full overflow-hidden before:absolute before:bg-[#F5F7FC] before:top-[0%] before:-left-[20%] before:w-[130%] before:h-[90%] before:rotate-[5deg]"
       }
-      id="membros"
+      id="nosso-time"
     >
       <div className="flex flex-col py-8 container-wrapper">
         <h3 className="z-10 mb-4 text-xl md:mb-0 text-accent">Nosso Time</h3>

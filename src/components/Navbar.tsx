@@ -4,36 +4,18 @@ import { useState, useRef, useEffect } from "react"
 import { RxCross2, RxHamburgerMenu } from "react-icons/rx"
 import useScrollLock from "../hooks/useScrollLock"
 
-const NavItemData = [
-  {
-    text: "Início",
-    url: "#",
-  },
-  {
-    text: "Serviços",
-    url: "#servicos",
-  },
-  {
-    text: "Sobre nós",
-    url: "#sobre-nos",
-  },
-  {
-    text: "Objetivos",
-    url: "#objetivos",
-  },
-  {
-    text: "Membros",
-    url: "#membros",
-  },
-  {
-    text: "Fale conosco",
-    url: "#fale-conosco",
-  },
-]
+type NavItemData = {
+  text: string
+  url: string
+}
 
 interface NavItemProps {
   text: string
   url: string
+}
+
+interface NavbarProps {
+  navbarData: NavItemData[]
 }
 
 const NavItem = ({ text, url }: NavItemProps) => {
@@ -56,7 +38,7 @@ const NavItemMobile = ({ text, url }: NavItemProps) => {
   )
 }
 
-const Navbar = () => {
+const Navbar = ({ navbarData }: NavbarProps) => {
   const [show, setShow] = useState(true)
   const { lockScroll, unlockScroll, scrollBarCompensation } = useScrollLock()
   const heightRef = useRef(0)
@@ -103,16 +85,22 @@ const Navbar = () => {
           <Image src="/images/ceos_logo.svg" alt="" width={150} height={120} />
         </Link>
         <ul className="flex flex-row gap-x-8 items-center py-0 px-4 ml-auto">
-          {NavItemData.map((item, index) => {
+          {navbarData.map((item, index) => {
             // The last item is the styled button
-            if (index === NavItemData.length - 1) {
+            if (index === navbarData.length - 1) {
               return (
-                <button
-                  className="bg-white border-2 border-[#FF9100] rounded-md py-2 px-4 transition-all duration-100 text-base hover:bg-[#FF9100] hover:scale-110 hover:text-white"
+                <li
+                  className="text-base text-center bg-white rounded-md border-2 transition-all duration-100 hover:text-white hover:scale-110 border-accent hover:bg-accent"
                   key={item.url + item.text}
                 >
-                  <Link href={item.url}>{item.text}</Link>
-                </button>
+                  <Link
+                    href={item.url}
+                    scroll={false}
+                    className="block py-2 px-4 w-full h-full"
+                  >
+                    {item.text}
+                  </Link>
+                </li>
               )
             }
 
@@ -151,7 +139,7 @@ const Navbar = () => {
             (open ? " translate-y-[29rem] opacity-100" : "")
           }
         >
-          {NavItemData.map((item) => {
+          {navbarData.map((item) => {
             return (
               <NavItemMobile
                 key={item.url + item.text}

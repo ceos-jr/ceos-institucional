@@ -1,7 +1,6 @@
 import AboutUs from "../components/AboutUs"
 import { NextPage } from "next"
 import Head from "next/head"
-import SocialProf from "../components/SocialProof/SocialProof"
 import Navbar from "../components/Navbar"
 import OurTeam from "../components/OurTeam/OurTeam"
 import Hero from "../components/Hero"
@@ -9,6 +8,33 @@ import OurGoals from "../components/OurGoals"
 import Footer from "../components/Footer"
 import ContactUs from "../components/ContactUs"
 import Services from "../components/Services/Services"
+
+const navbarData = [
+  {
+    text: "Início",
+    url: "#hero",
+  },
+  {
+    text: "Serviços",
+    url: "#servicos",
+  },
+  {
+    text: "Sobre nós",
+    url: "#sobre-nos",
+  },
+  {
+    text: "Objetivos",
+    url: "#objetivos",
+  },
+  {
+    text: "Nosso Time",
+    url: "#nosso-time",
+  },
+  {
+    text: "Fale conosco",
+    url: "#fale-conosco",
+  },
+]
 
 const Home: NextPage = () => {
   return (
@@ -21,13 +47,12 @@ const Home: NextPage = () => {
         />
       </Head>
       <main className="w-full min-h-screen">
-        <Navbar />
+        <Navbar navbarData={navbarData} />
         <Hero />
         <Services />
         <AboutUs />
         <OurGoals />
         <OurTeam />
-        <SocialProf />
         <ContactUs />
       </main>
       <Footer />

@@ -5,21 +5,14 @@ import { FaDesktop, FaDonate, FaGlobe, FaHandsHelping } from "react-icons/fa"
 import { IconType } from "react-icons"
 import Link from "next/link"
 import { HiArrowNarrowRight } from "react-icons/hi"
-import { PossibleServices } from "../typings/services"
 
 type ServicesCardProps = {
   title: string
   description: string
   Icon: IconType
-  kind: PossibleServices
 }
 
-const ServicesCard = ({
-  title,
-  kind,
-  description,
-  Icon,
-}: ServicesCardProps) => {
+const ServicesCard = ({ title, description, Icon }: ServicesCardProps) => {
   return (
     <div className="relative group flex flex-col gap-6 py-12 px-8 rounded-xl transition-all duration-500 hover:text-white w-[280px] bg-slate-100 h-[340px] text-description hover:shadow-blue-800/70 hover:bg-primary scale-100 hover:scale-105 hover:shadow-xl ">
       <div className="w-min bg-gray-300 rounded-full transition-colors group-hover:text-white text-primary group-hover:bg-white/20 group-hover: scale-125">
@@ -31,11 +24,9 @@ const ServicesCard = ({
       <h1 className="text-lg font-bold">{title}</h1>
       <p className="text-sm opacity-70">{description}</p>
       <Link
-        href={{
-          pathname: "/fale-conosco",
-          query: { service: kind },
-        }}
-        className="flex absolute bottom-5 gap-2text-sm font-semibold transition-colors group-hover:text-white text-accent"
+        href="#fale-conosco"
+        scroll={false}
+        className="flex gap-2 items-center text-sm font-semibold transition-colors group-hover:text-white text-accent"
       >
         Solicite um Orçamento
         <HiArrowNarrowRight size="1.5rem" className="" />
@@ -47,28 +38,24 @@ const ServicesCard = ({
 const services: ServicesCardProps[] = [
   {
     title: "Sites Institucionais",
-    kind: "institucional",
     description:
       "Criamos sites modernos para divulgar os serviços, os produtos e a missão da sua empresa!                     ",
     Icon: FaGlobe,
   },
   {
     title: "Sistemas Web",
-    kind: "sistema",
     description:
       "Elaboramos um sistema web personalizado para que você otimize processos e aumente a produtividade da sua organização.",
     Icon: FaDesktop,
   },
   {
     title: "E-commerce",
-    kind: "ecommerce",
     description:
       "Facilitamos a gestão e a logística da sua empresa com transações comerciais online.",
     Icon: FaDonate,
   },
   {
     title: "Assessoria de Sites",
-    kind: "assessoria",
     description:
       "Identificamos os seus problemas e participamos diretamente nos processos operacionais para resolvê-los.",
     Icon: FaHandsHelping,
