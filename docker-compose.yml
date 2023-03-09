@@ -28,7 +28,7 @@ services:
       - "443:443"
     restart: unless-stopped
   certbot:
-    image: certbot/certbot
+    image: certbot/certbot:v2.4.0
     container_name: certbot
     volumes:
       - certbot-etc:/etc/letsencrypt
@@ -37,3 +37,12 @@ services:
     depends_on:
       - nginx
     command: certonly --webroot --webroot-path=/var/www/html --email  ceos.adm@gmail.com --agree-tos --no-eff-email --staging -d ceos.dc.ufc.br
+volumes:
+  certbot-etc:
+  certbot-var:
+  webroot:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/sammy/node_project/views/
+      o: bind
