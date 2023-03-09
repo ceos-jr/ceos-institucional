@@ -78,13 +78,14 @@ const OurTeam = () => {
     width >= 1200 ? 4 : width >= 1024 ? 3 : width >= 768 ? 2 : 1.1
 
   return (
-    <section
-      className={
-        "relative h-full w-full overflow-hidden before:absolute before:bg-[#F5F7FC] before:top-[0%] before:-left-[20%] before:w-[130%] before:h-[90%] before:rotate-[5deg]"
-      }
-      id="nosso-time"
-    >
-      <div className="flex flex-col py-8 container-wrapper">
+    <section className="relative p-8" id="nosso-time">
+      <div
+        className="absolute top-0 left-0 z-0 w-full h-full bg-[#F5F7FC]"
+        style={{
+          clipPath: "polygon(0 0, 100% 15%, 100% 100%, 0 85%)",
+        }}
+      ></div>
+      <div className="flex z-10 flex-col py-8 container-wrapper">
         <h3 className="z-10 mb-4 text-xl md:mb-0 text-accent">Nosso Time</h3>
         <h2 className="z-10 text-3xl font-semibold leading-10 text-secondary max-w-[45ch]">
           Somos uma pequena equipe de contadores de histórias, pensadores e
