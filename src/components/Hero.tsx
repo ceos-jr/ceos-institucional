@@ -10,9 +10,9 @@ export default function Hero() {
             Obtenha a melhor solução para o seu projeto
           </h1>
           <p className="font-semibold leading-7 opacity-70 text-description">
-            Todos os nossos projetos são feitos sob medida para atender às suas
-            necessidades e objetivos, garantindo que seu site seja único e
-            eficiente.
+            Todos os nossos projetos são feitos sob medida para atender às
+            necessidades e objetivos de cada cliente, garantindo soluções únicas
+            e eficientes para o seu problema.
           </p>
           <ButtonWithArrow
             name="Inicie um projeto conosco"

@@ -14,11 +14,11 @@ type ServicesCardProps = {
 
 const ServicesCard = ({ title, description, Icon }: ServicesCardProps) => {
   return (
-    <div className="relative group flex flex-col gap-6 py-12 px-8 rounded-xl transition-all duration-500 hover:text-white w-[280px] bg-slate-100 h-[340px] text-description hover:shadow-blue-800/70 hover:bg-primary scale-100 hover:scale-105 hover:shadow-xl ">
-      <div className="w-min bg-gray-300 rounded-full transition-colors group-hover:text-white text-primary group-hover:bg-white/20 group-hover: scale-125">
+    <div className="flex relative flex-col gap-6 py-12 px-8 rounded-xl transition-all duration-500 scale-100 hover:text-white hover:shadow-xl hover:scale-105 group w-[280px] bg-slate-100 h-[340px] text-description hover:shadow-blue-800/70 hover:bg-primary">
+      <div className="w-min bg-gray-300 rounded-full transition-colors scale-125 group-hover:text-white text-primary group-hover:bg-white/20 group-hover:">
         <Icon
           size="3rem"
-          className="p-2.5 transition-colors group-hover:text-white text-primary  "
+          className="p-2.5 transition-colors group-hover:text-white text-primary"
         />
       </div>
       <h1 className="text-lg font-bold">{title}</h1>
@@ -78,8 +78,9 @@ export default function Services() {
             solucionadores de problemas.
           </h1>
           <p>
-            Ajudamos a sua empresa a refletir seu verdadeiro eu por meio de
-            projetos inovadores.
+            Ajudamos a sua empresa a refletir seu{" "}
+            <span className="font-bold text-accent">verdadeiro potencial</span>{" "}
+            por meio de projetos inovadores.
           </p>
         </div>
         <Carousel show={slidesCount}>

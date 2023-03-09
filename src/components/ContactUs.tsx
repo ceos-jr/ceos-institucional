@@ -143,9 +143,9 @@ export default function Twu() {
           especialistas sobre seu projeto
         </h1>
         <p className="text-description/70">
-          Não perca tempo tentando realizar seu projeto sozinho. Consulte
-          gratuitamente nossos especialistas altamente qualificados e coloque
-          suas ideias em prática. Agende já sua consulta!
+          Não perca tempo tentando realizar seu projeto sozinho. Ajude sua
+          empresa a refletir seu verdadeiro potencial por meio de projetos
+          inovadores. Agende já sua consulta!
         </p>
         <form
           className="flex flex-col gap-6 mx-auto w-full"

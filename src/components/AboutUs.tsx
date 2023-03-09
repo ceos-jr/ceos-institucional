@@ -16,9 +16,11 @@ export default function AboutUs() {
           Nossa visão é construir uma solução empresarial de sucesso.
         </h1>
         <p className="mb-8 leading-7 text-description/70">
-          Um processo de desenvolvimento bem estruturado é crucial para criar
-          produtos que as adoram. A CEOS tem um processo de desenvolvimento
-          rigoroso que inclui um desenvolvimento dirigido por testes.
+          Por meio de um desenvolvimento bem estruturado e de projetos
+          inovadores, desenvolvemos os melhores produtos utilizando tecnologia
+          de ponta. Dessa forma, guiados pelo nosso lema &quot;O céu é o
+          limite&quot;, somos capazes de agregar o máximo de valor para os
+          nossos parceiros.
         </p>
         <ButtonWithArrow
           className="lg:max-w-[300px]"
