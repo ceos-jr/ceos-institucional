@@ -3,6 +3,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import TeamImage from "../../public/images/team.jpg"
 
 const navbarData = [
   {
@@ -35,11 +36,10 @@ const AboutUs: NextPage = () => {
           <div className="flex flex-col items-center h-full">
             <Image
               className="object-cover min-h-[18.75rem] max-h-[35rem] 2xl:max-w-[1536px]"
-              src="/images/team.jpg"
+              src={TeamImage}
               alt="membros da ceos"
-              width={1900}
-              height={800}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 2000px"
+              placeholder="blur"
               priority
             />
             <div
