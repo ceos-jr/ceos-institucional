@@ -12,7 +12,7 @@ import Services from "../components/Services/Services"
 const navbarData = [
   {
     text: "Início",
-    url: "#",
+    url: "#hero",
   },
   {
     text: "Serviços",
