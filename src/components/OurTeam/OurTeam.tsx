@@ -34,7 +34,7 @@ const members: TeamCardProps[] = [
   },
   {
     name: "Julia Naomi",
-    role: "Gerente Admin-Financeira",
+    role: "Gerente Admin-Financeiro",
     memberImg: "/images/OurTeam/juia.jpeg",
     memberImgAlt: "Gerente Naomi",
     linkedinURL:
@@ -57,16 +57,16 @@ const members: TeamCardProps[] = [
   },
   {
     name: "Alan Cabral",
-    role: "Membro efetivo da CEOS",
+    role: "Consultor de Vendas",
     memberImg: "/images/OurTeam/alan.jpeg",
-    memberImgAlt: "Membro da área Administrativa-Financeira, Alan",
+    memberImgAlt: "Consultor de Vendas, Alan",
     linkedinURL: "https://www.linkedin.com/in/alan-carneiro-cabral-39035024a/",
   },
   {
     name: "Jonathan Aires",
-    role: "Membro efetivo da CEOS",
+    role: "Assessor de Projetos",
     memberImg: "/images/OurTeam/john.jpeg",
-    memberImgAlt: "Membro da área de Projetos, Jonathan",
+    memberImgAlt: "Assessor de Projetos, Jonathan",
     linkedinURL: "http://www.linkedin.com/in/jonathan-aires-2258a1268",
   },
 ]
