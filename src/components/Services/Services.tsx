@@ -14,15 +14,17 @@ type ServicesCardProps = {
 
 const ServicesCard = ({ title, description, Icon }: ServicesCardProps) => {
   return (
-    <div className="flex relative flex-col gap-6 py-12 px-8 rounded-xl transition-all duration-500 scale-100 hover:text-white hover:shadow-xl hover:scale-105 group w-[280px] bg-slate-100 h-[340px] text-description hover:shadow-blue-800/70 hover:bg-primary">
+    <div className="flex relative flex-col justify-between py-12 px-8 rounded-xl transition-all duration-500 scale-100 hover:text-white hover:shadow-xl hover:scale-105 group w-[280px] bg-slate-100 h-[340px] text-description hover:shadow-blue-800/70 hover:bg-primary">
       <div className="w-min bg-gray-300 rounded-full transition-colors scale-125 group-hover:text-white text-primary group-hover:bg-white/20 group-hover:">
         <Icon
           size="3rem"
           className="p-2.5 transition-colors group-hover:text-white text-primary"
         />
       </div>
-      <h1 className="text-lg font-bold">{title}</h1>
-      <p className="text-sm opacity-70">{description}</p>
+      <div>
+        <h1 className="text-lg font-bold">{title}</h1>
+        <p className="text-sm opacity-70">{description}</p>
+      </div>
       <Link
         href="#fale-conosco"
         scroll={false}
