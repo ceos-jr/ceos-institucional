@@ -1,47 +1,158 @@
----
 - name: Deploy CEOS Institucional with Docker
   hosts: all
-  remote_user: ansible
+  remote_user: guri_du_bronx
   vars:
-    container_image: ceosjr/institucional
-    tag: beta
-    host_port: 80
-    container_port: 80
+    email: usguri@gmail.com
+    domains:
+      - usguri.junkyard
+      - ehusguri.junkyard
+    staging: true
+    pull: true
+    remove_old: true
+  environment:
+    tag: v1
+    port: "3000"
   become: true
   roles:
     - geerlingguy.docker
   tasks:
-    - name: Build and run container with repository
+    - name: Create Devops group
+      ansible.builtin.group:
+        name: devops
+        state: present
+    - name: Create project folder
+      ansible.builtin.file:
+        path: /project
+        owner: root
+        group: devops
+        mode: "0664"
+        state: directory
+    - name: Copy .env and sheets-key.json to project folder
+      ansible.builtin.copy:
+        src: "{{ item }}"
+        dest: /projects/ceos/
+        owner: root
+        group: devops
+        mode: "0644"
+      loop:
+        - ./.env
+        - ./sheets-key.json
+    - name: Build path
+      when: not pull
       block:
-        - name: Clone this repository
+        - name: (BUILD PATH) Clone the repository
           ansible.builtin.git:
             repo: "https://github.com/ceos-jr/ceos-institucional.git"
-            dest: "{{ ansible_env.HOME }}/ceos"
-            clone: yes
-            update: yes
-        - name: Run docker compose
-          ansible.builtin.shell:
-            cmd: "docker compose up -d --build"
-            chdir: "{{ ansible_env.HOME }}/ceos"
-      when: container_image is not defined
-
-    - name: Run container from Image
+            dest: "/projects/ceos"
+            clone: true
+            update: true
+        - name: (BUILD PATH) Build image and run
+          community.docker.docker_compose:
+            project_src: "/projects/ceos"
+            project_name: "ceos"
+            build: true
+            state: present
+    - name: Pull path
+      when: pull
       block:
-        - name: Pull image from dockerhub
-          community.docker.docker_image:
-            name: "{{ container_image }}"
-            tag: "{{ tag }}"
-            source: pull
-          when: container_image is defined
-
-        - name: Run container
-          community.docker.docker_container:
-            name: ceos-institucional
-            image: "{{ container_image }}:{{ tag }}"
-            recreate: true
-            detach: true
-            restart_policy: "unless-stopped"
-            published_ports:
-              - "{{ host_port }}:{{ container_port }}"
-            state: started
-      when: container_image is defined
+        - name: (PULL PATH) Copy docker-compose to project folder
+          ansible.builtin.copy:
+            src: docker-compose.yml
+            dest: /projects/ceos/
+            owner: root
+            group: devops
+            mode: "0644"
+        - name: (PULL PATH) Run docker compose
+          community.docker.docker_compose:
+            project_src: "/projects/ceos"
+            project_name: "ceos"
+            pull: true
+            build: false
+            state: present
+    - name: (Debian) Install NGINX and Socat
+      ansible.builtin.apt:
+        pkg:
+          - nginx
+          - socat
+        state: present
+        update_cache: true
+    - name: Get Status of ACME on system
+      ansible.builtin.stat:
+        path: /root/.acme.sh/
+      register: acme_dir
+    - name: Install ACME.sh
+      when: not acme_dir.stat.exists
+      block:
+        - name: Clone ACME git repo
+          ansible.builtin.git:
+            repo: "https://github.com/acmesh-official/acme.sh.git"
+            dest: "/projects/acme.sh"
+            clone: true
+            update: true
+        - name: Install ACME.sh
+          ansible.builtin.shell:
+            cmd: "./acme.sh --install -m email={{ email }}"
+            chdir: /projects/acme.sh
+    - name: Stop NGINX just to get certificates
+      ansible.builtin.service:
+        name: nginx
+        state: stopped
+    - name: Create certificates folder
+      ansible.builtin.file:
+        path: "/etc/letsencrypt/live/{{ domains[0] }}/"
+        owner: root
+        group: root
+        mode: "0751"
+        state: directory
+    - name: Get current certificates state
+      ansible.builtin.shell:
+        chdir: /root/.acme.sh/
+        cmd: "./acme.sh --list | grep -c {{ domains[0] }}"
+      ignore_errors: true
+      register: cert_exists
+    - name: Remove old Certificate
+      when: remove_old and not cert_exists.failed
+      block:
+        - name: Revoke Old Certificate
+          ansible.builtin.shell:
+            chdir: /root/.acme.sh
+            cmd: "./acme.sh --revoke -d {{ domains | join('-d ') }}"
+        - name: Remove Old Certificate
+          ansible.builtin.shell:
+            chdir: /root/.acme.sh
+            cmd: "./acme.sh --remove -d {{ domains | join('-d ') }}"
+        - name: Remove Certificate directory
+          ansible.builtin.file:
+            path: "/root/.acme.sh/{{ domains[0] }}_ecc"
+            state: absent
+    - name: Get a new Certificate
+      when: cert_exists.failed
+      block:
+        - name: (STAGING) Run ACME in Standalone mode to get certificates
+          ansible.builtin.shell:
+            cmd: "./acme.sh --issue --standalone --staging -d {{ domains | join('-d ') }}"
+            chdir: /root/.acme.sh
+          when: staging
+        - name: (PROD) Run ACME in Standalone mode to get certificates
+          ansible.builtin.shell:
+            cmd: "./acme.sh --issue --standalone -d {{ domains | join('-d ') }}"
+            chdir: /root/.acme.sh
+          when: not staging
+    - name: Install certificates for NGINX use
+      ansible.builtin.shell:
+        chdir: /root/.acme.sh/
+        cmd: |
+          ./acme.sh --install-cert -d {{ domains[0] }} \
+            --key-file /etc/letsencrypt/live/{{ domains[0] }}/privkey.pem \
+            --fullchain-file /etc/letsencrypt/live/{{ domains[0] }}/fullchain.pem
+    - name: Add CEOS VHOST to NGINX
+      ansible.builtin.template:
+        src: ./nginx/default.conf.j2
+        dest: /etc/nginx/conf.d/ceos.conf
+        owner: root
+        group: root
+        mode: "0644"
+    - name: Start NGINX service
+      ansible.builtin.service:
+        name: nginx
+        state: reloaded

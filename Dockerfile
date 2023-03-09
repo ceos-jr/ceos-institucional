@@ -18,9 +18,6 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Copiar o arquivo .env para rodar o build com os parametros certos
-COPY .env .env
-
 ENV NEXT_TELEMETRY_DISABLED 1
 
 # Yarn aqui pq essa imagem do node usa Yarn ao inves de NPM

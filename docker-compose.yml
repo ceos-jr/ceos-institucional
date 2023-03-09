@@ -3,46 +3,17 @@ version: "3.9"
 services:
   ceos:
     container_name: ceos-institucional
+    image: ceosjr/institucional:${TAG:-v1}
+    build:
+      context: ./
+    volumes:
+      - ./sheets-key.json:/sheets-key.json:ro
+      - ./.env:/.env:ro
+    ports:
+      - ${PORT:-3000}:3000
     deploy:
       resources:
         limits:
-          cpus: "1.0"
+          cpus: "0.5"
           memory: 100M
-    build:
-      context: ./
-    image: ceosjr/institucional:latest
     restart: unless-stopped
-  nginx:
-    container_name: nginx
-    image: nginx:mainline-alpine
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/
-      - ./nginx/default.conf:/etc/nginx/conf.d/
-      - webroot:/var/www/html
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-    depends_on:
-      - ceos
-    ports:
-      - "80:80"
-      - "443:443"
-    restart: unless-stopped
-  certbot:
-    image: certbot/certbot:v2.4.0
-    container_name: certbot
-    volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - web-root:/var/www/html
-    depends_on:
-      - nginx
-    command: certonly --webroot --webroot-path=/var/www/html --email  ceos.adm@gmail.com --agree-tos --no-eff-email --staging -d ceos.dc.ufc.br
-volumes:
-  certbot-etc:
-  certbot-var:
-  webroot:
-    driver: local
-    driver_opts:
-      type: none
-      device: /home/sammy/node_project/views/
-      o: bind
