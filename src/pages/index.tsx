@@ -19,16 +19,16 @@ const navbarData = [
     url: "#servicos",
   },
   {
-    text: "Sobre nós",
-    url: "#sobre-nos",
-  },
-  {
     text: "Objetivos",
     url: "#objetivos",
   },
   {
     text: "Nosso Time",
     url: "#nosso-time",
+  },
+  {
+    text: "Sobre nós",
+    url: "/sobre-nos",
   },
   {
     text: "Fale conosco",
@@ -50,9 +50,9 @@ const Home: NextPage = () => {
         <Navbar navbarData={navbarData} />
         <Hero />
         <Services />
-        <AboutUs />
         <OurGoals />
         <OurTeam />
+        <AboutUs />
         <ContactUs />
       </main>
       <Footer />
