@@ -1,5 +1,6 @@
-import { useState, ChangeEvent, FocusEvent } from "react"
+import { useState, ChangeEvent, FocusEvent, FormEvent } from "react"
 import Image from "next/image"
+import { useRouter } from "next/router"
 
 interface ContactFormData {
   name: string
@@ -63,8 +64,10 @@ const ErrorMessage = ({ id, msg }: { id: string; msg: string }) => {
   )
 }
 
-export default function Twu() {
+export default function ContactUs() {
   const [formData, setFormData] = useState<ContactFormData>(DEFAULT_FORM_DATA)
+  const [isSubmitting, setSubmitting] = useState(false)
+  const router = useRouter()
   const [validation, setValidation] =
     useState<InputValidation>(DEFAULT_VALIDATION)
 
@@ -128,6 +131,24 @@ export default function Twu() {
     })
   }
 
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setSubmitting(true)
+
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+      })
+      router.push({ pathname: "/obrigado", query: { name: formData.name } })
+    } catch (error) {
+      console.log("error dus guri")
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
   return (
     <section
       className="grid grid-cols-1 gap-8 place-items-center md:grid-cols-2 container-wrapper"
@@ -143,14 +164,13 @@ export default function Twu() {
           especialistas sobre seu projeto
         </h1>
         <p className="text-description/70">
-          Não perca tempo tentando realizar seu projeto sozinho. Consulte
-          gratuitamente nossos especialistas altamente qualificados e coloque
-          suas ideias em prática. Agende já sua consulta!
+          Não perca tempo tentando realizar seu projeto sozinho. Ajude sua
+          empresa a refletir seu verdadeiro potencial por meio de projetos
+          inovadores. Agende já sua consulta!
         </p>
         <form
           className="flex flex-col gap-6 mx-auto w-full"
-          action="/send-data-here"
-          method="post"
+          onSubmit={handleSubmit}
         >
           <div className="flex gap-4 justify-between">
             <div className="w-full">
@@ -164,7 +184,7 @@ export default function Twu() {
                 onBlur={handleFocusOut}
                 value={formData.name}
                 aria-invalid={!validation.name.isValid}
-                aria-errormessage={validation.name.errorReason}
+                aria-errormessage="name-error"
                 className={`form-input ${
                   !validation.name.isValid ? "form-input-error" : ""
                 }`}
@@ -187,7 +207,7 @@ export default function Twu() {
                 onBlur={handleFocusOut}
                 value={formData.phone}
                 aria-invalid={!validation.phone.isValid}
-                aria-errormessage={validation.phone.errorReason}
+                aria-errormessage="phone-error"
                 className={`form-input ${
                   !validation.phone.isValid ? "form-input-error" : ""
                 }`}
@@ -210,7 +230,7 @@ export default function Twu() {
               onBlur={handleFocusOut}
               value={formData.email}
               aria-invalid={!validation.email.isValid}
-              aria-errormessage={validation.email.errorReason}
+              aria-errormessage="email-error"
               className={`form-input ${
                 !validation.email.isValid ? "form-input-error" : ""
               }`}
@@ -232,25 +252,27 @@ export default function Twu() {
               onBlur={handleFocusOut}
               value={formData.message}
               aria-invalid={!validation.message.isValid}
-              aria-errormessage={validation.message.errorReason}
+              aria-errormessage="message-error"
               className={`form-input ${
                 !validation.message.isValid ? "form-input-error" : ""
               }`}
               required
             />
-            {!validation.email.isValid && (
+            {!validation.message.isValid && (
               <ErrorMessage
                 id="message-error"
-                msg={validation.email.errorReason}
+                msg={validation.message.errorReason}
               />
             )}
           </div>
           <button
             type="submit"
             className={`py-3 px-4 mt-4 text-white rounded-lg transition-all ${
-              AreInputsValid ? "bg-accent hover:scale-105" : "bg-gray-500"
+              !isSubmitting && AreInputsValid
+                ? "bg-accent hover:scale-105"
+                : "bg-gray-500"
             }`}
-            disabled={!AreInputsValid ? true : false}
+            disabled={isSubmitting || !AreInputsValid}
           >
             Enviar
           </button>
