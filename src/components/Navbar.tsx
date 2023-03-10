@@ -58,16 +58,15 @@ const NavItemMobile = ({ text, url }: NavItemProps) => {
 
 const Navbar = () => {
   const [show, setShow] = useState(true)
-  const { lockScroll, unlockScroll, scrollBarCompensation } = useScrollLock()
+  const { lockScroll, unlockScroll, locked, scrollBarCompensation } = useScrollLock()
   const heightRef = useRef(0)
 
   useEffect(() => {
     const handleScroll = () => {
       const currentHeight = window.scrollY
-
-      // If the scroll is locked, don't hide the navbar
-      // scrollBarCompensation == 0 mean scroll unlocked
-      if (scrollBarCompensation !== 0) return
+      
+      // If the scroll is locked, don't change the navbar position
+      if (locked) return
 
       if (heightRef.current - currentHeight < 0) {
         setShow(false)
@@ -100,7 +99,7 @@ const Navbar = () => {
     <nav
       className={`sticky top-0 left-0 z-50 bg-white/70 backdrop-blur justify-between items-center py-4 px-8 transition-transform duration-300 ease-out ${
         show ? "shadow-md shadow-primary/40" : "-translate-y-48"
-      } ${scrollBarCompensation > 0 ? "w-screen" : "w-full"}`}
+      } ${locked ? "w-screen" : "w-full"}`}
     >
       <div className="hidden lg:flex">
         <Link href="/">
