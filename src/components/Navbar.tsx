@@ -58,13 +58,14 @@ const NavItemMobile = ({ text, url }: NavItemProps) => {
 
 const Navbar = () => {
   const [show, setShow] = useState(true)
-  const { lockScroll, unlockScroll, locked, scrollBarCompensation } = useScrollLock()
+  const { lockScroll, unlockScroll, locked, scrollBarCompensation } =
+    useScrollLock()
   const heightRef = useRef(0)
 
   useEffect(() => {
     const handleScroll = () => {
       const currentHeight = window.scrollY
-      
+
       // If the scroll is locked, don't change the navbar position
       if (locked) return
 
