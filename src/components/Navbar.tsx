@@ -80,7 +80,7 @@ const Navbar = ({ navbarData }: NavbarProps) => {
 
   return (
     <nav
-      className={`sticky top-0 left-0 z-50 bg-white/70 backdrop-blur justify-between items-center py-4 px-8 transition-transform duration-300 ease-out ${
+      className={`sticky top-0 left-0 z-50 bg-white justify-between items-center py-4 px-8 transition-transform duration-300 ease-out ${
         show ? "shadow-md shadow-primary/40" : "-translate-y-48"
       } ${locked ? "w-screen" : "w-full"}`}
     >
