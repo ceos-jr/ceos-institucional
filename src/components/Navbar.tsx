@@ -33,7 +33,11 @@ const NavItem = ({ text, url, scroll = false }: NavItemProps) => {
 const NavItemMobile = ({ text, url, scroll = false }: NavItemProps) => {
   return (
     <li className="w-full text-gray-800 border-b border-gray-200 transition-colors duration-300 ease-in hover:text-primary">
-      <Link className="block py-4 w-full text-center" href={url} scroll={scroll}>
+      <Link
+        className="block py-4 w-full text-center"
+        href={url}
+        scroll={scroll}
+      >
         {text}
       </Link>
     </li>
