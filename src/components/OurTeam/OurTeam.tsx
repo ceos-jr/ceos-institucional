@@ -3,39 +3,49 @@ import CarouselSlide from "../Carousel/CarouselSlide"
 import MemberCard, { TeamCardProps } from "./MemberCard"
 import useWindowSize from "../../hooks/useWindowSize"
 
+import Luquitas from "../../../public/images/OurTeam/luquitas.jpeg"
+import Saido from "../../../public/images/OurTeam/saido.jpeg"
+import DiretorMarcelinho from "../../../public/images/OurTeam/marcelinhopfvrfunciona.jpeg"
+import Enzo from "../../../public/images/OurTeam/enzo.jpeg"
+import Juia from "../../../public/images/OurTeam/juia.jpeg"
+import Lg from "../../../public/images/OurTeam/lg.jpeg"
+import Vivi from "../../../public/images/OurTeam/vivi.jpeg"
+import Alanbida from "../../../public/images/OurTeam/alan.jpeg"
+import John from "../../../public/images/OurTeam/john.jpeg"
+
 const members: TeamCardProps[] = [
   {
     name: "Lucas Braide",
     role: "Presidente da CEOS",
     linkedinURL: "https://www.linkedin.com/in/lucas-braide-70a8b5206",
-    memberImg: "/images/OurTeam/luquitas.jpeg",
+    memberImg: Luquitas,
     memberImgAlt: "Presidente Lucas",
   },
   {
     name: "Said Rodrigues",
     role: "Diretor de Projetos",
     linkedinURL: "https://www.linkedin.com/in/said-rodrigues-752316149/",
-    memberImg: "/images/OurTeam/saido.jpeg",
+    memberImg: Saido,
     memberImgAlt: "Diretor Said",
   },
   {
     name: "Marcelo Marques",
     role: "Diretor de Pessoas e Processos",
-    memberImg: "/images/OurTeam/marcelinhopfvrfunciona.jpeg",
+    memberImg: DiretorMarcelinho,
     memberImgAlt: "Diretor Marcelinho",
     linkedinURL: "https://www.linkedin.com/in/marcelo-marques-27a9a7267/",
   },
   {
     name: "Enzo Lozano",
     role: "Gerente de Marketing",
-    memberImg: "/images/OurTeam/enzo.jpeg",
+    memberImg: Enzo,
     memberImgAlt: "Diretor Enzo",
     linkedinURL: "https://www.linkedin.com/in/enzo-lozano-abreu-3886b01bb/",
   },
   {
     name: "Julia Naomi",
     role: "Gerente Admin-Financeiro",
-    memberImg: "/images/OurTeam/juia.jpeg",
+    memberImg: Juia,
     memberImgAlt: "Gerente Naomi",
     linkedinURL:
       "https://www.linkedin.com/in/julia-naomi-takihi-makiyama-1a4540257",
@@ -43,7 +53,7 @@ const members: TeamCardProps[] = [
   {
     name: "Luiz Gustavo",
     role: "Gerente de Projetos",
-    memberImg: "/images/OurTeam/lg.jpeg",
+    memberImg: Lg,
     memberImgAlt: "Gerente Luiz Gustavo",
     linkedinURL:
       "https://www.linkedin.com/in/luiz-gustavo-marques-costa-790297217/",
@@ -51,21 +61,21 @@ const members: TeamCardProps[] = [
   {
     name: "Victoria de Castro",
     role: "Gerente de Pessoas",
-    memberImg: "/images/OurTeam/vivi.jpeg",
+    memberImg: Vivi,
     memberImgAlt: "Gerente Victoria",
     linkedinURL: "https://www.linkedin.com/in/victoria-de-castro-19ba5a242",
   },
   {
     name: "Alan Cabral",
     role: "Consultor de Vendas",
-    memberImg: "/images/OurTeam/alan.jpeg",
+    memberImg: Alanbida,
     memberImgAlt: "Consultor de Vendas, Alan",
     linkedinURL: "https://www.linkedin.com/in/alan-carneiro-cabral-39035024a/",
   },
   {
     name: "Jonathan Aires",
     role: "Assessor de Projetos",
-    memberImg: "/images/OurTeam/john.jpeg",
+    memberImg: John,
     memberImgAlt: "Assessor de Projetos, Jonathan",
     linkedinURL: "http://www.linkedin.com/in/jonathan-aires-2258a1268",
   },
