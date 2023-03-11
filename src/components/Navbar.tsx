@@ -7,31 +7,33 @@ import useScrollLock from "../hooks/useScrollLock"
 export type NavItemData = {
   text: string
   url: string
+  scroll?: boolean
 }
 
 interface NavItemProps {
   text: string
   url: string
+  scroll?: boolean
 }
 
 interface NavbarProps {
   navbarData: NavItemData[]
 }
 
-const NavItem = ({ text, url }: NavItemProps) => {
+const NavItem = ({ text, url, scroll = false }: NavItemProps) => {
   return (
     <li className="transition-all duration-75 ease-linear hover:scale-110">
-      <Link className="text-lg" href={url} scroll={false}>
+      <Link className="text-lg" href={url} scroll={scroll}>
         {text}
       </Link>
     </li>
   )
 }
 
-const NavItemMobile = ({ text, url }: NavItemProps) => {
+const NavItemMobile = ({ text, url, scroll = false }: NavItemProps) => {
   return (
     <li className="w-full text-gray-800 border-b border-gray-200 transition-colors duration-300 ease-in hover:text-primary">
-      <Link className="block py-4 w-full text-center" href={url} scroll={false}>
+      <Link className="block py-4 w-full text-center" href={url} scroll={scroll}>
         {text}
       </Link>
     </li>
@@ -99,7 +101,7 @@ const Navbar = ({ navbarData }: NavbarProps) => {
                 >
                   <Link
                     href={item.url}
-                    scroll={false}
+                    scroll={item.scroll || false}
                     className="block py-2 px-4 w-full h-full"
                   >
                     {item.text}
@@ -113,6 +115,7 @@ const Navbar = ({ navbarData }: NavbarProps) => {
                 key={item.url + item.text}
                 text={item.text}
                 url={item.url}
+                scroll={item?.scroll}
               />
             )
           })}
@@ -149,6 +152,7 @@ const Navbar = ({ navbarData }: NavbarProps) => {
                 key={item.url + item.text}
                 text={item.text}
                 url={item.url}
+                scroll={item?.scroll}
               />
             )
           })}
