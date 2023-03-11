@@ -29,6 +29,7 @@ const navbarData = [
   {
     text: "Sobre nós",
     url: "/sobre-nos",
+    scroll: true,
   },
   {
     text: "Fale conosco",
