@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@next/font": "^13.1.6",
+    "googleapis": "^112.0.0",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.7.1"
+    "react-icons": "^4.7.1",
+    "sharp": "^0.31.3"
   },
   "devDependencies": {
     "@types/node": "18.11.3",

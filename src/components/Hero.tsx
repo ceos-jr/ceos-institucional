@@ -3,20 +3,20 @@ import ButtonWithArrow from "./layout/ButtonWithArrow"
 
 export default function Hero() {
   return (
-    <section>
+    <section id="hero">
       <div className="grid grid-cols-1 gap-5 place-items-center py-10 md:grid-cols-2 container-wrapper">
         <div className="flex z-10 flex-col gap-8">
           <h1 className="text-4xl font-bold lg:text-6xl lg:leading-snug text-secondary">
             Obtenha a melhor solução para o seu projeto
           </h1>
           <p className="font-semibold leading-7 opacity-70 text-description">
-            Todos os nossos projetos são feitos sob medida para atender às suas
-            necessidades e objetivos, garantindo que seu site seja único e
-            eficiente.
+            Todos os nossos projetos são feitos sob medida para atender às
+            necessidades e objetivos de cada cliente, garantindo soluções únicas
+            e eficientes para o seu problema.
           </p>
           <ButtonWithArrow
             name="Inicie um projeto conosco"
-            href="fale-conosco"
+            href="#fale-conosco"
             className="w-full xl:w-3/5"
           />
         </div>

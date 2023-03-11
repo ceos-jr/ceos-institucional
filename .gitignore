@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+.open-next/
+
 # testing
 /coverage
 
@@ -27,6 +29,9 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
+
+sheets-key.json
 
 # vercel
 .vercel
