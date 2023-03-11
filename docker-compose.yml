@@ -1,9 +1,19 @@
-version: "3"
+---
+version: "3.9"
 services:
   ceos:
-    container_name: ceos
+    container_name: ceos-institucional
+    image: ceosjr/institucional:${TAG:-v1}
     build:
       context: ./
-    image: ceos-local
+    volumes:
+      - ./sheets-key.json:/sheets-key.json:ro
+      - ./.env:/.env:ro
     ports:
-      - "80:80"
+      - ${PORT:-3000}:3000
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 100M
+    restart: unless-stopped

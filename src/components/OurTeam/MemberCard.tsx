@@ -1,10 +1,10 @@
 import { FaLinkedinIn } from "react-icons/fa"
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 
 export interface TeamCardProps {
   name: string
   role: string
-  memberImg: string
+  memberImg: string | StaticImageData
   memberImgAlt: string
   linkedinURL: string
 }

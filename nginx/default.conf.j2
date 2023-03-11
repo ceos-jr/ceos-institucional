@@ -1,0 +1,86 @@
+proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=CEOS:10m inactive=7d use_temp_path=off;
+
+upstream nextjs_upstream {
+  server localhost:3000;
+}
+
+server {
+  listen       80;
+  listen       [::]:80;
+
+  # Aqui a gente define o nome do servidor
+  # So vai entrar nesse server block se bater esse nome de domínio
+  server_name  {{ domains | join(' ') }};
+  server_tokens off;
+
+  # Aqui a gente redireciona para o HTTPS caso o usuario nao esteja usando
+  # http vagabundo
+  # HTTPS é mais seguro e mais rapido que o HTTP no nosso caso, por causa do SSL e Multiplexing do HTTP2
+  return 301 https://$host$request_uri;
+}
+
+server {
+  listen       443 ssl http2;
+  listen       [::]:443 ssl http2;
+
+  # Aqui a gente define o certificado e chave do SSL
+  ssl_certificate /etc/letsencrypt/live/{{ domains[0] }}/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/{{ domains[0] }}/privkey.pem;
+
+  # Locais onde vai ter os logs
+  access_log /var/log/nginx/ceos.access.log;
+  error_log /var/log/nginx/ceos.error.log;
+
+  # Aqui a gente define o nome do servidor
+  # So vai entrar nesse server block se bater esse nome de domínio
+  server_name  {{ domains | join(' ') }};
+
+  # Retira o nome do NGINX do header
+  # Caso exista alguma vulnerabilidade do NGINX, nao vai ser exposta tao facil
+  server_tokens off;
+
+  # Compressao de alguns item que possuem muito text
+  # Nunca coloque imagens aqui pois ja sao comprimidas
+  gzip on;
+  gzip_proxied any;
+  gzip_comp_level 2;
+  gzip_min_length 1000;
+  gzip_types text/plain text/css application/javascript image/svg+xml;
+
+  # Aqui a gente termina o SSL e faz a conexão com o servidor via HTTP 1.1
+  # Como a gente não precisa de arquitetura Zero Trust e o TLS handshake é custoso
+  # A gente faz o SSL no NGINX e o HTTP no NodeJS
+  proxy_http_version 1.1;
+  proxy_set_header Upgrade $http_upgrade;
+  proxy_set_header Connection 'upgrade';
+  proxy_set_header Host $host;
+  proxy_cache_bypass $http_upgrade;
+
+  # Aqui a gente faz o uso do Cache por 24h do que tem no NGINX
+  # 24h porque as imagens do nextjs não possuem uma nova hash a cada build
+  # Entao se a imagem mudar, ela vai ficar atrasada por 24h
+  # E ainda manda pro samango fazer cache no browser
+  location /images/ {
+    add_header Cache-Control "public, max-age=86400";
+    proxy_ignore_headers Cache-Control;
+    proxy_hide_header Cache-Control;
+    proxy_cache_valid 200 206 24h;
+
+    proxy_cache CEOS;
+    proxy_pass http://nextjs_upstream;
+  }
+
+  # Aqui a gente faz o cache de outros arquivos estaticos como HTML, chunks de JS e CSS
+  # Nao precisa setar header aqui porque o NextJS ja coloca pra ficar eterno JS, CSS, HTML
+  # Pois eles possuem um id diferente a cada build
+  # Entao nao precisa ficar invalidando o cache a cada build
+  location /_next/static {
+    proxy_cache CEOS;
+    proxy_pass http://nextjs_upstream;
+  }
+
+  # Aqui a gente serve o resto dos arquivos com o proprio nextjs
+  location / {
+    proxy_pass http://nextjs_upstream;
+  }
+}
