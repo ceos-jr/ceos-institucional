@@ -1,16 +1,14 @@
 import "../styles/globals.css"
 import type { AppProps } from "next/app"
-import { Poppins } from "@next/font/google"
+import { Quicksand } from "@next/font/google"
 
-const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+const font = Quicksand({
   subsets: ["latin"],
-  variable: "--font-poppins",
 })
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${poppins.variable} font-poppins`}>
+    <div className={font.className}>
       <Component {...pageProps} />
     </div>
   )
