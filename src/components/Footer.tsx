@@ -46,9 +46,9 @@ function Footer() {
       <div className="mx-auto mb-8 w-full md:mb-0 md:w-1/4">
         <h3 className="mb-2 text-2xl font-bold text-secondary">Links</h3>
         <ul className="flex flex-col gap-2 text-gray-500">
-          <LinkItem href="#hero" name="Início" />
+          <LinkItem href="/#hero" name="Início" />
           <LinkItem href="/sobre-nos" name="Sobre nós" />
-          <LinkItem href="#servicos" name="Serviços" />
+          <LinkItem href="/#servicos" name="Serviços" />
         </ul>
       </div>
       <div className="mx-auto mb-8 w-full md:mb-0 md:w-1/4">
