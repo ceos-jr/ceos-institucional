@@ -88,7 +88,7 @@ const OurTeam = () => {
     width >= 1200 ? 4 : width >= 1025 ? 3 : width >= 768 ? 2 : 1.15
 
   return (
-    <section className="relative p-8" id="nosso-time">
+    <section className="relative py-8" id="nosso-time">
       <div
         className="absolute top-0 left-0 z-0 w-full h-full bg-[#F5F7FC]"
         style={{
