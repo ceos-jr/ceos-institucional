@@ -85,7 +85,7 @@ const OurTeam = () => {
   const { width } = useWindowSize()
 
   const slidesCount =
-    width >= 1200 ? 4 : width >= 1024 ? 3 : width >= 768 ? 2 : 1.1
+    width >= 1200 ? 4 : width >= 1025 ? 3 : width >= 768 ? 2 : 1.15
 
   return (
     <section className="relative p-8" id="nosso-time">
@@ -104,7 +104,7 @@ const OurTeam = () => {
         <Carousel show={slidesCount}>
           {members.map((member, index) => (
             <CarouselSlide
-              className="flex justify-center items-center md:w-1/2 lg:w-1/3 xl:w-1/4"
+              className="flex justify-center items-center w-[87%] md:w-1/2 lg:w-1/3 xl:w-1/4"
               key={member.name}
               position={index}
             >
