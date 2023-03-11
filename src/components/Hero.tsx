@@ -28,9 +28,9 @@ export default function Hero() {
             priority
           />
         </div>
-        <div className="hidden relative col-span-full place-self-end w-3/5 h-16 md:inline-block">
+        {/* <div className="hidden relative col-span-full place-self-end w-3/5 h-16 md:inline-block">
           <Image src="/images/Hero/parceiros.svg" alt="parceiros image" fill />
-        </div>
+        </div> */}
       </div>
     </section>
   )
